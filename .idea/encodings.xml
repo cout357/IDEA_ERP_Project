@@ -10,9 +10,12 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/model/GeneralLedger.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/model/QueryInfoByCustomerInfo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/model/ScreenInfoByCustomerInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/otherClass/QueryInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/otherClass/QueryInfoByCustomerInfo_old.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/service/impl/GeneralLedgerServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/service/impl/OrdersAndJournalServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/itheima/test/Test.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/js/eventANS.js" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

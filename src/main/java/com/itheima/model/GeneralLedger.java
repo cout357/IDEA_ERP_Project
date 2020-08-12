@@ -5,29 +5,29 @@ import java.math.BigInteger;
 import java.util.Date;
 
 public class GeneralLedger implements Serializable {
-    private Integer gl_id;            			//  ĞòºÅ  ------------
-    private String kmId;            		//  ²úÆ·±àºÅ   ------------
-    private String deposit;   				//  ¹Ì¶¨´æ·Å¿âÎ»    ------------
-    private String productClassification;   //  ²úÆ··ÖÀà     ------------
-    private String salesMan;          	 	 //  ÒµÎñÔ±    ------------
-    private String dataTime;        		 //  ÅÌµãÊı¾İÈ·ÈÏÈÕÆÚ     ------------
-    private Integer orderNeedSum;        		 //  ¶©µ¥×ÜĞèÇóÊı
-    private Integer storageSum;          		 //  Èë¿âÀÛ¼ÆÊı
-    private Integer checkoutSum;          		//  Êµ¼Ê³ö¿âÀÛ¼ÆÊı
-    private Integer stockSum;         			//  µ±Ç°¿ÉÓÃ¿â´æÊıÁ¿
-    private Integer stockCaseSum;           	//  µ±Ç°¿â´æÏäÊı ***   ------------
-    private Integer needStage;               	  //  ĞèÇóÆ¥Åä×´Ì¬
-    private Integer preExportNumber;         	 //   ±¸»õÊıÁ¿
-    private Integer availableNumber;          //  ±¸»õºó¿ÉÓÃ¿â´æ
-    private String beforeYear;             //  19Äê±ê×¼¿â´æ
-    private Integer averageMouth2020;           //   2020ÔÂ¾ùÓÃÁ¿
-    private double averageMouth;            //   ÔÂ¾ùµ¥Êı
-    private Integer orderNumber;             //  ¶©µ¥ÕÅÊı
-    private Integer storageNumber;              //  Èë¿âÆµÊı
-    private Integer checkoutNumber;               //  ³ö¿âÆµÊı
-    private Integer lowMiniNeed;             //  µÍÓÚ×îµÍ¿â´æÔ¤¾¯¿îÊı   ------------
-    private Integer outHighNeed;                //  ¸ßÓÚ×î´ó¿â´æ×Ü¿îÊı    ------------
-    private Integer proposalNumber;           //  ½¨ÒéÍ¶²úÊıÁ¿
+    private Integer gl_id;            			//  åºå·  ------------
+    private String kmId;            		//  äº§å“ç¼–å·   ------------
+    private String deposit;   				//  å›ºå®šå­˜æ”¾åº“ä½    ------------
+    private String productClassification;   //  äº§å“åˆ†ç±»     ------------
+    private String salesMan;          	 	 //  ä¸šåŠ¡å‘˜    ------------
+    private String dataTime;        		 //  ç›˜ç‚¹æ•°æ®ç¡®è®¤æ—¥æœŸ     ------------
+    private Integer orderNeedSum;        		 //  è®¢å•æ€»éœ€æ±‚æ•°
+    private Integer storageSum;          		 //  å…¥åº“ç´¯è®¡æ•°
+    private Integer checkoutSum;          		//  å®é™…å‡ºåº“ç´¯è®¡æ•°
+    private Integer stockSum;         			//  å½“å‰å¯ç”¨åº“å­˜æ•°é‡
+    private Integer stockCaseSum;           	//  å½“å‰åº“å­˜ç®±æ•° ***   ------------
+    private Integer needStage;               	  //  éœ€æ±‚åŒ¹é…çŠ¶æ€
+    private Integer preExportNumber;         	 //   å¤‡è´§æ•°é‡
+    private Integer availableNumber;          //  å¤‡è´§åå¯ç”¨åº“å­˜
+    private String beforeYear;             //  19å¹´æ ‡å‡†åº“å­˜
+    private Integer averageMouth2020;           //   2020æœˆå‡ç”¨é‡
+    private double averageMouth;            //   æœˆå‡å•æ•°
+    private Integer orderNumber;             //  è®¢å•å¼ æ•°
+    private Integer storageNumber;              //  å…¥åº“é¢‘æ•°
+    private Integer checkoutNumber;               //  å‡ºåº“é¢‘æ•°
+    private Integer lowMiniNeed;             //  ä½äºæœ€ä½åº“å­˜é¢„è­¦æ¬¾æ•°   ------------
+    private Integer outHighNeed;                //  é«˜äºæœ€å¤§åº“å­˜æ€»æ¬¾æ•°    ------------
+    private Integer proposalNumber;           //  å»ºè®®æŠ•äº§æ•°é‡
     
 	
 	public Integer getGl_id() {

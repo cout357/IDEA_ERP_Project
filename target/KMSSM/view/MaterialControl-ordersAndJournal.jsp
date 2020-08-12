@@ -1046,8 +1046,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];
 		</script>
-		<script  type="text/javascript" charset="UTF-8" src="js/init.js"></script>
-		<script type="text/javascript" charset="UTF-8" src="js/funcsOfAjax.js" ></script>
-		<script type="text/javascript" charset="UTF-8" src="js/event.js" ></script>
+		<script src="js/init.js" charset="utf-8"></script>
+		<script src="js/funcsOfAjax.js" charset="utf-8"></script>
+		<script src="js/event.js"  charset="utf-8"></script>
+		<script>
+		</script>
 	</body>
 </html>

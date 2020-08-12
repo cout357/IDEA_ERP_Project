@@ -16,7 +16,7 @@ public class QueryInfoByCustomerInfo_old {
 		this.limitBegin = limitBegin;
 		this.pageDataCount = pageDataCount;
 	}
-	//½«Ç°Ì¨´«À´µÄÊı×éÊı¾İ×ªÎªmysqlÅÅĞòÌõ¼şÓï¾ä£¬ÆäÖĞÇ°Ì¨´«À´µÄ
+	//å°†å‰å°ä¼ æ¥çš„æ•°ç»„æ•°æ®è½¬ä¸ºmysqlæ’åºæ¡ä»¶è¯­å¥ï¼Œå…¶ä¸­å‰å°ä¼ æ¥çš„
 	public QueryInfoByCustomerInfo_old(List<String> screenInfoPackage) {
 		int flag = 0;
 		List<String> infos = new ArrayList<String>();
@@ -67,20 +67,20 @@ public class QueryInfoByCustomerInfo_old {
 			String str = colValuescreen.get(i);
 			String items = null;
 			String sign = "";
-			//»ñÈ¡ÌáÊ¾·û£¬ÅĞ¶Ï¸ÃÁĞÊÇ°´Ê²Ã´·½·¨É¸Ñ¡
+			//è·å–æç¤ºç¬¦ï¼Œåˆ¤æ–­è¯¥åˆ—æ˜¯æŒ‰ä»€ä¹ˆæ–¹æ³•ç­›é€‰
 			for(int si = 0;str.charAt(si)!=' ';si++)
 				sign+=str.charAt(si);
 			str = str.substring(sign.length()+1);
 			if("&value".equals(sign)) {
 				items = colNames[i] + " IN (";
-				items += str.substring(0,str.length()-1);		//È¥µôÄ©Î²¶ººÅ
+				items += str.substring(0,str.length()-1);		//å»æ‰æœ«å°¾é€—å·
 				items += ")";
 			}
 			else if("&number".equals(sign)) {
 				items = colNames[i] + str;
 			}
-			else {		//³ÌĞòÕı³£²»»áÖ´ĞĞ
-				System.out.println("colValueItem·ûºÅÓĞÎó£¡");
+			else {		//ç¨‹åºæ­£å¸¸ä¸ä¼šæ‰§è¡Œ
+				System.out.println("colValueItemç¬¦å·æœ‰è¯¯ï¼");
 			}
 			colValueItems.add(items);
 		}

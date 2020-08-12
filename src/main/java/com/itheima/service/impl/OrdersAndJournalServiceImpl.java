@@ -67,7 +67,7 @@ public class OrdersAndJournalServiceImpl implements OrdersAndJournalService{
 	@Override
 	public boolean edit(OrdersAndJournal ordersAndJournal) {
 		// TODO Auto-generated method stub
-		System.out.println("½«ÒªĞŞ¸ÄµÄÊı¾İ:"+ordersAndJournal);
+		System.out.println("å°†è¦ä¿®æ”¹çš„æ•°æ®:"+ordersAndJournal);
 		return ordersAndJournalMapper.edit(ordersAndJournal)==1;
 	}
 	

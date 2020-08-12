@@ -70,7 +70,7 @@ public class GeneralLedgerServiceImpl implements GeneralLedgerService{
 	@Override
 	public boolean edit(GeneralLedger data) {
 		// TODO Auto-generated method stub
-		System.out.println("½«ÒªĞŞ¸ÄµÄÊı¾İ:"+data);
+		System.out.println("å°†è¦ä¿®æ”¹çš„æ•°æ®:"+data);
 		return generalLedgerMapper.edit(data)==1;
 	}
 	

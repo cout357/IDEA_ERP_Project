@@ -7,10 +7,10 @@ import com.itheima.model.OrdersAndJournal;
 import com.itheima.otherClass.QueryInfo;
 
 public class Test {
-	private static String[] dbName = {"ÐòºÅ","²úÆ·±àºÅ/Ãû³Æ","¹Ì¶¨´æ·Å¿âÎ»","²úÆ··ÖÀà","ÒµÎñÔ±","ÅÌµãÊý¾ÝÈ·ÈÏÈÕÆÚ",
-			"¶©µ¥×ÜÐèÇóÊý","Èë¿âÀÛ¼ÆÊý","Êµ¼Ê³ö¿âÀÛ¼ÆÊý","µ±Ç°¿ÉÓÃ¿â´æÊý","µ±Ç°¿â´æÏäÊý","ÐèÇóÆ¥Åä×´Ì¬","±¸»õÊýÁ¿",
-			"±¸»õºó¿ÉÓÃ¿â´æÊý","19Äê±ê×¼¿â´æ","20ÄêÔÂ¾ùÓÃÁ¿","ÔÂ¾ùµ¥Êý","¶©µ¥ÕÅÊý","Èë¿âÆµ´Î","³ö¿âÆµ´Î","µÍÓÚ×îµÍ¿â´æÔ¤¾¯¿îÊý",
-			"¸ßÓÚ×î´ó¿â´æ×Ü¿îÊý","½¨ÒéÍ¶²úÊýÁ¿"};
+	private static String[] dbName = {"åºå·","äº§å“ç¼–å·/åç§°","å›ºå®šå­˜æ”¾åº“ä½","äº§å“åˆ†ç±»","ä¸šåŠ¡å‘˜","ç›˜ç‚¹æ•°æ®ç¡®è®¤æ—¥æœŸ",
+			"è®¢å•æ€»éœ€æ±‚æ•°","å…¥åº“ç´¯è®¡æ•°","å®žé™…å‡ºåº“ç´¯è®¡æ•°","å½“å‰å¯ç”¨åº“å­˜æ•°","å½“å‰åº“å­˜ç®±æ•°","éœ€æ±‚åŒ¹é…çŠ¶æ€","å¤‡è´§æ•°é‡",
+			"å¤‡è´§åŽå¯ç”¨åº“å­˜æ•°","19å¹´æ ‡å‡†åº“å­˜","20å¹´æœˆå‡ç”¨é‡","æœˆå‡å•æ•°","è®¢å•å¼ æ•°","å…¥åº“é¢‘æ¬¡","å‡ºåº“é¢‘æ¬¡","ä½ŽäºŽæœ€ä½Žåº“å­˜é¢„è­¦æ¬¾æ•°",
+			"é«˜äºŽæœ€å¤§åº“å­˜æ€»æ¬¾æ•°","å»ºè®®æŠ•äº§æ•°é‡"};
 	public static void test1() {
 		QueryInfo qbc = new QueryInfo();
 		Field[] fs = QueryInfo.class.getDeclaredFields();
@@ -35,7 +35,7 @@ public class Test {
 			System.out.printf("		<th class=\"colname-th\"><span class=\"colname-text numCol\">%s</span>\r\n" + 
 					"			<div class=\"menu\">\r\n" + 
 					"				<span class=\"sortSign iconfont\">&#xe660;</span><br/>\r\n" + 
-					"				<span class=\"sort-cancel iconfont\">Ò»</span><br/>\r\n" + 
+					"				<span class=\"sort-cancel iconfont\">ä¸€</span><br/>\r\n" + 
 					"			</div>\r\n" + 
 					"		</th>\n",dbName[i]);
 		}
