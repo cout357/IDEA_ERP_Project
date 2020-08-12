@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.GeneralLedgerMapper">
+	<!-- 条件查询 -->
+	<select id="completeQuery" parameterType="QueryInfo" resultType="GeneralLedger">
+		select * from completeGl
+		<where>
+			<if test="colValueItems!=null and colValueItems.size>0">
+				<foreach collection="colValueItems" open="" item="colValueItem">
+					AND ${colValueItem}
+				</foreach>
+			</if>
+		</where>
+		<if test="orderItems!=null and orderItems.size>0">
+			<foreach collection="orderItems" open="order by "  item="orderItem" separator=",">
+				${orderItem}
+			</foreach>
+		</if> 
+		<if test="limitBegin!=null and pageDataCount!=null">
+			Limit ${limitBegin},${pageDataCount}
+		</if>
+	</select>
+	<!-- 单查 -->
+	<select id="findById" parameterType="INTEGER" resultType="GeneralLedger">
+		select * from completeGl where gl_id=#{id}
+	</select>
+	<!-- 查询单列存在的值 -->
+	<select id="findColValues" parameterType="String" resultType="String">
+		select DISTINCT ${colName} from completeGl order by ${colName}
+	</select>
+	
+	<!-- 查询行数 -->
+	<select id="findCount" resultType="INTEGER">
+		select Count(*) from generalLedger
+	</select>
+	<!-- 查询筛选后的行数 -->
+	<select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
+		select Count(*) from completeGl
+		<where>
+			<foreach collection="colValueItems" open="" item="colValueItem">
+				AND ${colValueItem}
+			</foreach>
+		</where>
+	</select>
+	
+	<insert id="adds" parameterType="List">
+		insert into generalLedger(kmId,deposit,productClassification,salesMan) 
+		values
+		<foreach collection="datas" separator="," item="data">
+			('${data.kmId}','${data.deposit}','${data.productClassification}','${data.salesMan}')
+		</foreach>
+	</insert>
+	
+	
+	<!-- 删除多行数据 -->
+	<delete id="dels" parameterType="List">
+		delete from generalLedger
+		<where>
+			<if test="ids!=null and ids.size>0">
+				<foreach collection="ids" open="gl_id in (" separator="," close=")" item="id">
+					'${id}'
+				</foreach>
+			</if>
+		</where>
+	</delete>
+	
+	
+	<!-- 更新一行数据 -->
+	<!-- 只更新可以更新的部分 -->
+	<update id="edit" parameterType="GeneralLedger" >
+		update generalLedger
+		<set>
+			gl_id='${gl_id}',
+			kmId='${kmId}',
+			deposit='${deposit}',
+			productClassification='${productClassification}',
+			salesMan='${salesMan}',
+		</set>
+		where gl_id=#{gl_id}
+	</update>
+</mapper>

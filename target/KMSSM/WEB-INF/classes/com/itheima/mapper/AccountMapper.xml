@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.AccountMapper">
+
+    <select id="AccountAll" resultType="com.itheima.model.Account">
+        select * from account
+    </select>
+
+    <select id="AccountFindByEmail" parameterType="string" resultType="com.itheima.model.Account">
+        select * from account where user = #{user}
+    </select>
+
+    <insert id="AccountAdd" parameterType="com.itheima.model.Account">
+        insert into Account(name,password,email,role) values (#{name}, #{password} , #{email}, #{role})
+    </insert>
+
+
+
+</mapper>
