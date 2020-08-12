@@ -820,11 +820,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" disabled id="" class="dataInput oaj_id" value="" /></td>
+							<td class="data"><input type="text" name="" disabled  class="dataInput oaj_id" value="" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">订单下达日期：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDate" value="" /></td>
+							<td class="data"><input type="text" name=""  class="dataInput orderDate" value="" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">订单编号：</td>
@@ -1046,9 +1046,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];
 		</script>
-		<script src="js/init.js"></script>
-		<script src="js/funcsOfAjax.js"></script>
-		<script src="js/event.js"></script>
+		<script src="js/init.js" charset="utf-8"></script>
+		<script src="js/funcsOfAjax.js" charset="utf-8"></script>
+		<script src="js/event.js"  charset="utf-8"></script>
 		<script>
 		</script>
 	</body>

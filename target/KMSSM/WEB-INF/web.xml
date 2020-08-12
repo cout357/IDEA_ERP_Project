@@ -9,6 +9,11 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+
+    <session-config>
+        <session-timeout>240</session-timeout>
+    </session-config>
+
     <!-- java.lang.Exception异常错误,依据这个标记可定义多个类似错误提示 -->
 <!--    <error-page>
         <error-code>404</error-code>

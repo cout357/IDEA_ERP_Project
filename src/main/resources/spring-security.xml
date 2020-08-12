@@ -37,7 +37,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
         <security:form-login login-page="/index.jsp"
                              login-processing-url="/login" username-parameter="username"
                              password-parameter="password" authentication-failure-url="/register.jsp"
-                             default-target-url="/view/Analysis-customerValue.jsp"
+                             default-target-url="/OrdersAndJournalCT/limitQuery"
 
         />
 
