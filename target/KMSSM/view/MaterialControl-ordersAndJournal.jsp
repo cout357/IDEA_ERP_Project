@@ -739,7 +739,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox">
 			<div class="box-head">
-				<span class="title">添加客户信息</span>
+				<span class="title">添加</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -809,7 +809,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox">
 			<div class="box-head">
-				<span class="title">编辑客户信息</span>
+				<span class="title">编辑</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
