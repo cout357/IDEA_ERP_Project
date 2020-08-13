@@ -114,7 +114,7 @@ totalInfoTableBox.style.width = 0;
 totalInfoTableBox.style.height = 0;
 var isFirst = true;
 TS = null;
-totalInfoLink.onclick = function(){
+$('#totalInfoLink').on('click',function(){
 	var totalInfoTableBox = document.getElementById("totalInfoTableBox");
 	if(totalInfoIsClose){
 //		totalInfoTableBox.style.display = "block";
@@ -132,7 +132,7 @@ totalInfoLink.onclick = function(){
 		totalInfoLink.style.color = "#000";
 	}
 	totalInfoIsClose = !totalInfoIsClose;
-}
+});
 
 totalInfoLink.onmouseenter = function(){
 	if(isFirst){

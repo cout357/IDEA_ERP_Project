@@ -1,0 +1,1 @@
+$('#totalInfoLink').trigger('click');

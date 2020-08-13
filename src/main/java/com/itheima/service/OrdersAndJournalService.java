@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.OrdersAndJournal;
+import com.itheima.model.OrdersAndJournalTotalInfo;
 import com.itheima.otherClass.QueryInfo;
 
 public interface OrdersAndJournalService {
@@ -18,4 +19,5 @@ public interface OrdersAndJournalService {
 	Integer dels(List<Integer> ids);
 	OrdersAndJournal findById(Integer id);
 	boolean edit(OrdersAndJournal ordersAndJournal);
+	OrdersAndJournalTotalInfo queryTotalInfo();
 }

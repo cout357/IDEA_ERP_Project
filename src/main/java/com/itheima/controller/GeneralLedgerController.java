@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.itheima.model.GeneralLedgerTotalInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,8 @@ public class GeneralLedgerController {
 		model.addAttribute("pageIdx",pageIdx);
 		model.addAttribute("pageDataCount",pageDataCount);
 		model.addAttribute("dataCount",gService.findCount());
+		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
+		model.addAttribute("totalInfo", totalInfo);
 		System.out.println("limitQuery_gl:"+generalLedgers);
 		return "MaterialControl-DynamicGeneralLedger";
 	}
@@ -54,6 +57,8 @@ public class GeneralLedgerController {
 		hash.put("generalLedgers", generalLedgers);
 		hash.put("pageIdx",pageIdx);
 		hash.put("dataCount", count);
+		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
+		hash.put("totalInfo", totalInfo);
 		
 		return hash;
 	}

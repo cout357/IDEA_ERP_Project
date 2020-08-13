@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
+import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.model.OrdersAndJournal;
 import com.itheima.otherClass.QueryInfo;
 
@@ -19,4 +20,5 @@ public interface GeneralLedgerService {
 	Integer dels(List<Integer> ids);
 	GeneralLedger findById(Integer id);
 	boolean edit(GeneralLedger data);
+	GeneralLedgerTotalInfo queryTotalInfo();
 }

@@ -19,6 +19,13 @@
 			Limit ${limitBegin},${pageDataCount}
 		</if>
 	</select>
+	
+	
+	<!-- 查询统计信息 -->
+	<select id="queryTotalInfo" resultType="GeneralLedgerTotalInfo">
+		select * from GeneralLedgerTotalInfo
+	</select>
+	
 	<!-- 单查 -->
 	<select id="findById" parameterType="INTEGER" resultType="GeneralLedger">
 		select * from completeGl where gl_id=#{id}

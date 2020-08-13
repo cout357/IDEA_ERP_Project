@@ -6,7 +6,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList"  %>
-<%@ page import="com.itheima.model.CustomerInfo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -344,7 +343,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>用户权限管理</span>
 					</div>
-					<!--<div class="totalInfo-box">
+					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
 							<table class="totalInfo">
@@ -388,7 +387,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</tr>
 							</table>
 						</div>
-					</div>-->
+					</div>
 				</div>
 				<!-- 数据表格 -->
 				<div class="content-body">
@@ -732,7 +731,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>
 		<script src="js/event.js"></script>
-		<script>
-		</script>
+		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

@@ -6,7 +6,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList"  %>
-<%@ page import="com.itheima.model.CustomerInfo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -40,19 +39,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				background-color: #FF9933;
 			}
 			.tinfo-3{
-				background-color: #FF9966;
+				background-color:#3399CC;;
 			}
 			.tinfo-4{
 				background-color: #669933;
 			}
 			.tinfo-5{
-				background-color: #FF6600;
+				background-color: red;
 			}
 			.tinfo-6{
-				background-color: #3399CC;
+				background-color: #CECE0F;
+				/* background-color: #3399CC; */
 			}
 			.tinfo-7{
 				background-color: #6666CC;
+			}
+			.tinfo-8{
+				background-color:#FF9966;
 			}
 			/*.tinfo-1,.tinfo-2,.tinfo-3,.tinfo-4,.tinfo-5,.tinfo-6,.tinfo-7{}*/
 		</style>
@@ -395,39 +398,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="hor val tinfo-1" colspan="1">仓管员</th>
 									<th class="hor val tinfo-1" colspan="1">陈燕</th>
 									<th class="hor val tinfo-1" colspan="1">运行天数</th>
-									<th class="hor val tinfo-1" colspan="1">122</th>
-									<th class="hor val tinfo-2" colspan="2">版本更新日期</th>
-									<th class="hor val tinfo-2" colspan="2">4月10日</th>
-									<th class="hor val tinfo-2" colspan="2">开始运行日期</th>
-									<th class="hor val tinfo-2" colspan="2">3月17日</th>
+									<th class="hor val tinfo-1 startDay" colspan="1">${totalInfo.startDay}</th>
+									<th class="hor val tinfo-2" colspan="1">版本更新日期</th>
+									<th class="hor val tinfo-2" colspan="1">4月10日</th>
+									<th class="hor val tinfo-2" colspan="1">开始运行日期</th>
+									<th class="hor val tinfo-2 startData" colspan="1">${totalInfo.startData}</th>
+									<th class="hor val tinfo-5" colspan="1">库存填写报错</th>
+									<th class="hor val tinfo-5 inventoryError" colspan="1">${totalInfo.inventoryError}</th>
+									<th class="hor val tinfo-5" colspan="1">订单填写报错</th>
+									<th class="hor val tinfo-5 orderError" colspan="1">${totalInfo.orderError}</th>
 								</tr>
 								<tr class="row title-tr">
 									<th class="hor val tinfo-3" colspan="1">预出库数量</th>
-									<th class="hor val tinfo-3" colspan="1">2E+05</th>
-									<th class="hor val tinfo-5" colspan="1">库存填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">0</th>
-									<th class="hor val tinfo-7" colspan="1">总订单需求数</th>
-									<th class="hor val tinfo-7" colspan="1">1659326</th>
-									<th class="hor val tinfo-7" colspan="1">总结库存数</th>
-									<th class="hor val tinfo-7" colspan="1">1406845</th>
+									<th class="hor val tinfo-3 advanceDeliveryNumber" colspan="1">${totalInfo.advanceDeliveryNumber}</th>
 									<th class="hor val tinfo-6" colspan="1">预警欠数未发单数</th>
-									<th class="hor val tinfo-6" colspan="1">842</th>
+									<th class="hor val tinfo-6 unitsWithoutEarlyWarningNumberIssued" colspan="1">${totalInfo.unitsWithoutEarlyWarningNumberIssued}</th>
+									<th class="hor val tinfo-7" colspan="1">总订单需求数</th>
+									<th class="hor val tinfo-7 sumOrderNeed" colspan="1">${totalInfo.sumOrderNeed}</th>
+									<th class="hor val tinfo-7" colspan="1">总结库存数</th>
+									<th class="hor val tinfo-7 storageNumber" colspan="1">${totalInfo.storageNumber}</th>
 									<th class="hor val tinfo-4" colspan="1">拖期单数</th>
-									<th class="hor val tinfo-4" colspan="1">787</th>
+									<th class="hor val tinfo-4 tardinessSingular" colspan="1">${totalInfo.tardinessSingular}</th>
+									<th class="hor val tinfo-8" colspan="1">发货出库数</th>
+									<th class="hor val tinfo-8 sumDelivery" colspan="1">${totalInfo.sumDelivery}</th>
 								</tr>
 								<tr class="row" >
 									<th class="hor val tinfo-3" colspan="1">预出库单数</th>
-									<th class="hor val tinfo-3" colspan="1">613</th>
-									<th class="hor val tinfo-5" colspan="1">订单填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">2</th>
-									<th class="hor val tinfo-7" colspan="1">总入库数</th>
-									<th class="hor val tinfo-7" colspan="1">2610076</th>
-									<th class="hor val tinfo-7" colspan="1">总出库数</th>
-									<th class="hor val tinfo-7" colspan="1">1203231</th>
+									<th class="hor val tinfo-3 advanceDeliverySingular" colspan="1">${totalInfo.advanceDeliverySingular}</th>
 									<th class="hor val tinfo-6" colspan="1">涉及欠数单次</th>
-									<th class="hor val tinfo-6" colspan="1">302</th>
+									<th class="hor val tinfo-6 aUnitOfDebtIsInvolved" colspan="1">${totalInfo.aUnitOfDebtIsInvolved}</th>
+									<th class="hor val tinfo-7" colspan="1">总入库数</th>
+									<th class="hor val tinfo-7 totalNumberIncoming" colspan="1">${totalInfo.totalNumberIncoming}</th>
+									<th class="hor val tinfo-7" colspan="1">总出库数</th>
+									<th class="hor val tinfo-7 totalNumberOutbound" colspan="1">${totalInfo.totalNumberOutbound}</th>
 									<th class="hor val tinfo-4" colspan="1">拖期数量</th>
-									<th class="hor val tinfo-4" colspan="1">-4E+05</th>
+									<th class="hor val tinfo-4 tardinessNumber" colspan="1">${totalInfo.tardinessNumber}</th>
+									<th class="hor val tinfo-8" colspan="1">备货出库数</th>
+									<th class="hor val tinfo-8 readyForDelivery" colspan="1">${totalInfo.readyForDelivery}</th>
 								</tr>
 							</table>
 						</div>
@@ -739,7 +746,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox">
 			<div class="box-head">
-				<span class="title">添加</span>
+				<span class="title">添加客户信息</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -809,95 +816,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox">
 			<div class="box-head">
-				<span class="title">编辑</span>
+				<span class="title">编辑客户信息</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
 			</div>
 			<div class="box-body">
-				<div class="table-box">
-					<table id="table">
-						<tbody class="edit-tbody">
-						<tr class="line">
-							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" disabled  class="dataInput oaj_id" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单下达日期：</td>
-							<td class="data"><input type="text" name=""  class="dataInput orderDate" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单编号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderId" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">业务员：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">OE编号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput OEId" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">康明编号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput KMId" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">客户等级：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">客户名称：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput cusName" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单需求数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">要求：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput req" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">交货日期：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryDate" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">倒计时管理：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput countdown" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">成品入库数量：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">出库数量：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">预出库/备货：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput preDate" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">动态存放库位：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput dyLoc" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">卡板/箱：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput box" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">现有箱数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">说明：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput remarks" value="" /></td>
-						</tr>
-						<input type="hidden" class="version" value="" />
-						</tbody>
-					</table>
-				</div>
 				<div class="box-foot">
 					<ul class="footBT-list">
 						<li class="footBT-item"><input type="button" class="footBT cur-poi" id="submit-edit" value="提交" /></li>
@@ -978,11 +902,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			function refreshSuc(hash){
 				console.log(hash);
 				var oajs = hash.ordersAndJournals;
+				var totalInfo = hash.totalInfo;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
 				refreshDataPageLinks();
 				var datatable = document.getElementsByClassName("datatable")[0];
 				$('.datatable .row').remove();
+				//填入表格数据
 				for(var i = 0;i < oajs.length;i++){
 					var $newRow = $dataRowTemp.clone(true);
 					var $vals = $newRow.children('.val');
@@ -1014,6 +940,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$newRow.find(".delData").attr("name",oajs[i].oaj_id);
 					$('.datatable').append($newRow);
 				}
+				//填入统计信息
+				$('.tardinessSingular').text(totalInfo.tardinessSingular);
+				$('.tardinessNumber').text(totalInfo.tardinessNumber);
+				$('.inventoryError').text(totalInfo.inventoryError);
+				$('.orderError').text(totalInfo.orderError);
+				$('.startData').text(totalInfo.startData);
+				$('.startDay').text(totalInfo.startDay);
+				$('.advanceDeliveryNumber').text(totalInfo.advanceDeliveryNumber);
+				$('.advanceDeliverySingular').text(totalInfo.advanceDeliverySingular);
+				$('.sumOrderNeed').text(totalInfo.sumOrderNeed);
+				$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+				$('.sumDelivery').text(totalInfo.sumDelivery);
+				$('.readyForDelivery').text(totalInfo.readyForDelivery);
+				$('.totalNumberOutbound').text(totalInfo.totalNumberOutbound);
+				$('.storageNumber').text(totalInfo.storageNumber);
+				$('.unitsWithoutEarlyWarningNumberIssued').text(totalInfo.unitsWithoutEarlyWarningNumberIssued);
+				$('.aUnitOfDebtIsInvolved').text(totalInfo.aUnitOfDebtIsInvolved);
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
@@ -1046,10 +989,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];
 		</script>
-		<script src="js/init.js" charset="utf-8"></script>
-		<script src="js/funcsOfAjax.js" charset="utf-8"></script>
-		<script src="js/event.js"  charset="utf-8"></script>
-		<script>
-		</script>
+		<script src="js/init.js"></script>
+		<script src="js/funcsOfAjax.js"></script>
+		<script src="js/event.js"></script>
+		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

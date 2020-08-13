@@ -9,6 +9,7 @@ import com.itheima.mapper.GeneralLedgerMapper;
 import com.itheima.mapper.OrdersAndJournalMapper;
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
+import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.model.GeneralLedger;
 import com.itheima.otherClass.QueryInfo;
 import com.itheima.service.GeneralLedgerService;
@@ -72,6 +73,12 @@ public class GeneralLedgerServiceImpl implements GeneralLedgerService{
 		// TODO Auto-generated method stub
 		System.out.println("将要修改的数据:"+data);
 		return generalLedgerMapper.edit(data)==1;
+	}
+
+	@Override
+	public GeneralLedgerTotalInfo queryTotalInfo() {
+		// TODO Auto-generated method stub
+		return generalLedgerMapper.queryTotalInfo();
 	}
 	
 }

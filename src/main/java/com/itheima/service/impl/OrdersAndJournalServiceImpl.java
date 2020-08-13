@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.itheima.mapper.OrdersAndJournalMapper;
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.OrdersAndJournal;
+import com.itheima.model.OrdersAndJournalTotalInfo;
 import com.itheima.otherClass.QueryInfo;
 import com.itheima.service.OrdersAndJournalService;
 
@@ -67,8 +68,14 @@ public class OrdersAndJournalServiceImpl implements OrdersAndJournalService{
 	@Override
 	public boolean edit(OrdersAndJournal ordersAndJournal) {
 		// TODO Auto-generated method stub
-		System.out.println("将要修改的数据:"+ordersAndJournal);
+		System.out.println("灏嗚淇敼鐨勬暟鎹�:"+ordersAndJournal);
 		return ordersAndJournalMapper.edit(ordersAndJournal)==1;
+	}
+
+	@Override
+	public OrdersAndJournalTotalInfo queryTotalInfo() {
+		// TODO Auto-generated method stub
+		return ordersAndJournalMapper.queryTotalInfo();
 	}
 	
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
+import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.model.OrdersAndJournal;
 import com.itheima.otherClass.QueryInfo;
 import org.springframework.stereotype.Repository;
@@ -20,4 +21,5 @@ public interface GeneralLedgerMapper {
 	Integer dels(@Param("ids") List<Integer> ids);
 	GeneralLedger findById(Integer id);
 	Integer edit(GeneralLedger data);
+	GeneralLedgerTotalInfo queryTotalInfo();
 }

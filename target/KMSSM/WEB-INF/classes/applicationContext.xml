@@ -24,7 +24,7 @@
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hc?characterEncoding=UTF-8"/>
 		<property name="user" value="root"/>
 <!--		123456  hfx8k6thm-->
-		<property name="password" value="hfx8k6thm"/>
+		<property name="password" value="123456"/>
 	</bean>
 	<!-- 事务管理器，依赖于数据源 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

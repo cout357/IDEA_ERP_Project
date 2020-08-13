@@ -37,22 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				background-color: #FF6666;
 			}
 			.tinfo-2{
-				background-color: #FF9933;
+				background-color: #FF0000;
 			}
 			.tinfo-3{
-				background-color: #FF9966;
+				background-color: #008000;
 			}
 			.tinfo-4{
-				background-color: #669933;
-			}
-			.tinfo-5{
-				background-color: #FF6600;
-			}
-			.tinfo-6{
-				background-color: #3399CC;
-			}
-			.tinfo-7{
-				background-color: #6666CC;
+				background-color: #6666cc;
 			}
 			/*.tinfo-1,.tinfo-2,.tinfo-3,.tinfo-4,.tinfo-5,.tinfo-6,.tinfo-7{}*/
 		</style>
@@ -392,42 +383,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="table-box" id="totalInfoTableBox">
 							<table class="totalInfo">
 								<tr class="row">
-									<th class="hor val tinfo-1" colspan="1">仓管员</th>
-									<th class="hor val tinfo-1" colspan="1">陈燕</th>
+									<th class="hor val tinfo-1" colspan="1">开始运行日期</th>
+									<th class="hor val tinfo-1 startData" colspan="1">${totalInfo.startData }</th>
 									<th class="hor val tinfo-1" colspan="1">运行天数</th>
-									<th class="hor val tinfo-1" colspan="1">122</th>
-									<th class="hor val tinfo-2" colspan="2">版本更新日期</th>
-									<th class="hor val tinfo-2" colspan="2">4月10日</th>
-									<th class="hor val tinfo-2" colspan="2">开始运行日期</th>
-									<th class="hor val tinfo-2" colspan="2">3月17日</th>
+									<th class="hor val tinfo-1 startDay" colspan="1">${totalInfo.startDay }</th>
+									<th class="hor val tinfo-2" colspan="1">无订单款数</th>
+									<th class="hor val tinfo-2 noOrderAmount" colspan="1">${totalInfo.noOrderAmount }</th>
+									<th class="hor val tinfo-2" colspan="1">无订单库存</th>
+									<th class="hor val tinfo-2 noOrderInventory" colspan="1">${totalInfo.noOrderInventory }</th>
+									<th class="hor val tinfo-2" colspan="1">错误数据项</th>
+									<th class="hor val tinfo-2 errorDataItem" colspan="1">${totalInfo.errorDataItem }</th>
+									<th class="hor val tinfo-3" colspan="2">总结存数</th>
 								</tr>
 								<tr class="row title-tr">
-									<th class="hor val tinfo-3" colspan="1">预出库数量</th>
-									<th class="hor val tinfo-3" colspan="1">2E+05</th>
-									<th class="hor val tinfo-5" colspan="1">库存填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">0</th>
-									<th class="hor val tinfo-7" colspan="1">总订单需求数</th>
-									<th class="hor val tinfo-7" colspan="1">1659326</th>
-									<th class="hor val tinfo-7" colspan="1">总结库存数</th>
-									<th class="hor val tinfo-7" colspan="1">1406845</th>
-									<th class="hor val tinfo-6" colspan="1">预警欠数未发单数</th>
-									<th class="hor val tinfo-6" colspan="1">842</th>
-									<th class="hor val tinfo-4" colspan="1">拖期单数</th>
-									<th class="hor val tinfo-4" colspan="1">787</th>
+									<th class="hor val tinfo-4" colspan="1">入库种数</th>
+									<th class="hor val tinfo-4 warehousingSpecies" colspan="1">${totalInfo.warehousingSpecies }</th>
+									<th class="hor val tinfo-4 " colspan="1">出库种数</th>
+									<th class="hor val tinfo-4 outboundSpecies" colspan="1">${totalInfo.outboundSpecies }</th>
+									<th class="hor val tinfo-4" colspan="1">订单总需求</th>
+									<th class="hor val tinfo-4 totalOrderDemand" colspan="1">${totalInfo.totalOrderDemand }</th>
+									<th class="hor val tinfo-4" colspan="1">缺货款数</th>
+									<th class="hor val tinfo-4 lackOfLoans" colspan="1">${totalInfo.lackOfLoans }</th>
+									<th class="hor val tinfo-4" colspan="1">缺货数量</th>
+									<th class="hor val tinfo-4 lackOfCreditNumber" colspan="1">${totalInfo.lackOfCreditNumber }</th>
+									<th class="hor val tinfo-3 conclusionDepositNumber" colspan="2">${totalInfo.conclusionDepositNumber }</th>
 								</tr>
 								<tr class="row" >
-									<th class="hor val tinfo-3" colspan="1">预出库单数</th>
-									<th class="hor val tinfo-3" colspan="1">613</th>
-									<th class="hor val tinfo-5" colspan="1">订单填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">2</th>
-									<th class="hor val tinfo-7" colspan="1">总入库数</th>
-									<th class="hor val tinfo-7" colspan="1">2610076</th>
-									<th class="hor val tinfo-7" colspan="1">总出库数</th>
-									<th class="hor val tinfo-7" colspan="1">1203231</th>
-									<th class="hor val tinfo-6" colspan="1">涉及欠数单次</th>
-									<th class="hor val tinfo-6" colspan="1">302</th>
-									<th class="hor val tinfo-4" colspan="1">拖期数量</th>
-									<th class="hor val tinfo-4" colspan="1">-4E+05</th>
+									<th class="hor val tinfo-3" colspan="1">总款数</th>
+									<th class="hor val tinfo-3 totalNumber" colspan="1">${totalInfo.totalNumber }</th>
+									<th class="hor val tinfo-3" colspan="1">总入库数</th>
+									<th class="hor val tinfo-3 totalNumberIncoming" colspan="1">${totalInfo.totalNumberIncoming }</th>
+									<th class="hor val tinfo-3" colspan="1">实际出库数</th>
+									<th class="hor val tinfo-3 actualNumberWarehouses" colspan="1">${totalInfo.actualNumberWarehouses }</th>
+									<th class="hor val tinfo-3" colspan="1">备货预出库数</th>
+									<th class="hor val tinfo-3 prepareQuantity" colspan="1">${totalInfo.prepareQuantity }</th>
+									<th class="hor val tinfo-3" colspan="1">总入库频次数</th>
+									<th class="hor val tinfo-3 totalStorageFrequency" colspan="1">${totalInfo.totalStorageFrequency }</th>
+									<th class="hor val tinfo-3" colspan="1">总出库频次数</th>
+									<th class="hor val tinfo-3 totalOutboundFrequency" colspan="1">${totalInfo.totalOutboundFrequency }</th>
 								</tr>
 							</table>
 						</div>
@@ -814,13 +807,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 		</div>
-
 		<div class="completeValBox">
-			<div class="cont">
-				<span class="text"></span>
-				<div class="iconfont close">×</div>
-			</div>
-		</div>
+	        <div class="cont">
+	            <span class="text"></span>
+	            <div class="iconfont close">×</div>
+	        </div>
+	    </div>
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
 			function getAddDatas(){
@@ -855,6 +847,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var datas = hash.generalLedgers;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
+				var totalInfo = hash.totalInfo;
 				refreshDataPageLinks();
 				var datatable = document.getElementsByClassName("datatable")[0];
 				$('.datatable .row').remove();
@@ -888,7 +881,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$newRow.find(".delData").attr("name",datas[i].gl_id);
 					$('.datatable').append($newRow);
 				}
-				addEditEvent();
+
+				//填入统计信息
+				$('.startData').text(totalInfo.startData);
+				$('.startDay').text(totalInfo.startDay);
+				$('.noOrderAmount').text(totalInfo.noOrderAmount);
+				$('.noOrderInventory').text(totalInfo.noOrderInventory);
+				$('.errorDataItem').text(totalInfo.errorDataItem);
+				$('.totalNumber').text(totalInfo.totalNumber);
+				$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+				$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
+				$('.prepareQuantity').text(totalInfo.prepareQuantity);
+				$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
+				$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
+				$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
+				$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
+				$('.outboundSpecies').text(totalInfo.outboundSpecies);
+				$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
+				$('.lackOfLoans').text(totalInfo.lackOfLoans);
+				$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
@@ -922,7 +933,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>
 		<script src="js/event.js"></script>
-		<script>
-		</script>
+		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

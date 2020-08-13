@@ -19,10 +19,17 @@
 			Limit ${limitBegin},${pageDataCount}
 		</if>
 	</select>
+	
+	<!-- 查询统计信息 -->
+	<select id="queryTotalInfo" resultType="OrdersAndJournalTotalInfo">
+		SELECT * from OrdersAndJournalTotalInfo
+	</select>
+	
 	<!-- 单查 -->
 	<select id="findById" parameterType="INTEGER" resultType="OrdersAndJournal">
 		select * from completeOaj where oaj_id=#{id}
 	</select>
+	
 	<!-- 查询单列存在的值 -->
 	<select id="findColValues" parameterType="String" resultType="String">
 		select DISTINCT ${colName} from completeOaj order by ${colName}
@@ -32,6 +39,7 @@
 	<select id="findCount" resultType="INTEGER">
 		select Count(*) from ordersAndJournal
 	</select>
+	
 	<!-- 查询筛选后的行数 -->
 	<select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
 		select Count(*) from completeOaj

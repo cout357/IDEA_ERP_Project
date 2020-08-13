@@ -3,6 +3,7 @@ package com.itheima.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import com.itheima.model.OrdersAndJournalTotalInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,8 @@ public class OrdersAndJournalController {
 		model.addAttribute("pageIdx",pageIdx);
 		model.addAttribute("pageDataCount",pageDataCount);
 		model.addAttribute("dataCount",oService.findCount());
+		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
+		model.addAttribute("totalInfo", totalInfo);
 		return "MaterialControl-ordersAndJournal";
 	}
 	/*
@@ -50,7 +53,9 @@ public class OrdersAndJournalController {
 		hash.put("ordersAndJournals", ordersAndJournals);
 		hash.put("pageIdx",pageIdx);
 		hash.put("dataCount", count);
-		
+		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
+		hash.put("totalInfo", totalInfo);
+
 		return hash;
 	}
 
