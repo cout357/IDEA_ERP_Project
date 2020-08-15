@@ -6,7 +6,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList"  %>
-<%@ page import="com.itheima.model.CustomerInfo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -344,7 +343,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>用户权限管理</span>
 					</div>
-					<!--<div class="totalInfo-box">
+					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
 							<table class="totalInfo">
@@ -388,7 +387,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</tr>
 							</table>
 						</div>
-					</div>-->
+					</div>
 				</div>
 				<!-- 数据表格 -->
 				<div class="content-body">
@@ -398,9 +397,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>-->
 						<div class="fl">
 							<ul class="list">
+								<li class="item dropdown" id="dataCheckedMenu-dropdown">
+									<input type="checkbox" id="data-allCheb" />
+									<a href="javascript:;" class="dropdownLink iconfont link">
+										选中项&#xe63b;
+									</a>
+									<div class="dropdown-content">
+										<ul class="droplist">
+											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+										</ul>
+									</div>
+								</li>
 								<li class="item dropdown" id="showColMenu-dropdown">
 									<!-- 显示|隐藏列 -->
-									<a href="javascript:;" class="dropdownLink iconfont link" style="font-size:19px;">&#xe607;</a>
+									<a href="javascript:;" class="dropdownLink iconfont link">隐藏列&#xe63b;</a>
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><input class="cheb-all cur-poi" type="checkbox" checked="checked"/><span class="text">全选</span></li>
@@ -527,7 +538,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<th class="colname-th ">操作</th>
 							</tr>
 							<tr class="colscreen-tr" valign="top">
-								<th></th>
+								<th class="replenishDataCheb-th">
+									<input type="checkbox" class="replenishDataCheb">
+									所有页
+								</th>
 								<th class="colscreen-td">
 									<span class="colscreen iconfont"><span class="text">&#xe83b;</span></span>
 								</th>
@@ -535,7 +549,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<!-- 表格数据 -->
 							<c:forEach items="${datas }" var="data" varStatus="idx">
 								<tr class="row">
-									<th class="hor"><input type="checkbox" class="datatable-checkbox" /></th>
+									<th class="hor"><input type="checkbox" class="dataCheb" value="${data.id}" /></th>
 									<th class="hor val">${data.id}</th>
 									<th class="hor val">${data.name}</th>
 									<th class="hor val">${data.password}</th>
@@ -712,6 +726,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(2).html(datas[i].user);
 					$vals.eq(2).html(datas[i].role);
 					$vals.eq(2).html(datas[i].state);
+					$newRow.find(".dataCheb").val(datas[i].id);
 					$newRow.find(".editData").attr("name",datas[i].id);
 					$newRow.find(".delData").attr("name",datas[i].id);
 					$('.datatable').append($newRow);
@@ -732,7 +747,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>
 		<script src="js/event.js"></script>
-		<script>
-		</script>
+		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

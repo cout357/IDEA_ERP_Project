@@ -448,9 +448,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>-->
 						<div class="fl">
 							<ul class="list">
+								<li class="item dropdown" id="dataCheckedMenu-dropdown">
+									<input type="checkbox" id="data-allCheb" />
+									<a href="javascript:;" class="dropdownLink iconfont link">
+										选中项&#xe63b;
+									</a>
+									<div class="dropdown-content">
+										<ul class="droplist">
+											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+										</ul>
+									</div>
+								</li>
 								<li class="item dropdown" id="showColMenu-dropdown">
 									<!-- 显示|隐藏列 -->
-									<a href="javascript:;" class="dropdownLink iconfont link" style="font-size:19px;">&#xe607;</a>
+									<a href="javascript:;" class="dropdownLink iconfont link">隐藏列&#xe63b;</a>
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><input class="cheb-all cur-poi" type="checkbox" checked="checked"/><span class="text">全选</span></li>
@@ -487,7 +499,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
-												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -495,7 +506,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="text"  class="numscreen-val"  />		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -533,7 +544,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="hidden" id="tableName" value="OrdersAndJournal"/>
 						<table class="datatable long">
 							<tr class="colname-tr">
-								<th class="colname-th">选择
+								<th class="colname-th">
+									<input type="checkbox" id="data-allchecked"/>
+									<span>选择</span>
 									<div class="menu">
 										<span class=" iconfont" id="sort-cancel-all">一</span><br/>
 									</div>
@@ -544,7 +557,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text dateCol">月份</span>
+								<th class="colname-th "><span class="colname-text numCol">月份</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
@@ -685,7 +698,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<th class="colname-th ">操作</th>
 							</tr>
 							<tr class="colscreen-tr" valign="top">
-								<th></th>
+								<th class="replenishDataCheb-th">
+									<input type="checkbox" class="replenishDataCheb">
+									所有页
+								</th>
 								<th class="colscreen-td">
 									<span class="colscreen iconfont"><span class="text">&#xe83b;</span></span>
 								</th>
@@ -693,7 +709,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<!-- 表格数据 -->
 							<c:forEach items="${ordersAndJournals }" var="oaj" varStatus="idx">
 								<tr class="row">
-									<th class="hor"><input type="checkbox" class="datatable-checkbox" /></th>
+									<th class="hor"><input type="checkbox" class="dataCheb" value="${oaj.oaj_id }" /></th>
 									<th class="hor val">${oaj.oaj_id }</th>
 									<th class="hor val">${oaj.month }</th>
 									<th class="hor val">${oaj.orderDate }</th>
@@ -719,9 +735,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="hor val">${oaj.boxNum }</th>
 									<th class="hor val">${oaj.remarks }</th>
 									<th class="hor iconfont sep-hor">
-										<a href="javascript:;" class="editData" name="${oaj.oaj_id }" style="font-size:1.3rem;">&#xe612;</a>
-										&emsp;
-										<a href="javascript:;" class="delData" name="${oaj.oaj_id }" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
+										<a href="javascript:;" class="editData sec" name="${oaj.oaj_id }" style="font-size:1.3rem;">&#xe612;</a>
+										<a href="javascript:;" class="delData sec" name="${oaj.oaj_id }" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
 									</th>
 								</tr>
 							</c:forEach>
@@ -746,7 +761,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox">
 			<div class="box-head">
-				<span class="title">添加客户信息</span>
+				<span class="title">添加</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -780,24 +795,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</thead>
 						<tbody id="add-tbody">
 						<tr class="data-tr">
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDate" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderId" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput OEId" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput KMId" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput cusName" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput req" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryDate" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput countdown" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput preDate" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput dyLoc" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput box" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput remarks" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput orderDate" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput orderId" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput KMId" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput cusName" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput req" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput deliveryDate" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput countdown" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput preDate" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput dyLoc" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput box" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput remarks" /></td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -816,12 +831,95 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox">
 			<div class="box-head">
-				<span class="title">编辑客户信息</span>
+				<span class="title">编辑</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
 			</div>
 			<div class="box-body">
+				<div class="table-box">
+					<table id="table">
+						<tbody class="edit-tbody">
+						<tr class="line">
+							<td class="colName">序号：</td>
+							<td class="data"><input type="text" name="" disabled  class="dataInput oaj_id" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">订单下达日期：</td>
+							<td class="data"><input type="text" name=""  class="dataInput orderDate" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">订单编号：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput orderId" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">业务员：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">OE编号：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">康明编号：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput KMId" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">客户等级：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">客户名称：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput cusName" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">订单需求数：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">要求：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput req" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">交货日期：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput deliveryDate" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">倒计时管理：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput countdown" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">成品入库数量：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">出库数量：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">预出库/备货：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput preDate" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">动态存放库位：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput dyLoc" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">卡板/箱：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput box" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">现有箱数：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">说明：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput remarks" /></td>
+						</tr>
+						<input type="hidden" class="version" value="" />
+						</tbody>
+					</table>
+				</div>
 				<div class="box-foot">
 					<ul class="footBT-list">
 						<li class="footBT-item"><input type="button" class="footBT cur-poi" id="submit-edit" value="提交" /></li>
@@ -936,27 +1034,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(21).html(oajs[i].box);
 					$vals.eq(22).html(oajs[i].boxNum);
 					$vals.eq(23).html(oajs[i].remarks);
+					$newRow.find(".dataCheb").val(oajs[i].oaj_id);
 					$newRow.find(".editData").attr("name",oajs[i].oaj_id);
 					$newRow.find(".delData").attr("name",oajs[i].oaj_id);
 					$('.datatable').append($newRow);
 				}
 				//填入统计信息
-				$('.tardinessSingular').text(totalInfo.tardinessSingular);
-				$('.tardinessNumber').text(totalInfo.tardinessNumber);
-				$('.inventoryError').text(totalInfo.inventoryError);
-				$('.orderError').text(totalInfo.orderError);
-				$('.startData').text(totalInfo.startData);
-				$('.startDay').text(totalInfo.startDay);
-				$('.advanceDeliveryNumber').text(totalInfo.advanceDeliveryNumber);
-				$('.advanceDeliverySingular').text(totalInfo.advanceDeliverySingular);
-				$('.sumOrderNeed').text(totalInfo.sumOrderNeed);
-				$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
-				$('.sumDelivery').text(totalInfo.sumDelivery);
-				$('.readyForDelivery').text(totalInfo.readyForDelivery);
-				$('.totalNumberOutbound').text(totalInfo.totalNumberOutbound);
-				$('.storageNumber').text(totalInfo.storageNumber);
-				$('.unitsWithoutEarlyWarningNumberIssued').text(totalInfo.unitsWithoutEarlyWarningNumberIssued);
-				$('.aUnitOfDebtIsInvolved').text(totalInfo.aUnitOfDebtIsInvolved);
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.tardinessSingular').text(totalInfo.tardinessSingular);
+					$('.tardinessNumber').text(totalInfo.tardinessNumber);
+					$('.inventoryError').text(totalInfo.inventoryError);
+					$('.orderError').text(totalInfo.orderError);
+					$('.startData').text(totalInfo.startData);
+					$('.startDay').text(totalInfo.startDay);
+					$('.advanceDeliveryNumber').text(totalInfo.advanceDeliveryNumber);
+					$('.advanceDeliverySingular').text(totalInfo.advanceDeliverySingular);
+					$('.sumOrderNeed').text(totalInfo.sumOrderNeed);
+					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+					$('.sumDelivery').text(totalInfo.sumDelivery);
+					$('.readyForDelivery').text(totalInfo.readyForDelivery);
+					$('.totalNumberOutbound').text(totalInfo.totalNumberOutbound);
+					$('.storageNumber').text(totalInfo.storageNumber);
+					$('.unitsWithoutEarlyWarningNumberIssued').text(totalInfo.unitsWithoutEarlyWarningNumberIssued);
+					$('.aUnitOfDebtIsInvolved').text(totalInfo.aUnitOfDebtIsInvolved);
+				}
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');

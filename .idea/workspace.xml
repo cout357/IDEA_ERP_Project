@@ -28,26 +28,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/model/GeneralLedgerTotalInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/model/OrdersAndJournalTotalInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/endInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/GeneralLedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/GeneralLedgerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/GeneralLedgerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/GeneralLedgerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/GeneralLedgerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/model/QueryInfoByCustomerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/model/ScreenInfoByCustomerInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/otherClass/CustomerInfoPageRet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/otherClass/QueryInfoByCustomerInfo_old.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/GeneralLedgerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/service/GeneralLedgerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/OrdersAndJournalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/service/OrdersAndJournalService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/impl/GeneralLedgerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/service/impl/GeneralLedgerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/impl/OrdersAndJournalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/service/impl/OrdersAndJournalServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/curd.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/curd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/util.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/funcsOfAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/funcsOfAjax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" afterDir="false" />
@@ -81,39 +75,185 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/basic-customer_old.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/basic-customer_old.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/materialControl-finishedProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/materialControl-finishedProduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/temp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/QueryInfoByCustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/ScreenInfoByCustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-DynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-DynamicGeneralLedger.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/QueryInfoByCustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/ScreenInfoByCustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/CustomerInfoPageRet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/QueryInfoByCustomerInfo_old.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/test/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/springmvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/aspectjweaver-1.6.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/commons-io-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-annotations-2.9.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-core-2.9.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-databind-2.9.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jsqlparser-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jsr250-api-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/log4j-1.2.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mybatis-3.4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/pagehelper-5.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/slf4j-api-1.6.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-aspects-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-jdbc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-orm-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-acl-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-config-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-core-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-taglibs-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-web-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-test-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-web-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-webmvc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/curd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/datatable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/left-nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/util.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/img/AdminLTELogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/img/userImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/funcsOfAjax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/jquery-3.4.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-customerValue.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-manufacturing.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-orderBigData.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-partsConsumption.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-productionImprovement.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-department.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ERPMod.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-DynamicGeneralLedger.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchase.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-packingMaterial.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-supplierServices.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-metalworking.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-purchase.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-weeklyScheduling.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-finalAssemblyDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-injectionMoldingDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-metalworkingDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-process.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer_old.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/jsp.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/jsp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/materialControl-finishedProduct.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/script.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/script.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/temp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/CustomerInfoPageRet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/QueryInfoByCustomerInfo_old.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/test/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +300,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/view" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -174,11 +314,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\mapper" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\model" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\view" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service\impl" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\css" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\controller" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager">
@@ -305,7 +445,9 @@
       <workItem from="1597218336973" duration="582000" />
       <workItem from="1597226162832" duration="2809000" />
       <workItem from="1597277101814" duration="1843000" />
-      <workItem from="1597285302948" duration="170000" />
+      <workItem from="1597285302948" duration="5317000" />
+      <workItem from="1597368119178" duration="1899000" />
+      <workItem from="1597460063507" duration="1494000" />
     </task>
     <servers />
   </component>
@@ -333,11 +475,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="651" y="115" key="#Tomcat_Server/0.0.1920.1040@0.0.1920.1040" timestamp="1596845134139" />
-    <state x="513" y="112" width="1092" height="855" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597227098040">
+    <state x="513" y="112" width="1092" height="855" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597460401722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="410" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1597218509537" />
-    <state x="513" y="112" width="1092" height="855" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597227098040" />
+    <state x="513" y="112" width="1092" height="855" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597460401722" />
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser" timestamp="1597106081297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -346,6 +488,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="547" y="92" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1597201664815" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597460170572">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597460170572" />
     <state x="347" y="6" key="CommitChangelistDialog2" timestamp="1597201927358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -355,66 +501,66 @@
     </state>
     <state x="974" y="185" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597201457796" />
     <state x="1218" y="233" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597213357328" />
-    <state width="1630" height="324" key="GridCell.Tab.0.bottom" timestamp="1597285375767">
+    <state width="1630" height="324" key="GridCell.Tab.0.bottom" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375767" />
-    <state width="1630" height="324" key="GridCell.Tab.0.center" timestamp="1597285375766">
+    <state width="1630" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.0.center" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="324" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375766" />
-    <state width="1630" height="324" key="GridCell.Tab.0.left" timestamp="1597285375766">
+    <state width="1630" height="324" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.0.left" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="324" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375766" />
-    <state width="1630" height="324" key="GridCell.Tab.0.right" timestamp="1597285375767">
+    <state width="1630" height="324" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.0.right" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="324" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375767" />
-    <state width="1630" height="324" key="GridCell.Tab.1.bottom" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.1.bottom" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.1.center" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.1.center" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514685" />
-    <state width="1630" height="324" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.1.left" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.1.left" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514685" />
-    <state width="1630" height="324" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.1.right" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.1.right" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.2.bottom" timestamp="1597285375539">
+    <state width="1630" height="324" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.2.bottom" timestamp="1597461573186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375539" />
-    <state width="1630" height="324" key="GridCell.Tab.2.center" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573186" />
+    <state width="1630" height="324" key="GridCell.Tab.2.center" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.2.left" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.2.left" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
-    <state width="1630" height="324" key="GridCell.Tab.2.right" timestamp="1597285375538">
+    <state width="1630" height="324" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
+    <state width="1630" height="324" key="GridCell.Tab.2.right" timestamp="1597461573181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="324" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597285375538" />
+    <state width="1630" height="324" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597461573181" />
     <state x="456" y="0" key="SettingsEditor" timestamp="1597218933589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

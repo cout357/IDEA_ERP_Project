@@ -1,5 +1,6 @@
 package com.itheima.service.impl;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,11 @@ public class OrdersAndJournalServiceImpl implements OrdersAndJournalService{
 		// TODO Auto-generated method stub
 		return ordersAndJournalMapper.completeQuery(new QueryInfo(pageIdx*pageDataCount,pageDataCount));
 	}
-
+	@Override
+	public List<OrdersAndJournal> completeQuery(List<String> screenInfo) {
+		// TODO Auto-generated method stub
+		return ordersAndJournalMapper.completeQuery(new QueryInfo(OrdersAndJournal.class,screenInfo));
+	}
 	@Override
 	public List<OrdersAndJournal> completeQuery(List<String> screenInfo,Integer pageIdx,Integer pageDataCount) {
 		// TODO Auto-generated method stub

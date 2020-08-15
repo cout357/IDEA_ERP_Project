@@ -27,6 +27,11 @@ public class GeneralLedgerServiceImpl implements GeneralLedgerService{
 	}
 
 	@Override
+	public List<GeneralLedger> completeQuery(List<String> screenInfo) {
+		// TODO Auto-generated method stub
+		return generalLedgerMapper.completeQuery(new QueryInfo(GeneralLedger.class,screenInfo));
+	}
+	@Override
 	public List<GeneralLedger> completeQuery(List<String> screenInfo,Integer pageIdx,Integer pageDataCount) {
 		// TODO Auto-generated method stub
 		return generalLedgerMapper.completeQuery(new QueryInfo(GeneralLedger.class,screenInfo,pageIdx*pageDataCount,pageDataCount));

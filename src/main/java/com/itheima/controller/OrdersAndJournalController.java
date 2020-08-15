@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itheima.model.CustomerInfo;
+import com.itheima.model.GeneralLedger;
 import com.itheima.model.OrdersAndJournal;
 import com.itheima.service.OrdersAndJournalService;
 
@@ -91,5 +92,13 @@ public class OrdersAndJournalController {
 	public boolean edit(@RequestBody OrdersAndJournal data) {
 		data.setVersion(data.getVersion()+1);
 		return oService.edit(data);
+	}	
+	@RequestMapping("export")
+	@ResponseBody
+	public HashMap export(@RequestBody List<String> screenInfo) {
+		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo);
+		System.out.println(datas);
+		System.out.println("--------------------------");
+		return null;
 	}
 }

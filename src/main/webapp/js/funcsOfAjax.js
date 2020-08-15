@@ -1,6 +1,6 @@
 function getDataRowTemp(colSum){
 	var $row = $('<tr class="row"></tr>');
-	$row.append($('<th class="hor"><input type="checkbox" class="datatable-checkbox" /></th>'));
+	$row.append($('<th class="hor"><input type="checkbox" class="dataCheb" /></th>'));
 	for(var i = 0; i < colSum;i++)
 		$row.append($('<th class="hor val"></th>'));
 	$row.append($('<th class="hor iconfont sep-hor"><a href="javascript:;" class="editData" style="font-size:1.3rem;">&#xe612;</a>&emsp;<a href="javascript:;" class="delData" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a></th>'));
@@ -9,7 +9,7 @@ function getDataRowTemp(colSum){
 }
 var $dataRowTemp = getDataRowTemp(colSum);
 //根据排序信息和筛选信息重新查询数据
-function refreshDataAjax(){
+function refreshDataAjax(isDataChange=false){
 	var sortTypes = new Array();			//排序列符号
 	for(var i = 0;i < signsort.length;i++){
 		if(signsort[i].classList.contains('sort-up'))
@@ -28,7 +28,7 @@ function refreshDataAjax(){
 	$.ajax({
 		type: "post",//注意不能用get
 		dataType: 'json',
-		url: tableName+"CT/completeQuery?pageIdx="+pageIdx+"&pageDataCount="+pageDataCount,
+		url: tableName+"CT/completeQuery?pageIdx="+pageIdx+"&pageDataCount="+pageDataCount+"&isDataChange="+isDataChange,
 		contentType: 'application/json;charset=utf-8',//这个必须是这个格式
 		data: JSON.stringify(screenInfo),//前台要封装成json格式
 		traditional: true,
@@ -75,7 +75,7 @@ function addAjax(tabelName,datas){
 		traditional: true,
 		success: function (count) {
 			console.log("成功添加"+count+"条数据");
-			refreshDataAjax();
+			refreshDataAjax(true);
 		}
 	});
 }
@@ -96,7 +96,7 @@ function delAjax(tableName,ids){
 		traditional: true,
 		success: function (count) {
 			console.log("成功删除"+count+"条数据");
-			refreshDataAjax();
+			refreshDataAjax(true);
 		}
 	});
 }
@@ -127,8 +127,43 @@ function editDataAjax(tableName,data){
 		success: function (isSuc) {
 			if(isSuc==false){
 				alert("更新失败！可能是数据已更新，请重试");
+				refreshDataAjax();
 			}
-			refreshDataAjax();
+			else
+				refreshDataAjax(true);
+		}
+	});
+}
+
+//导出
+function exportAjax(tableName){
+	var screenInfo = new Array();
+	screenInfo.push("colValueItems");
+	//如果没有勾选全部页,则只导出当前页勾选了的数据
+	if($('.datatable .replenishDataCheb-th .replenishDataCheb').prop("checked")==false){
+		var myColValuescreen = new Array();		//筛选条件
+		for(var i = 0;i < colSum;i++)
+			myColValuescreen[i] = "";
+		var $dataChebs = $('.datatable .row .dataCheb');
+		myColValuescreen[0] = "&value ";
+		for(var i = 0;i < $dataChebs.length;i++)
+			if($dataChebs.eq(i).prop("checked")==true)
+				myColValuescreen[0] += "'"+$dataChebs.eq(i).val()+"'" + ",";
+		screenInfo = screenInfo.concat(myColValuescreen);
+	}
+	else		//否则直接根据筛选条件导出符合的所有数据
+		screenInfo = screenInfo.concat(colValuescreen);
+	console.log("导出信息:");
+	console.log(screenInfo);
+	$.ajax({
+		type: "post",//注意不能用get
+		dataType: 'json',
+		url: tableName+"CT/export",
+		contentType: 'application/json;charset=utf-8',//这个必须是这个格式
+		data: JSON.stringify(screenInfo),//前台要封装成json格式
+		traditional: true,
+		success: function (hash) {
+			console.log("导出成功");
 		}
 	});
 }

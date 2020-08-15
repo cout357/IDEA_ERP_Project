@@ -75,9 +75,12 @@
 	height:25px;
 	background-color:#fff;
 	padding:0 5px;
-	border-radius: 5px;
+	border-radius: 2px;
 	outline: none;
-	margin:10px 10px;
+	margin:5px 2px;
+	font-size:16px;
+	font-weight:700;
+	text-align:center;
 }
 .box-body .addTable-box .adBT{
 	width:25px;
@@ -93,6 +96,7 @@
 }
 .box-body .addTable-box #delBT{
 	background-color:indianred;
+	margin-right:20px;
 }
 .box-foot{
 	width:100%;

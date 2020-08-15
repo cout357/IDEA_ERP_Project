@@ -239,16 +239,25 @@ function addDataTableEvent(){
 		$('.completeValBox').css("display","block");
 		$('.completeValBox .cont .text').text($this.text());
 	});
+	//添加选择cheb事件
+	$('.datatable .row .dataCheb').on("click",dataChebClick);
 }
 addDataTableEvent();
 
-
-/*显示|隐藏列功能*/
-$('#showColMenu-dropdown .dropdownLink').on('click',function(){
-	var display = $('#showColMenu-dropdown .dropdown-content').css("display")=="none"?"block":"none";
-	console.log($('#showColMenu-dropdown .dropdown-content').css("display"));
-	$('#showColMenu-dropdown .dropdown-content').css("display",display);
+$('.table-top .fl .dropdownLink').on('click',function(){
+	var $this = $(this);
+	var isPress = $this.siblings(' .dropdown-content').css("display")=="none"?true:false;
+	$this.siblings(' .dropdown-content').css("display",isPress?"block":"none");
+	$this.css("background-color",isPress?"#48545c":"rgba(0,0,0,0)");
+	$this.css("color",isPress?"#fff":"#444");
 });
+/*显示|隐藏列功能*/
+//$('#showColMenu-dropdown .dropdownLink').on('click',function(){
+//	var isPress = $('#showColMenu-dropdown .dropdown-content').css("display")=="none"?true:false;
+//	$('#showColMenu-dropdown .dropdown-content').css("display",isPress?"block":"none");
+//	$('#showColMenu-dropdown .dropdownLink ').css("background-color",isPress?"#48545c":"rgba(0,0,0,0)");
+//	$('#showColMenu-dropdown .dropdownLink ').css("color",isPress?"#fff":"#444");
+//});
 var showColMenu = document.getElementById("showColMenu-dropdown");
 var showColMenu_cheb = showColMenu.getElementsByClassName('cheb');
 showColMenu.getElementsByClassName("cheb-all")[0].onclick = function(){
@@ -273,8 +282,8 @@ for(var i = 0;i < showColMenu_cheb.length;i++){
 		for(var j = 0;j < trs.length;j++){
 				trs[j].children[this.index+1].style.display = isShow?"table-cell":"none";
 		}
-		console.log("隐藏的列:");
-		console.log(hiddenCols);
+//		console.log("隐藏的列:");
+//		console.log(hiddenCols);
 		var colNames = trs[0].children;
 		var showColSum = 0;
 		for(var i = 0;i < colNames.length;i++)
@@ -286,8 +295,8 @@ for(var i = 0;i < showColMenu_cheb.length;i++){
 
 (function(){
 	var $colname = $('.colname-text');
-	console.log("默认隐藏的列:");
-	console.log(hiddenCols);
+//	console.log("默认隐藏的列:");
+//	console.log(hiddenCols);
 	for(var i = $colname.length-1;i >= 0;i--){
 		if($.inArray($colname.eq(i).text(),hiddenCols)!=-1){
 			showColMenu_cheb[i].click();
@@ -646,3 +655,49 @@ function tmp2(){
 	}
 }
 
+//限制输入函数
+//只能输入数字和小数点
+function putNum(_this){
+	console.log(_this.value);
+}
+
+//数据选择
+//当前页数据全选事件
+$('.table-top #data-allCheb').on('click',function(){
+	$this = $(this);
+	$('.datatable .row .dataCheb').prop("checked",$this.prop("checked"));
+	if($this.prop("checked")==false)
+		$('.datatable .replenishDataCheb-th .replenishDataCheb').prop("checked",false);
+});
+//子选择点击事件
+function dataIsAllChecked(){
+	$dataChebs = $(".datatable .row .dataCheb");
+	for(var i = 0;i < $dataChebs.length;i++){
+		if($dataChebs.eq(i).prop("checked")==false){
+			return false;
+		}
+	}
+	return true;
+}
+function dataChebClick(){
+	$this = $(this);
+	if($this.prop("checked")==false)
+		$('.table-top #data-allCheb').prop("checked",false);
+	else if(dataIsAllChecked())
+		$('.table-top #data-allCheb').prop("checked",true);
+}
+$('.datatable .row .dataCheb').on("click",dataChebClick);
+//勾选所有页，当前页所有数据自动全部勾选。而取消勾选所有页，不影响数据勾选
+$('.datatable .replenishDataCheb-th .replenishDataCheb').on("click",function(){
+	$this = $(this);
+	if($this.prop("checked")==true)
+		$('.datatable .row .dataCheb').prop("checked",true);
+	dataChebClick();
+});
+
+//导出按钮事件
+$('.dataExport').on('click',function(){
+	console.log($('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink'));
+	$('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink').trigger("click");
+	exportAjax(tableName);
+});

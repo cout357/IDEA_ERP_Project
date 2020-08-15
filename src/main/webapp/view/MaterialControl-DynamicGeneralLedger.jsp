@@ -434,9 +434,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>-->
 						<div class="fl">
 							<ul class="list">
+								<li class="item dropdown" id="dataCheckedMenu-dropdown">
+									<input type="checkbox" id="data-allCheb" />
+									<a href="javascript:;" class="dropdownLink iconfont link">
+										选中项&#xe63b;
+									</a>
+									<div class="dropdown-content">
+										<ul class="droplist">
+											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+										</ul>
+									</div>
+								</li>
 								<li class="item dropdown" id="showColMenu-dropdown">
 									<!-- 显示|隐藏列 -->
-									<a href="javascript:;" class="dropdownLink iconfont link" style="font-size:19px;">&#xe607;</a>
+									<a href="javascript:;" class="dropdownLink iconfont link">隐藏列&#xe63b;</a>
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><input class="cheb-all cur-poi" type="checkbox" checked="checked"/><span class="text">全选</span></li>
@@ -473,7 +485,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
-												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -481,7 +492,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="text" οnkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -665,7 +676,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<th class="colname-th ">操作</th>
 							</tr>
 							<tr class="colscreen-tr" valign="top">
-								<th></th>
+								<th class="replenishDataCheb-th">
+									<input type="checkbox" class="replenishDataCheb">
+									所有页
+								</th>
 								<th class="colscreen-td">
 									<span class="colscreen iconfont"><span class="text">&#xe83b;</span></span>
 								</th>
@@ -673,7 +687,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<!-- 表格数据 -->
 							<c:forEach items="${generalLedgers }" var="db" varStatus="idx">
 								<tr class="row">
-									<th class="hor"><input type="checkbox" class="datatable-checkbox" /></th>
+									<th class="hor"><input type="checkbox" class="dataCheb" value="${db.gl_id }"/></th>
 									<th class="hor val">${db.gl_id }</th>
 									<th class="hor val">${db.kmId }</th>
 									<th class="hor val">${db.deposit }</th>
@@ -699,8 +713,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="hor val">${db.proposalNumber }</th>
 									<th class="hor iconfont sep-hor">
 										<a href="javascript:;" class="editData" name="${db.gl_id }" style="font-size:1.3rem;">&#xe612;</a>
-										&emsp;
-										<a href="javascript:;" class="delData" name="${db.gl_id}" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
+										<!-- <a href="javascript:;" class="delData" name="${db.gl_id}" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a> -->
 									</th>
 								</tr>
 							</c:forEach>
@@ -725,7 +738,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox">
 			<div class="box-head">
-				<span class="title">添加客户信息</span>
+				<span class="title">添加</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -767,7 +780,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox">
 			<div class="box-head">
-				<span class="title">编辑客户信息</span>
+				<span class="title">编辑</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
@@ -877,29 +890,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(20).html(datas[i].lowMiniNeed);
 					$vals.eq(21).html(datas[i].outHighNeed);
 					$vals.eq(22).html(datas[i].proposalNumber);
+					$newRow.find(".dataCheb").val(datas[i].gl_id);
 					$newRow.find(".editData").attr("name",datas[i].gl_id);
 					$newRow.find(".delData").attr("name",datas[i].gl_id);
+					$newRow.find(".delData").remove();
 					$('.datatable').append($newRow);
 				}
 
 				//填入统计信息
-				$('.startData').text(totalInfo.startData);
-				$('.startDay').text(totalInfo.startDay);
-				$('.noOrderAmount').text(totalInfo.noOrderAmount);
-				$('.noOrderInventory').text(totalInfo.noOrderInventory);
-				$('.errorDataItem').text(totalInfo.errorDataItem);
-				$('.totalNumber').text(totalInfo.totalNumber);
-				$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
-				$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
-				$('.prepareQuantity').text(totalInfo.prepareQuantity);
-				$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
-				$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
-				$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
-				$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
-				$('.outboundSpecies').text(totalInfo.outboundSpecies);
-				$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
-				$('.lackOfLoans').text(totalInfo.lackOfLoans);
-				$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.startData').text(totalInfo.startData);
+					$('.startDay').text(totalInfo.startDay);
+					$('.noOrderAmount').text(totalInfo.noOrderAmount);
+					$('.noOrderInventory').text(totalInfo.noOrderInventory);
+					$('.errorDataItem').text(totalInfo.errorDataItem);
+					$('.totalNumber').text(totalInfo.totalNumber);
+					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+					$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
+					$('.prepareQuantity').text(totalInfo.prepareQuantity);
+					$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
+					$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
+					$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
+					$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
+					$('.outboundSpecies').text(totalInfo.outboundSpecies);
+					$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
+					$('.lackOfLoans').text(totalInfo.lackOfLoans);
+					$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
+				}
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');

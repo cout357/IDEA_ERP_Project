@@ -11,6 +11,7 @@ import com.itheima.otherClass.QueryInfo;
 
 public interface OrdersAndJournalService {
 	List<OrdersAndJournal> limitQuery(Integer pageIdx, Integer pageDataCount);
+	List<OrdersAndJournal> completeQuery(List<String> screenInfo);
 	List<OrdersAndJournal> completeQuery(List<String> screenInfo, Integer pageIdx, Integer pageDataCount);
 	Integer findScreenCount(List<String> screenInfo);
 	Integer findCount();

@@ -156,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>康明订单</span>
 						<span class="sep">/</span>
-						<span>订单+流水账</span>
+						<span>用户权限管理</span>
 					</div>
 					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
@@ -212,9 +212,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>-->
 						<div class="fl">
 							<ul class="list">
+								<li class="item dropdown" id="dataCheckedMenu-dropdown">
+									<input type="checkbox" id="data-allCheb" />
+									<a href="javascript:;" class="dropdownLink iconfont link">
+										选中项&#xe63b;
+									</a>
+									<div class="dropdown-content">
+										<ul class="droplist">
+											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+										</ul>
+									</div>
+								</li>
 								<li class="item dropdown" id="showColMenu-dropdown">
 									<!-- 显示|隐藏列 -->
-									<a href="javascript:;" class="dropdownLink iconfont link" style="font-size:19px;">&#xe607;</a>
+									<a href="javascript:;" class="dropdownLink iconfont link">隐藏列&#xe63b;</a>
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><input class="cheb-all cur-poi" type="checkbox" checked="checked"/><span class="text">全选</span></li>
@@ -236,7 +248,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="item"><a href="javascript:;" id="addData" class="add iconfont link">&#xe627;&nbsp;添加数据</a></li>
 							</ul>
 						</div>
-						<div class="tablename">订单+流水账表</div>
+						<div class="tablename">用户权限</div>
 					</div>
 					<div class="table-box" id="data-table-box">
 						<!-- 列筛选 -->
@@ -251,7 +263,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
-												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -259,7 +270,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="text" οnkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -293,8 +304,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 							</ul>
 						</div>
-						<input type="hidden" id="colSum" value="12"/>
-						<input type="hidden" id="tableName" value="CustomerInfo"/>
+						<input type="hidden" id="colSum" value="6"/>
+						<input type="hidden" id="tableName" value="Account"/>
 						<table class="datatable">
 							<tr class="colname-tr">
 								<th class="colname-th">选择
@@ -308,67 +319,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text strCol">业务员</span>
+								<th class="colname-th "><span class="colname-text strCol">姓名</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text strCol">客户代码</span>
+								<th class="colname-th "><span class="colname-text strCol">用户密码</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text numCol">订单占比</span>
+								<th class="colname-th "><span class="colname-text strCol">用户名/邮箱</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text numCol">累计占比</span>
+								<th class="colname-th "><span class="colname-text strCol">权限</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th "><span class="colname-text numCol">月均订单</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text numCol">订单总数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text numCol">订单单数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text numCol">订单批量</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text strCol">客户级别</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text strCol">交货周期</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th "><span class="colname-text strCol">备注</span>
+								<th class="colname-th "><span class="colname-text strCol">状态</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
@@ -377,31 +352,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<th class="colname-th ">操作</th>
 							</tr>
 							<tr class="colscreen-tr" valign="top">
-								<th></th>
-								<th class="colscreen-td">
-									<span class="colscreen iconfont"><span class="text">&#xe83b;</span></span>
+								<th class="replenishDataCheb-th">
+									<input type="checkbox" class="replenishDataCheb">
+									所有页
 								</th>
 							</tr>
 							<!-- 表格数据 -->
-							<c:forEach items="${customerInfos }" var="customer" varStatus="idx">
+							<c:forEach items="${datas }" var="data" varStatus="idx">
 								<tr class="row">
-									<th class="hor"><input type="checkbox" class="datatable-checkbox" /></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
-									<th class="hor val"></th>
+									<th class="hor"><input type="checkbox" class="dataCheb" value="${data.id}" /></th>
+									<th class="hor val">${data.id}</th>
+									<th class="hor val">${data.name}</th>
+									<th class="hor val">${data.password}</th>
+									<th class="hor val">${data.user}</th>
+									<th class="hor val">${data.role}</th>
+									<th class="hor val">${data.state}</th>
 									<th class="hor iconfont sep-hor">
-										<a href="javascript:;" class="editData" name="${customer.id }" style="font-size:1.3rem;">&#xe612;</a>
+										<a href="javascript:;" class="editData" name="${data.id }" style="font-size:1.3rem;">&#xe612;</a>
 										&emsp;
-										<a href="javascript:;" class="delData" name="${customer.id}" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
+										<a href="javascript:;" class="delData" name="${data.id }" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
 									</th>
 								</tr>
 							</c:forEach>
@@ -426,7 +395,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox">
 			<div class="box-head">
-				<span class="title">添加客户信息</span>
+				<span class="title">添加账户</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -436,28 +405,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<table id="add-table">
 						<thead>
 						<tr class="colName-tr">
-							<th class="colName">业务员</th>
-							<th class="colName">客户代码</th>
-							<th class="colName">月均订单</th>
-							<th class="colName">订单总量</th>
-							<th class="colName">订单单数</th>
-							<th class="colName">订单批量</th>
-							<th class="colName">客户级别</th>
-							<th class="colName">备注</th>
+							<th class="colName">姓名</th>
+							<th class="colName">用户密码</th>
+							<th class="colName">用户名/邮箱</th>
+							<th class="colName">权限</th>
+							<th class="colName">状态</th>
 							<th class=""></th>
 							<th class=""></th>
 						</tr>
 						</thead>
 						<tbody id="add-tbody">
 						<tr class="data-tr">
-							<td class="data"><input type="text" name="" id="" class="dataInput salesman" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput customerId" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput averageMonthlyOrder" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput totalOrders" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderNumber" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderQuantity" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput customerLevel" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput remark" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput name" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput password" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput user" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -476,7 +439,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox">
 			<div class="box-head">
-				<span class="title">编辑客户信息</span>
+				<span class="title">编辑账户</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
@@ -487,51 +450,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput id" value="" /></td>
+							<td class="data"><input type="text" name="" id="" disabled class="dataInput id" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">业务员：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesman" value="" /></td>
+							<td class="colName">姓名：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput name" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">客户代码：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput customerId" value="" /></td>
+							<td class="colName">用户密码：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput password" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">订单占比：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput proportionOfOrders" value="" /></td>
+							<td class="colName">用户名/邮箱：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput user" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">累计占比：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput cumulativeProportion" value="" /></td>
+							<td class="colName">权限：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">月均订单：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput averageMonthlyOrder" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单总数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput totalOrders" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单单数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderNumber" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">订单批量：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderQuantity" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">客户级别：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput customerLevel" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">交货周期：</td>
-							<td class="data"><input type="text" disabled="disabled" name="" id="" class="dataInput leadTime" value="" /></td>
-						</tr>
-						<tr class="line">
-							<td class="colName">备注：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput remark" value="" /></td>
+							<td class="colName">状态：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
 						</tr>
 						</tbody>
 					</table>
@@ -544,58 +483,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 		</div>
-
+		<div class="completeValBox">
+			<div class="cont">
+				<span class="text"></span>
+				<div class="iconfont close">×</div>
+			</div>
+		</div>
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
+			function getAddDatas(){
+				var $dataTrs = $('#addBox .data-tr');
+				var datas = new Array();
+				for(var i = 0;i < $dataTrs.length;i++){
+					var $data = $dataTrs.eq(i);		//单行数据
+					datas[i] = {
+						name:				$data.find('.name').val(),
+						password:				$data.find('.password').val(),
+						user:				$data.find('.user').val(),
+						role:				$data.find('.role').val(),
+						state:				$data.find('.state').val()
+					};
+				}
+				return datas;
+			}
+			//将编辑后的数据封装进data中提交给ajax
+			function getEditData(){
+				var $editTbody = $('#editBox .edit-tbody');
+				//接收时全部接收，修改哪些取决于后台mapper语句
+				var data = {
+					id:             $editTbody.find(".roleId").val(),
+					name:             $editTbody.find(".name").val(),
+					password:              $editTbody.find(".password").val(),
+					user:              $editTbody.find(".user").val(),
+					role:              $editTbody.find(".role").val(),
+					state:              $editTbody.find(".state").val()
+				};
+				return data;
+			}
 			function refreshSuc(hash){
 				console.log(hash);
-				var customerInfos = hash.customerInfos;
+				var datas = hash.datas;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
 				refreshDataPageLinks();
 				var datatable = document.getElementsByClassName("datatable")[0];
 				$('.datatable .row').remove();
-				for(var i = 0;i < customerInfos.length;i++){
+				for(var i = 0;i < datas.length;i++){
 					var $newRow = $dataRowTemp.clone(true);
 					var $vals = $newRow.children('.val');
-					$vals.eq(0).html(customerInfos[i].id);
-					$vals.eq(1).html(customerInfos[i].salesman);
-					$vals.eq(2).html(customerInfos[i].customerId);
-					$vals.eq(3).html(customerInfos[i].proportionOfOrders);
-					$vals.eq(4).html(customerInfos[i].cumulativeProportion);
-					$vals.eq(5).html(customerInfos[i].averageMonthlyOrder);
-					$vals.eq(6).html(customerInfos[i].totalOrders);
-					$vals.eq(7).html(customerInfos[i].orderNumber);
-					$vals.eq(8).html(customerInfos[i].orderQuantity);
-					$vals.eq(9).html(customerInfos[i].customerLevel);
-					$vals.eq(10).html(customerInfos[i].leadTime);
-					$vals.eq(11).html(customerInfos[i].remark);
-					$newRow.find(".editData").attr("name",customerInfos[i].id);
-					$newRow.find(".delData").attr("name",customerInfos[i].id);
+					$vals.eq(0).html(datas[i].id);
+					$vals.eq(1).html(datas[i].name);
+					$vals.eq(2).html(datas[i].password);
+					$vals.eq(2).html(datas[i].user);
+					$vals.eq(2).html(datas[i].role);
+					$vals.eq(2).html(datas[i].state);
+					$newRow.find(".editData").attr("name",datas[i].id);
+					$newRow.find(".delData").attr("name",datas[i].id);
 					$('.datatable').append($newRow);
 				}
-				addEditEvent();
 			}
-			function editSuc(customerInfo) {
+			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
-				$editTbody.find(".id").val(customerInfo.id);
-				$editTbody.find(".salesman").val(customerInfo.salesman);
-				$editTbody.find(".customerId").val(customerInfo.customerId);
-				$editTbody.find(".proportionOfOrders").val(customerInfo.proportionOfOrders);
-				$editTbody.find(".cumulativeProportion").val(customerInfo.cumulativeProportion);
-				$editTbody.find(".averageMonthlyOrder").val(customerInfo.averageMonthlyOrder);
-				$editTbody.find(".totalOrders").val(customerInfo.totalOrders);
-				$editTbody.find(".orderNumber").val(customerInfo.orderNumber);
-				$editTbody.find(".orderQuantity").val(customerInfo.orderQuantity);
-				$editTbody.find(".customerLevel").val(customerInfo.customerLevel);
-				$editTbody.find(".leadTime").val(customerInfo.leadTime);
-				$editTbody.find(".remark").val(customerInfo.remark);
+				$editTbody.find(".id").val(data.roleId);
+				$editTbody.find(".name").val(data.roleUser);
+				$editTbody.find(".password").val(data.strRole);
+				$editTbody.find(".user").val(data.strRole);
+				$editTbody.find(".role").val(data.strRole);
+				$editTbody.find(".state").val(data.strRole);
 			}
+			//隐藏列表
+			var hiddenCols = [];
 		</script>
-		<script src="js/init.js"></script>
-		<script src="js/funcsOfAjax.js"></script>
-		<script src="js/event.js"></script>
-		<script>
-		</script>
+		<script charset="UTF-8" src="js/init.js"></script>
+		<script charset="UTF-8" src="js/funcsOfAjax.js"></script>
+		<script charset="UTF-8" src="js/event.js"></script>
+		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

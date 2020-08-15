@@ -12,6 +12,7 @@ import com.itheima.otherClass.QueryInfo;
 
 public interface GeneralLedgerService {
 	List<GeneralLedger> limitQuery(Integer pageIdx, Integer pageDataCount);
+	List<GeneralLedger> completeQuery(List<String> screenInfo);
 	List<GeneralLedger> completeQuery(List<String> screenInfo, Integer pageIdx, Integer pageDataCount);
 	Integer findScreenCount(List<String> screenInfo);
 	Integer findCount();

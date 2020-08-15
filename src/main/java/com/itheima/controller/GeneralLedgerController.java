@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.itheima.model.GeneralLedgerTotalInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
+import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.service.GeneralLedgerService;
 import com.itheima.service.OrdersAndJournalService;
 
@@ -28,12 +28,12 @@ public class GeneralLedgerController {
 	@RequestMapping("limitQuery")
 	public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx,@RequestParam(defaultValue = "30")Integer pageDataCount,Model model) {
 		List<GeneralLedger> generalLedgers = gService.limitQuery(pageIdx,pageDataCount);
+		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
 		model.addAttribute("generalLedgers", generalLedgers);
 		model.addAttribute("pageIdx",pageIdx);
 		model.addAttribute("pageDataCount",pageDataCount);
 		model.addAttribute("dataCount",gService.findCount());
-		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
-		model.addAttribute("totalInfo", totalInfo);
+		model.addAttribute("totalInfo",totalInfo);
 		System.out.println("limitQuery_gl:"+generalLedgers);
 		return "MaterialControl-DynamicGeneralLedger";
 	}
@@ -47,7 +47,8 @@ public class GeneralLedgerController {
 	*/
 	@RequestMapping("completeQuery")
 	@ResponseBody
-	public HashMap customerSort(@RequestBody List<String> screenInfo,@RequestParam Integer pageIdx,@RequestParam Integer pageDataCount){
+	public HashMap customerSort(@RequestBody List<String> screenInfo,@RequestParam Integer pageIdx,
+			@RequestParam Integer pageDataCount,@RequestParam(defaultValue = "false")Boolean isDataChange){
 		System.out.println(" pageIdx:"+pageDataCount+" pageDataCount:"+pageDataCount + "screenInfo:" + screenInfo);
 		int count = gService.findScreenCount(screenInfo);
 		//如果筛选后当前页大于筛选条件下的最大页，就把当前页改为最大页
@@ -57,9 +58,10 @@ public class GeneralLedgerController {
 		hash.put("generalLedgers", generalLedgers);
 		hash.put("pageIdx",pageIdx);
 		hash.put("dataCount", count);
-		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
-		hash.put("totalInfo", totalInfo);
-		
+		if(isDataChange) {
+			GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
+			hash.put("totalInfo", totalInfo);
+		}
 		return hash;
 	}
 
@@ -95,5 +97,13 @@ public class GeneralLedgerController {
 	public boolean edit(@RequestBody GeneralLedger data) {
 //		data.setVersion(data.getVersion()+1);
 		return gService.edit(data);
+	}
+	@RequestMapping("export")
+	@ResponseBody
+	public HashMap export(@RequestBody List<String> screenInfo) {
+		List<GeneralLedger> generalLedgers = gService.completeQuery(screenInfo);
+		System.out.println(generalLedgers);
+		System.out.println("--------------------------");
+		return null;
 	}
 }
