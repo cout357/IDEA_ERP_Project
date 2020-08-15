@@ -405,7 +405,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
-											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text exportData">导出</a></li>
 										</ul>
 									</div>
 								</li>
@@ -418,19 +418,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</ul>
 									</div>
 								</li>
-								<li class="item">
-									<form action="" class="search">
-										<div class="search-group">
-											<input type="search" placeholder="Search" class="search-text"/>
-											<input type="submit" class="search-submit iconfont" value="&#xe618;"/>
-										</div>
-									</form>
-								</li>
 							</ul>
 						</div>
 						<div class="fr">
 							<ul class="list">
-								<li class="item"><a href="javascript:;" id="addData" class="add iconfont link">&#xe627;&nbsp;添加数据</a></li>
+								<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li>
+								<li class="item"><a href="javascript:;"  class="exportData iconfont link">&#xe649;&nbsp;导出数据</a></li>
+								<li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li>
 							</ul>
 						</div>
 						<div class="tablename">用户权限</div>

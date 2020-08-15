@@ -17,12 +17,12 @@ html{
 } */
 @font-face {
   font-family: 'iconfont';  /* project id 1937264 */
-  src: url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.eot');
-  src: url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1937264_87f35uxbhnl.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1937264_s4allvkianp.eot');
+  src: url('//at.alicdn.com/t/font_1937264_s4allvkianp.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1937264_s4allvkianp.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1937264_s4allvkianp.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1937264_s4allvkianp.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1937264_s4allvkianp.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family: "iconfont" !important;

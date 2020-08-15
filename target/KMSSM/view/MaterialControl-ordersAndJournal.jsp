@@ -456,7 +456,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
-											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text exportData">导出</a></li>
 										</ul>
 									</div>
 								</li>
@@ -469,19 +469,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</ul>
 									</div>
 								</li>
-								<li class="item">
-									<form action="" class="search">
-										<div class="search-group">
-											<input type="search" placeholder="Search" class="search-text"/>
-											<input type="submit" class="search-submit iconfont" value="&#xe618;"/>
-										</div>
-									</form>
-								</li>
 							</ul>
 						</div>
 						<div class="fr">
 							<ul class="list">
-								<li class="item"><a href="javascript:;" id="addData" class="add iconfont link">&#xe627;&nbsp;添加数据</a></li>
+								<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li>
+								<li class="item"><a href="javascript:;"  class="exportData iconfont link">&#xe649;&nbsp;导出数据</a></li>
+								<li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li>
 							</ul>
 						</div>
 						<div class="tablename">订单+流水账表</div>
@@ -545,7 +539,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<table class="datatable long">
 							<tr class="colname-tr">
 								<th class="colname-th">
-									<input type="checkbox" id="data-allchecked"/>
 									<span>选择</span>
 									<div class="menu">
 										<span class=" iconfont" id="sort-cancel-all">一</span><br/>
@@ -759,7 +752,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--添加页面-->
-		<div id="addBox">
+		<div id="addBox" class="dialog">
 			<div class="box-head">
 				<span class="title">添加</span>
 				<div class="fr">
@@ -829,7 +822,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--编辑页面-->
-		<div id="editBox">
+		<div id="editBox" class="dialog">
 			<div class="box-head">
 				<span class="title">编辑</span>
 				<div class="fr">
@@ -928,12 +921,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 		</div>
+<!-- 显示完整数据-对话框 -->
 	    <div class="completeValBox">
+	    	<div class="head-box"></div>
 	        <div class="cont">
 	            <span class="text"></span>
 	            <div class="iconfont close">×</div>
 	        </div>
 	    </div>
+<!-- 导入数据的选择文件-对话框 -->
+	    <div class="export-chooseFileBox dialog" >
+	    	<form action="http://192.168.1.142:5000/Uploader" method="POST" enctype="multipart/form-data">
+				<div class="box-head">
+					<span class="title">导入数据</span>
+					<div class="fr">
+						<a href="javascript:;" class="close" id="close-box">×</a>
+					</div>
+				</div>
+		    	<div class="box-body">
+			    		<input type="file" name="file" />
+		    	</div>
+				<div class="box-foot">
+					<ul class="footBT-list">
+						<li class="footBT-item"><input type="submit" class="footBT cur-poi" id="submit-edit" value="导入" /></li>
+						<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
+					</ul>
+				</div>
+	    	</form>
+	    </div>
+	    
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
 			function getAddDatas(){

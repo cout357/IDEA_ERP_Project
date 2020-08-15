@@ -7,9 +7,7 @@ function getDataRowTemp(colSum){
 	
 	return $row;
 }
-var $dataRowTemp = getDataRowTemp(colSum);
-//根据排序信息和筛选信息重新查询数据
-function refreshDataAjax(isDataChange=false){
+function getSortTypes(){
 	var sortTypes = new Array();			//排序列符号
 	for(var i = 0;i < signsort.length;i++){
 		if(signsort[i].classList.contains('sort-up'))
@@ -17,9 +15,14 @@ function refreshDataAjax(isDataChange=false){
 		else if(signsort[i].classList.contains('sort-down'))
 			sortTypes.push(signsort[i].index + " " + -1);
 	}
+	return sortTypes;
+}
+var $dataRowTemp = getDataRowTemp(colSum);
+//根据排序信息和筛选信息重新查询数据
+function refreshDataAjax(isDataChange=false){
 	var screenInfo = new Array();
 	screenInfo.push("orderItems");
-	screenInfo = screenInfo.concat(sortTypes);
+	screenInfo = screenInfo.concat(getSortTypes());
 	screenInfo.push("colValueItems");
 	screenInfo = screenInfo.concat(colValuescreen);
 	console.log(screenInfo);
@@ -138,6 +141,9 @@ function editDataAjax(tableName,data){
 //导出
 function exportAjax(tableName){
 	var screenInfo = new Array();
+	//按照排序顺序导出
+	screenInfo.push("orderItems");
+	screenInfo = screenInfo.concat(getSortTypes());
 	screenInfo.push("colValueItems");
 	//如果没有勾选全部页,则只导出当前页勾选了的数据
 	if($('.datatable .replenishDataCheb-th .replenishDataCheb').prop("checked")==false){
@@ -163,7 +169,9 @@ function exportAjax(tableName){
 		data: JSON.stringify(screenInfo),//前台要封装成json格式
 		traditional: true,
 		success: function (hash) {
-			console.log("导出成功");
+			var url = hash.url;
+			console.log("export-url:"+url);
+			window.location.href=url;
 		}
 	});
 }

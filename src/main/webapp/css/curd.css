@@ -1,16 +1,17 @@
-#addBox{
-	width:1000px;
-	height:500px;
+.dialog{
 	background-color: #fff;
 	position: fixed;
-	top:180px;
-	left: 50%;
-	margin-left: -500px;
 	display: none;
 	border:1px solid #ddd;
 	border-radius: 10px;
 	overflow: hidden;
 	z-index: 2;
+}
+#addBox{
+	width:1000px;
+	height:500px;
+	top:180px;
+	left: 50%;
 }
 
 .box-head{
@@ -18,7 +19,6 @@
 	height:30px;
 	line-height: 30px;
 	background: lightgreen;
-	
 }
 .box-head .title{
 	margin-left: 20px;
@@ -131,16 +131,9 @@
 /*编辑页面*/
 #editBox{
 	width:400px;
-	background-color: #fff;
-	position: fixed;
 	top:20px;
 	left: 50%;
 	margin-left: -200px;
-	display: none;
-	border:1px solid #ddd;
-	border-radius: 10px;
-	overflow: hidden;
-	z-index: 2;
 }
 #editBox .box-body{
 	width:100%;
@@ -161,4 +154,14 @@
 	border-radius: 5px;
 	outline: none;
 	margin:10px 10px;
+}
+.export-chooseFileBox{
+	width:400px;
+	top:400px;
+	left: 50%;
+	margin-left: -200px;
+}
+.export-chooseFileBox .box-body{
+	padding:30px 10px;
+	text-align:center;
 }

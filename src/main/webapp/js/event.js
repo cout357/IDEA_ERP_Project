@@ -185,7 +185,7 @@ for(var i = 0;i < navList_menu.length;i++){
 	}
 }
 //添加数据功能
-document.getElementById("addData").onclick = function(){
+document.getElementsByClassName("addData")[0].onclick = function(){
 	document.getElementById("addBox").style.display = "block";
 }
 
@@ -696,8 +696,35 @@ $('.datatable .replenishDataCheb-th .replenishDataCheb').on("click",function(){
 });
 
 //导出按钮事件
-$('.dataExport').on('click',function(){
-	console.log($('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink'));
-	$('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink').trigger("click");
+function exportDataClick(){
+	//导出至少要勾选一条数据
+	var haveChecked = false;
+	var $dataChebs = $('.datatable .row .dataCheb');
+	for(var i = 0;i < $dataChebs.length;i++){
+		if($dataChebs.eq(i).prop("checked")==true){
+			haveChecked = true;
+			break;
+		}
+	}
+	if(haveChecked==false){
+		return alert("请至少勾选一条数据");
+	}
 	exportAjax(tableName);
+}
+$('.table-top #dataCheckedMenu-dropdown .exportData').on('click',function(){
+	$('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink').trigger("click");		//关闭
+	exportDataClick();
+});
+$('.table-top .fr .exportData').on('click',exportDataClick);
+
+//导入按钮事件
+$('.table-top .importData').on('click',function(){
+	$('.export-chooseFileBox').css('display',"block");
+});
+
+//dialog基础事件
+$('.dialog .close').on('click',function(){
+	$this = $(this);
+	console.log($this.closest(".dialog"));
+	$this.closest(".dialog").css("display","none");
 });
