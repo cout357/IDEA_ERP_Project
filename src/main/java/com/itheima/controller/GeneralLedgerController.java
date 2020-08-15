@@ -103,6 +103,19 @@ public class GeneralLedgerController {
 	public HashMap export(@RequestBody List<String> screenInfo) {
 		List<GeneralLedger> generalLedgers = gService.completeQuery(screenInfo);
 		System.out.println(generalLedgers);
+
+		String url ="http://192.168.1.142:5000/DynamicBill?";
+
+		for (int i=0; i<generalLedgers.size();i++){
+			if (i==0){
+				url=url+ "id="+String.valueOf(generalLedgers.get(i).getGl_id());
+			}else {
+				url = url + "&id=" + String.valueOf(generalLedgers.get(i).getGl_id());
+			}
+		}
+
+		System.out.println("url = "+ url);
+
 		System.out.println("--------------------------");
 		return null;
 	}

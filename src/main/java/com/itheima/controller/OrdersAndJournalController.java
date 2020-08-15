@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,6 +17,10 @@ import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
 import com.itheima.model.OrdersAndJournal;
 import com.itheima.service.OrdersAndJournalService;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("OrdersAndJournalCT")
@@ -95,10 +100,23 @@ public class OrdersAndJournalController {
 	}	
 	@RequestMapping("export")
 	@ResponseBody
-	public HashMap export(@RequestBody List<String> screenInfo) {
+	public HashMap export(@RequestBody List<String> screenInfo, HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo);
-		System.out.println(datas);
+
+		String url ="http://192.168.1.142:5000/OrderCurrentAccount?";
+
+		for (int i=0; i<datas.size();i++){
+			if (i==0){
+				url=url+ "id="+String.valueOf(datas.get(i).getOaj_id());
+			}else {
+				url = url + "&id=" + String.valueOf(datas.get(i).getOaj_id());
+			}
+		}
+
+		System.out.println("url ==========" +url);
 		System.out.println("--------------------------");
-		return null;
+		HashMap hash = new HashMap();
+		hash.put("url",url);
+		return hash;
 	}
 }
