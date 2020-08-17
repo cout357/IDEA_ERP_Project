@@ -3,6 +3,7 @@ package com.itheima.service.security.impl;
 
 import com.itheima.mapper.AccountMapper;
 import com.itheima.mapper.RoleMapper;
+import com.itheima.model.Account;
 import com.itheima.model.Role;
 import com.itheima.service.security.FavUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,26 +33,39 @@ public class FavUserDetailServiceImpl implements FavUserDetailService {
     private RoleMapper roleMapper;
 
 
+    /**
+     * 数据库State>0返回真
+     * @param string
+     * @return
+     * @throws UsernameNotFoundException
+     */
 
     @Override
     public UserDetails loadUserByUsername(String string) throws UsernameNotFoundException {
 
-        return  new User(accountMapper.AccountFindByEmail(string).getUser(),"{noop}"+ accountMapper.AccountFindByEmail(string).getPassword(),true,true,true,true,getAuthorities(string));
+        Account account = accountMapper.AccountFindByEmail(string);
+        boolean flag;
+        if (account.getState() > 0)
+            flag = true;
+        else
+            flag = false;
+
+        return  new User(account.getUser(),"{noop}"+ account.getPassword(),true,true,true,flag,getAuthorities(account.getRole()));
     }
 
 
 
     /**  * 获取用户的角色权限,为了降低实验的难度，这里去掉了根据用户名获取角色的步骤     * @param    * @return   */
-    private Collection<GrantedAuthority> getAuthorities(String user){
+    private Collection<GrantedAuthority> getAuthorities(String role){
         List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
-        if (accountMapper.AccountFindByEmail(user).getRole().equals("ROOT")){
+        if (role.equals("ROOT")){
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "SALES"));
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "ADMIN"));
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "ROOT"));
-        }else if (accountMapper.AccountFindByEmail(user).getRole().equals("SALES"))
+        }else if (role.equals("SALES"))
         {
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "SALES"));
-        }else if (accountMapper.AccountFindByEmail(user).getRole().equals("ADMIN")){
+        }else if (role.equals("ADMIN")){
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "ADMIN"));
         }
         return authList;
