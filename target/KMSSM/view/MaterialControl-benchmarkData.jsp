@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList"  %>
-<%@ page import="com.itheima.model.GeneralLedger"%>
+<%@ page import="com.itheima.model.CustomerInfo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -37,15 +37,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				background-color: #FF6666;
 			}
 			.tinfo-2{
-				background-color: #FF0000;
+				background-color: #FF9933;
 			}
 			.tinfo-3{
-				background-color: #008000;
+				background-color: #FF9966;
 			}
 			.tinfo-4{
-				background-color: #6666cc;
+				background-color: #669933;
 			}
-			/*.tinfo-1,.tinfo-2,.tinfo-3,.tinfo-4,.tinfo-5,.tinfo-6,.tinfo-7{}*/
+			.tinfo-5{
+				background-color: #FF6600;
+			}
+			.tinfo-6{
+				background-color: #3399CC;
+			}
+			.tinfo-7{
+				background-color: #6666CC;
+			}
+			.content-head .totalInfo-box .table-box{
+				width:500px;
+			}
+			.content-head .totalInfo-box .totalInfo-menu{
+				width:500px;
+			}
 		</style>
 	</head>
 	<body>
@@ -84,6 +98,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<ul class="subsublist">
 								
 								<li class="subsubitem">
+								<a href="BenchmarkDataCT/limitQuery" class="select-a  selected">
+										<div class="text-icon icon"><span class="icon-text">成</span></div>
+										<span class="select-text text">成品基准信息</span>
+									</a>
+								</li>
+								
+								<li class="subsubitem">
 									<a href="OrdersAndJournalCT/limitQuery" class="select-a ">
 										<div class="text-icon icon"><span class="icon-text">订</span></div>
 										<span class="select-text text">订单+流水账</span>
@@ -91,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 								
 								<li class="subsubitem">
-									<a href="GeneralLedgerCT/limitQuery" class="select-a  selected">
+									<a href="GeneralLedgerCT/limitQuery" class="select-a ">
 										<div class="text-icon icon"><span class="icon-text">动</span></div>
 										<span class="select-text text">动态总账</span>
 									</a>
@@ -111,7 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<ul class="subsublist">
 								
 								<li class="subsubitem">
-									<a href="view/MaterialControl-partsInventory.jsp" class="select-a ">
+									<a href="view/MaterialControl-partsInventory.jsp" class="select-a">
 										<div class="text-icon icon"><span class="icon-text">零</span></div>
 										<span class="select-text text">零件库存台账</span>
 									</a>
@@ -172,9 +193,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						
 					</ul>
-			<div class="select">
-			</div>
-			
+				</li>
+			</ul>
 			<div class="icon iconfont"></div>
 		</div>
 		<div class="body">
@@ -247,12 +267,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
                         
 						<li class="head-item tablelink">
-							<a class="mainlink" href="view/MaterialControl-ordersAndJournal.jsp">物控管理</a>
+							<a class="mainlink" href="view/MaterialControl-benchmarkData.jsp">物控管理</a>
 							<div class="dropdown-content">
 								<ul class="droplist">
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/MaterialControl-ordersAndJournal.jsp">成品库存标准及库存动态</a>
+										<a class="droplink" href="view/MaterialControl-benchmarkData.jsp">成品库存标准及库存动态</a>
 									</li>
                                     
 									<li class="dropitem">
@@ -376,8 +396,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>康明订单</span>
 						<span class="sep">/</span>
-						<span>订单+流水账</span>
+						<span>成品基准信息</span>
 					</div>
+<!-- 统计信息 -->
 					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
@@ -387,44 +408,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							<table class="totalInfo">
 								<tr class="row">
-									<th class="hor val tinfo-1" colspan="1">开始运行日期</th>
-									<th class="hor val tinfo-1 startData" colspan="1">${totalInfo.startData }</th>
-									<th class="hor val tinfo-1" colspan="1">运行天数</th>
-									<th class="hor val tinfo-1 startDay" colspan="1">${totalInfo.startDay }</th>
-									<th class="hor val tinfo-2" colspan="1">无订单款数</th>
-									<th class="hor val tinfo-2 noOrderAmount" colspan="1">${totalInfo.noOrderAmount }</th>
-									<th class="hor val tinfo-2" colspan="1">无订单库存</th>
-									<th class="hor val tinfo-2 noOrderInventory" colspan="1">${totalInfo.noOrderInventory }</th>
-									<th class="hor val tinfo-2" colspan="1">错误数据项</th>
-									<th class="hor val tinfo-2 errorDataItem" colspan="1">${totalInfo.errorDataItem }</th>
-									<th class="hor val tinfo-3" colspan="2">总结存数</th>
-								</tr>
-								<tr class="row title-tr">
-									<th class="hor val tinfo-4" colspan="1">入库种数</th>
-									<th class="hor val tinfo-4 warehousingSpecies" colspan="1">${totalInfo.warehousingSpecies }</th>
-									<th class="hor val tinfo-4 " colspan="1">出库种数</th>
-									<th class="hor val tinfo-4 outboundSpecies" colspan="1">${totalInfo.outboundSpecies }</th>
-									<th class="hor val tinfo-4" colspan="1">订单总需求</th>
-									<th class="hor val tinfo-4 totalOrderDemand" colspan="1">${totalInfo.totalOrderDemand }</th>
-									<th class="hor val tinfo-4" colspan="1">缺货款数</th>
-									<th class="hor val tinfo-4 lackOfLoans" colspan="1">${totalInfo.lackOfLoans }</th>
-									<th class="hor val tinfo-4" colspan="1">缺货数量</th>
-									<th class="hor val tinfo-4 lackOfCreditNumber" colspan="1">${totalInfo.lackOfCreditNumber }</th>
-									<th class="hor val tinfo-3 conclusionDepositNumber" colspan="2">${totalInfo.conclusionDepositNumber }</th>
-								</tr>
-								<tr class="row" >
-									<th class="hor val tinfo-3" colspan="1">总款数</th>
-									<th class="hor val tinfo-3 totalNumber" colspan="1">${totalInfo.totalNumber }</th>
-									<th class="hor val tinfo-3" colspan="1">总入库数</th>
-									<th class="hor val tinfo-3 totalNumberIncoming" colspan="1">${totalInfo.totalNumberIncoming }</th>
-									<th class="hor val tinfo-3" colspan="1">实际出库数</th>
-									<th class="hor val tinfo-3 actualNumberWarehouses" colspan="1">${totalInfo.actualNumberWarehouses }</th>
-									<th class="hor val tinfo-3" colspan="1">备货预出库数</th>
-									<th class="hor val tinfo-3 prepareQuantity" colspan="1">${totalInfo.prepareQuantity }</th>
-									<th class="hor val tinfo-3" colspan="1">总入库频次数</th>
-									<th class="hor val tinfo-3 totalStorageFrequency" colspan="1">${totalInfo.totalStorageFrequency }</th>
-									<th class="hor val tinfo-3" colspan="1">总出库频次数</th>
-									<th class="hor val tinfo-3 totalOutboundFrequency" colspan="1">${totalInfo.totalOutboundFrequency }</th>
+									<th class="hor val tinfo-1" colspan="1">总款数</th>
+									<th class="hor val tinfo-1 totalAmount" colspan="1">${totalInfo.totalAmount }</th>
+									<th class="hor val tinfo-1" colspan="1">常销款数</th>
+									<th class="hor val tinfo-1 startData" colspan="1">-</th>
 								</tr>
 							</table>
 						</div>
@@ -468,7 +455,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li>
 							</ul>
 						</div>
-						<div class="tablename">动态总账表</div>
+						<div class="tablename">成品基准信息表</div>
 					</div>
 					<div class="table-box" id="data-table-box">
 						<!-- 列筛选 -->
@@ -483,6 +470,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
+												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -490,7 +478,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" οnkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -524,9 +512,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 							</ul>
 						</div>
-						<input type="hidden" id="colSum" value="23"/>
-						<input type="hidden" id="tableName" value="GeneralLedger"/>
-						<table class="datatable long">
+						<input type="hidden" id="colSum" value="8"/>
+						<input type="hidden" id="tableName" value="BenchmarkData"/>
+						<table class="datatable">
 							<tr class="colname-tr">
 								<th class="colname-th">选择
 									<div class="menu">
@@ -539,133 +527,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text strCol">产品编号/名称</span>
+								<th class="colname-th "><span class="colname-text strCol">康明编号</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text strCol hid">固定存放库位</span>
+								<th class="colname-th "><span class="colname-text strCol">装箱标准(箱/只)</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text strCol hid">产品分类</span>
+								<th class="colname-th "><span class="colname-text strCol">每箱毛重（公斤）</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text strCol hid">业务员</span>
+								<th class="colname-th "><span class="colname-text strCol">箱尺寸（CM）</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text dateCol hid">盘点数据确认日期</span>
+								<th class="colname-th "><span class="colname-text strCol">卡板标准（卡板/箱）</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text numCol">订单总需求数</span>
+								<th class="colname-th "><span class="colname-text strCol">卡板标准（长*宽）</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
 									</div>
 								</th>
-								<th class="colname-th"><span class="colname-text numCol">入库累计数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">实际出库累计数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">当前可用库存数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">当前库存箱数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">需求匹配状态</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">备货数量</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">备货后可用库存数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol hid">19年标准库存</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">20年月均用量</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">月均单数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">订单张数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">入库频次</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">出库频次</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol hid">低于最低库存预警款数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol hid">高于最大库存总款数</span>
-									<div class="menu">
-										<span class="sortSign iconfont">&#xe660;</span><br/>
-										<span class="sort-cancel iconfont">一</span><br/>
-									</div>
-								</th>
-								<th class="colname-th"><span class="colname-text numCol">建议投产数量</span>
+								<th class="colname-th "><span class="colname-text strCol">说明</span>
 									<div class="menu">
 										<span class="sortSign iconfont">&#xe660;</span><br/>
 										<span class="sort-cancel iconfont">一</span><br/>
@@ -683,35 +581,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</th>
 							</tr>
 							<!-- 表格数据 -->
-							<c:forEach items="${generalLedgers }" var="db" varStatus="idx">
+							<c:forEach items="${datas }" var="data" varStatus="idx">
 								<tr class="row">
-									<th class="hor"><input type="checkbox" class="dataCheb" value="${db.gl_id }"/></th>
-									<th class="hor val">${db.gl_id }</th>
-									<th class="hor val">${db.kmId }</th>
-									<th class="hor val">${db.deposit }</th>
-									<th class="hor val">${db.productClassification }</th>
-									<th class="hor val">${db.salesMan }</th>
-									<th class="hor val">${db.dataTime }</th>
-									<th class="hor val">${db.orderNeedSum }</th>
-									<th class="hor val">${db.storageSum }</th>
-									<th class="hor val">${db.checkoutSum }</th>
-									<th class="hor val">${db.stockSum }</th>
-									<th class="hor val">${db.stockCaseSum }</th>
-									<th class="hor val">${db.needStage }</th>
-									<th class="hor val">${db.preExportNumber }</th>
-									<th class="hor val">${db.availableNumber }</th>
-									<th class="hor val">${db.beforeYear }</th>
-									<th class="hor val">${db.averageMouth2020 }</th>
-									<th class="hor val">${db.averageMouth }</th>
-									<th class="hor val">${db.orderNumber }</th>
-									<th class="hor val">${db.storageNumber }</th>
-									<th class="hor val">${db.checkoutNumber }</th>
-									<th class="hor val">${db.lowMiniNeed }</th>
-									<th class="hor val">${db.outHighNeed }</th>
-									<th class="hor val">${db.proposalNumber }</th>
+									<th class="hor"><input type="checkbox" class="dataCheb" value="${data.id}" /></th>
+									<th class="hor val">${data.id}</th>
+									<th class="hor val">${data.kangMingId}</th>
+									<th class="hor val">${data.packingStandard}</th>
+									<th class="hor val">${data.grossWeightOfEachBox}</th>
+									<th class="hor val">${data.tankSize}</th>
+									<th class="hor val">${data.aStandardCardBoardBox}</th>
+									<th class="hor val">${data.aStandardCardBoardLongWide}</th>
+									<th class="hor val">${data.instructions}</th>
 									<th class="hor iconfont sep-hor">
-										<a href="javascript:;" class="editData" name="${db.gl_id }" style="font-size:1.3rem;">&#xe612;</a>
-										<!-- <a href="javascript:;" class="delData" name="${db.gl_id}" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a> -->
+										<a href="javascript:;" class="editData" name="${data.id }" style="font-size:1.3rem;">&#xe612;</a>
+										&emsp;
+										<a href="javascript:;" class="delData" name="${data.id }" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a>
 									</th>
 								</tr>
 							</c:forEach>
@@ -736,7 +620,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--添加页面-->
 		<div id="addBox" class="dialog">
 			<div class="box-head">
-				<span class="title">添加</span>
+				<span class="title">添加账户</span>
 				<div class="fr">
 					<a href="javascript:;" class="close" id="close-addBox">×</a>
 				</div>
@@ -746,20 +630,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<table id="add-table">
 						<thead>
 						<tr class="colName-tr">
-							<th class="colName">产品编号/名称</th>
-							<th class="colName">固定存放库位</th>
-							<th class="colName">产品分类</th>
-							<th class="colName">业务员</th>
+							<th class="colName">康明编号</th>
+							<th class="colName">装箱标准(箱/只)</th>
+							<th class="colName">每箱毛重(公斤)</th>
+							<th class="colName">箱尺寸(CM)</th>
+							<th class="colName">卡板标准(卡板/箱)</th>
+							<th class="colName">卡板标准(长*宽)</th>
+							<th class="colName">说明</th>
 							<th class=""></th>
 							<th class=""></th>
 						</tr>
 						</thead>
 						<tbody id="add-tbody">
 						<tr class="data-tr">
-							<td class="data"><input type="text" name="" id="" class="dataInput kmId" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deposit" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput productClassification" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput kangMingId" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput packingStandard" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput grossWeightOfEachBox" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput tankSize" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput aStandardCardBoardBox" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput aStandardCardBoardLongWide" value="" /></td>
+							<td class="data"><input type="text" name="" id="" class="dataInput instructions" value="" /></td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -778,7 +668,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--编辑页面-->
 		<div id="editBox" class="dialog">
 			<div class="box-head">
-				<span class="title">编辑</span>
+				<span class="title">编辑账户</span>
 				<div class="fr">
 					<a href="javascript:;" class="close">×</a>
 				</div>
@@ -789,23 +679,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" disabled id="" class="dataInput gl_id" value="" /></td>
+							<td class="data"><input type="text" name="" id="" disabled class="dataInput id" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">产品编号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput kmId" value="" /></td>
+							<td class="colName">康明编号：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput kangMingId" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">固定存放库位：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deposit" value="" /></td>
+							<td class="colName">装箱标准(箱/只)：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput packingStandard" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">产品分类：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput productClassification" value="" /></td>
+							<td class="colName">每箱毛重(公斤)：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput grossWeightOfEachBox" value="" /></td>
 						</tr>
 						<tr class="line">
-							<td class="colName">业务员：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" value="" /></td>
+							<td class="colName">箱尺寸(CM)：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput tankSize" value="" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">卡板标准(卡板/箱)：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput aStandardCardBoardBox" value="" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">卡板标准(长*宽)：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput aStandardCardBoardLongWide" value="" /></td>
+						</tr>
+						<tr class="line">
+							<td class="colName">说明：</td>
+							<td class="data"><input type="text" name="" id="" class="dataInput instructions" value="" /></td>
 						</tr>
 						</tbody>
 					</table>
@@ -854,10 +756,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				for(var i = 0;i < $dataTrs.length;i++){
 					var $data = $dataTrs.eq(i);		//单行数据
 					datas[i] = {
-							kmId:                    $data.find('.kmId').val(),
-							deposit:                 $data.find('.deposit').val(),
-							productClassification:   $data.find('.productClassification').val(),
-							salesMan:                $data.find('.salesMan').val()
+						kangMingId:              $data.find('.kangMingId').val(),
+						packingStandard:         $data.find('.packingStandard').val(),
+						grossWeightOfEachBox:    $data.find('.grossWeightOfEachBox').val(),
+						tankSize:                $data.find('.tankSize').val(),
+						aStandardCardBoardBox:   $data.find('.aStandardCardBoardBox').val(),
+						aStandardCardBoardLongWide:$data.find('.aStandardCardBoardLongWide').val(),
+						instructions:            $data.find('.instructions').val()
 					};
 				}
 				return datas;
@@ -867,17 +772,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var $editTbody = $('#editBox .edit-tbody');
 				//接收时全部接收，修改哪些取决于后台mapper语句
 				var data = {
-						gl_id:              $editTbody.find(".gl_id").val(),
-						kmId:               $editTbody.find(".kmId").val(),
-						deposit:            $editTbody.find(".deposit").val(),
-						productClassification:$editTbody.find(".productClassification").val(),
-						salesMan:           $editTbody.find(".salesMan").val()
+					kangMingId:                   $editTbody.find(".kangMingId").val(),
+					packingStandard:              $editTbody.find(".packingStandard").val(),
+					grossWeightOfEachBox:         $editTbody.find(".grossWeightOfEachBox").val(),
+					tankSize:                     $editTbody.find(".tankSize").val(),
+					aStandardCardBoardBox:        $editTbody.find(".aStandardCardBoardBox").val(),
+					aStandardCardBoardLongWide:   $editTbody.find(".aStandardCardBoardLongWide").val(),
+					instructions:                 $editTbody.find(".instructions").val(),
+					benchmarkDataVersionNumber:   $editTbody.find(".benchmarkDataVersionNumber").val()
 				};
 				return data;
 			}
 			function refreshSuc(hash){
 				console.log(hash);
-				var datas = hash.generalLedgers;
+				var datas = hash.datas;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
 				refreshDataPageLinks();
@@ -886,62 +794,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				for(var i = 0;i < datas.length;i++){
 					var $newRow = $dataRowTemp.clone(true);
 					var $vals = $newRow.children('.val');
-					$vals.eq(0).html(datas[i].gl_id);
-					$vals.eq(1).html(datas[i].kmId);
-					$vals.eq(2).html(datas[i].deposit);
-					$vals.eq(3).html(datas[i].productClassification);
-					$vals.eq(4).html(datas[i].salesMan);
-					$vals.eq(5).html(datas[i].dataTime);
-					$vals.eq(6).html(datas[i].orderNeedSum);
-					$vals.eq(7).html(datas[i].storageSum);
-					$vals.eq(8).html(datas[i].checkoutSum);
-					$vals.eq(9).html(datas[i].stockSum);
-					$vals.eq(10).html(datas[i].stockCaseSum);
-					$vals.eq(11).html(datas[i].needStage);
-					$vals.eq(12).html(datas[i].preExportNumber);
-					$vals.eq(13).html(datas[i].availableNumber);
-					$vals.eq(14).html(datas[i].beforeYear);
-					$vals.eq(15).html(datas[i].averageMouth2020);
-					$vals.eq(16).html(datas[i].averageMouth);
-					$vals.eq(17).html(datas[i].orderNumber);
-					$vals.eq(18).html(datas[i].storageNumber);
-					$vals.eq(19).html(datas[i].checkoutNumber);
-					$vals.eq(20).html(datas[i].lowMiniNeed);
-					$vals.eq(21).html(datas[i].outHighNeed);
-					$vals.eq(22).html(datas[i].proposalNumber);
-					$newRow.find(".dataCheb").val(datas[i].gl_id);
-					$newRow.find(".editData").attr("name",datas[i].gl_id);
-					$newRow.find(".delData").attr("name",datas[i].gl_id);
-					$newRow.find(".delData").remove();
+					$vals.eq(0).html(datas[i].id);
+					$vals.eq(1).html(datas[i].kangMingId);
+					$vals.eq(2).html(datas[i].packingStandard);
+					$vals.eq(3).html(datas[i].grossWeightOfEachBox);
+					$vals.eq(4).html(datas[i].tankSize);
+					$vals.eq(5).html(datas[i].aStandardCardBoardBox);
+					$vals.eq(6).html(datas[i].aStandardCardBoardLongWide);
+					$vals.eq(7).html(datas[i].instructions);
+					$newRow.find(".dataCheb").val(datas[i].id);
+					$newRow.find(".editData").attr("name",datas[i].id);
+					$newRow.find(".delData").attr("name",datas[i].id);
 					$('.datatable').append($newRow);
 				}
-
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
-				$editTbody.find(".gl_id").val(data.gl_id);
-				$editTbody.find(".kmId").val(data.kmId);
-				$editTbody.find(".deposit").val(data.deposit);
-				$editTbody.find(".productClassification").val(data.productClassification);
-				$editTbody.find(".salesMan").val(data.salesMan);
-				$editTbody.find(".dataTime").val(data.dataTime);
-				$editTbody.find(".orderNeedSum").val(data.orderNeedSum);
-				$editTbody.find(".storageSum").val(data.storageSum);
-				$editTbody.find(".checkoutSum").val(data.checkoutSum);
-				$editTbody.find(".stockSum").val(data.stockSum);
-				$editTbody.find(".stockCaseSum").val(data.stockCaseSum);
-				$editTbody.find(".needStage").val(data.needStage);
-				$editTbody.find(".preExportNumber").val(data.preExportNumber);
-				$editTbody.find(".availableNumber").val(data.availableNumber);
-				$editTbody.find(".beforeYear").val(data.beforeYear);
-				$editTbody.find(".averageMouth2020").val(data.averageMouth2020);
-				$editTbody.find(".averageMouth").val(data.averageMouth);
-				$editTbody.find(".orderNumber").val(data.orderNumber);
-				$editTbody.find(".storageNumber").val(data.storageNumber);
-				$editTbody.find(".checkoutNumber").val(data.checkoutNumber);
-				$editTbody.find(".lowMimiNeed").val(data.lowMiniNeed);
-				$editTbody.find(".outHighNeed").val(data.outHighNeed);
-				$editTbody.find(".proposalNumber").val(data.proposalNumber);
+				$editTbody.find(".id").val(data.id);
+				$editTbody.find(".kangMingId").val(data.kangMingId);
+				$editTbody.find(".packingStandard").val(data.packingStandard);
+				$editTbody.find(".grossWeightOfEachBox").val(data.grossWeightOfEachBox);
+				$editTbody.find(".tankSize").val(data.tankSize);
+				$editTbody.find(".aStandardCardBoardBox").val(data.aStandardCardBoardBox);
+				$editTbody.find(".aStandardCardBoardLongWide").val(data.aStandardCardBoardLongWide);
+				$editTbody.find(".instructions").val(data.instructions);
+				$editTbody.find(".benchmarkDataVersionNumber").val(data.benchmarkDataVersionNumber);
 			}
 			
 			function refreshTotalInfoSuc(hash){
@@ -949,28 +826,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var refreshTime = hash.refreshTime;
 				//填入统计信息
 				if(totalInfo!=undefined&&totalInfo!=null){
-					$('.startData').text(totalInfo.startData);
-					$('.startDay').text(totalInfo.startDay);
-					$('.noOrderAmount').text(totalInfo.noOrderAmount);
-					$('.noOrderInventory').text(totalInfo.noOrderInventory);
-					$('.errorDataItem').text(totalInfo.errorDataItem);
-					$('.totalNumber').text(totalInfo.totalNumber);
-					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
-					$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
-					$('.prepareQuantity').text(totalInfo.prepareQuantity);
-					$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
-					$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
-					$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
-					$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
-					$('.outboundSpecies').text(totalInfo.outboundSpecies);
-					$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
-					$('.lackOfLoans').text(totalInfo.lackOfLoans);
-					$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
+					$('.totalAmount').text(totalInfo.totalAmount);
 				}
 				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表
-			var hiddenCols = ['固定存放库位','产品分类','业务员','盘点数据确认日期','低于最低库存预警款数','高于最大库存总款数'];
+			var hiddenCols = null;
 		</script>
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>

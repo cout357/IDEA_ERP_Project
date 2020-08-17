@@ -368,6 +368,12 @@
 	text-align: left;
 	border-bottom: 1px solid #eee;
 }
+.cur-def{
+	cursor:default;
+}
+.cur-poi{
+	cursor:pointer;
+}
 .colscreen-dropdown .valuescreen .list .item .cheb{
 	cursor:pointer;
 }
@@ -540,7 +546,6 @@
 	100%{margin-top:30px;opacity:1;}
 }
 .content-head .totalInfo-box .table-box{
-	width:1500px;
 	margin:0 auto;
 	margin-top: 10px;
 	overflow: hidden;white-space:nowrap;
@@ -551,7 +556,6 @@
 .content-head .totalInfo-box .table-box .totalInfo{
 }
 .content-head .totalInfo-box .totalInfo-menu{
-	width:1500px;
 	text-align:right;
 	margin:0 auto;
 	padding:4px 0;
@@ -569,4 +573,5 @@
 	color:#fff;
 	border:none;
 	border-radius:3px;
+	outline:none;
 }

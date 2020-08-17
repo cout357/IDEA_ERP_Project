@@ -140,9 +140,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						
 					</ul>
-			<div class="select">
-			</div>
-			
+				</li>
+			</ul>
 			<div class="icon iconfont"></div>
 		</div>
 		<div class="body">
@@ -215,12 +214,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
                         
 						<li class="head-item tablelink">
-							<a class="mainlink" href="view/MaterialControl-ordersAndJournal.jsp">物控管理</a>
+							<a class="mainlink" href="view/MaterialControl-benchmarkData.jsp">物控管理</a>
 							<div class="dropdown-content">
 								<ul class="droplist">
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/MaterialControl-ordersAndJournal.jsp">成品库存标准及库存动态</a>
+										<a class="droplink" href="view/MaterialControl-benchmarkData.jsp">成品库存标准及库存动态</a>
 									</li>
                                     
 									<li class="dropitem">
@@ -346,47 +345,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>用户权限管理</span>
 					</div>
+<!-- 统计信息 -->
 					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
+							<div class="totalInfo-menu">
+								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${totalInfoRefreshTime }</span></span>
+								<button class="updateTotalInfoBT cur-poi">更新</button>
+							</div>
 							<table class="totalInfo">
 								<tr class="row">
-									<th class="hor val tinfo-1" colspan="1">仓管员</th>
-									<th class="hor val tinfo-1" colspan="1">陈燕</th>
+									<th class="hor val tinfo-1" colspan="1">开始运行日期</th>
+									<th class="hor val tinfo-1 startData" colspan="1">${totalInfo.startData }</th>
 									<th class="hor val tinfo-1" colspan="1">运行天数</th>
-									<th class="hor val tinfo-1" colspan="1">122</th>
-									<th class="hor val tinfo-2" colspan="2">版本更新日期</th>
-									<th class="hor val tinfo-2" colspan="2">4月10日</th>
-									<th class="hor val tinfo-2" colspan="2">开始运行日期</th>
-									<th class="hor val tinfo-2" colspan="2">3月17日</th>
+									<th class="hor val tinfo-1 startDay" colspan="1">${totalInfo.startDay }</th>
+									<th class="hor val tinfo-2" colspan="1">无订单款数</th>
+									<th class="hor val tinfo-2 noOrderAmount" colspan="1">${totalInfo.noOrderAmount }</th>
+									<th class="hor val tinfo-2" colspan="1">无订单库存</th>
+									<th class="hor val tinfo-2 noOrderInventory" colspan="1">${totalInfo.noOrderInventory }</th>
+									<th class="hor val tinfo-2" colspan="1">错误数据项</th>
+									<th class="hor val tinfo-2 errorDataItem" colspan="1">${totalInfo.errorDataItem }</th>
+									<th class="hor val tinfo-3" colspan="2">总结存数</th>
 								</tr>
 								<tr class="row title-tr">
-									<th class="hor val tinfo-3" colspan="1">预出库数量</th>
-									<th class="hor val tinfo-3" colspan="1">2E+05</th>
-									<th class="hor val tinfo-5" colspan="1">库存填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">0</th>
-									<th class="hor val tinfo-7" colspan="1">总订单需求数</th>
-									<th class="hor val tinfo-7" colspan="1">1659326</th>
-									<th class="hor val tinfo-7" colspan="1">总结库存数</th>
-									<th class="hor val tinfo-7" colspan="1">1406845</th>
-									<th class="hor val tinfo-6" colspan="1">预警欠数未发单数</th>
-									<th class="hor val tinfo-6" colspan="1">842</th>
-									<th class="hor val tinfo-4" colspan="1">拖期单数</th>
-									<th class="hor val tinfo-4" colspan="1">787</th>
+									<th class="hor val tinfo-4" colspan="1">入库种数</th>
+									<th class="hor val tinfo-4 warehousingSpecies" colspan="1">${totalInfo.warehousingSpecies }</th>
+									<th class="hor val tinfo-4 " colspan="1">出库种数</th>
+									<th class="hor val tinfo-4 outboundSpecies" colspan="1">${totalInfo.outboundSpecies }</th>
+									<th class="hor val tinfo-4" colspan="1">订单总需求</th>
+									<th class="hor val tinfo-4 totalOrderDemand" colspan="1">${totalInfo.totalOrderDemand }</th>
+									<th class="hor val tinfo-4" colspan="1">缺货款数</th>
+									<th class="hor val tinfo-4 lackOfLoans" colspan="1">${totalInfo.lackOfLoans }</th>
+									<th class="hor val tinfo-4" colspan="1">缺货数量</th>
+									<th class="hor val tinfo-4 lackOfCreditNumber" colspan="1">${totalInfo.lackOfCreditNumber }</th>
+									<th class="hor val tinfo-3 conclusionDepositNumber" colspan="2">${totalInfo.conclusionDepositNumber }</th>
 								</tr>
 								<tr class="row" >
-									<th class="hor val tinfo-3" colspan="1">预出库单数</th>
-									<th class="hor val tinfo-3" colspan="1">613</th>
-									<th class="hor val tinfo-5" colspan="1">订单填写报错</th>
-									<th class="hor val tinfo-5" colspan="1">2</th>
-									<th class="hor val tinfo-7" colspan="1">总入库数</th>
-									<th class="hor val tinfo-7" colspan="1">2610076</th>
-									<th class="hor val tinfo-7" colspan="1">总出库数</th>
-									<th class="hor val tinfo-7" colspan="1">1203231</th>
-									<th class="hor val tinfo-6" colspan="1">涉及欠数单次</th>
-									<th class="hor val tinfo-6" colspan="1">302</th>
-									<th class="hor val tinfo-4" colspan="1">拖期数量</th>
-									<th class="hor val tinfo-4" colspan="1">-4E+05</th>
+									<th class="hor val tinfo-3" colspan="1">总款数</th>
+									<th class="hor val tinfo-3 totalNumber" colspan="1">${totalInfo.totalNumber }</th>
+									<th class="hor val tinfo-3" colspan="1">总入库数</th>
+									<th class="hor val tinfo-3 totalNumberIncoming" colspan="1">${totalInfo.totalNumberIncoming }</th>
+									<th class="hor val tinfo-3" colspan="1">实际出库数</th>
+									<th class="hor val tinfo-3 actualNumberWarehouses" colspan="1">${totalInfo.actualNumberWarehouses }</th>
+									<th class="hor val tinfo-3" colspan="1">备货预出库数</th>
+									<th class="hor val tinfo-3 prepareQuantity" colspan="1">${totalInfo.prepareQuantity }</th>
+									<th class="hor val tinfo-3" colspan="1">总入库频次数</th>
+									<th class="hor val tinfo-3 totalStorageFrequency" colspan="1">${totalInfo.totalStorageFrequency }</th>
+									<th class="hor val tinfo-3" colspan="1">总出库频次数</th>
+									<th class="hor val tinfo-3 totalOutboundFrequency" colspan="1">${totalInfo.totalOutboundFrequency }</th>
 								</tr>
 							</table>
 						</div>
@@ -408,7 +414,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<div class="dropdown-content">
 										<ul class="droplist">
 											<li class="dropitem"><a href="javascript:;" class="text">删除</a></li>
-											<li class="dropitem"><a href="javascript:;" class="text dataExport">导出</a></li>
+											<li class="dropitem"><a href="javascript:;" class="text exportData">导出</a></li>
 										</ul>
 									</div>
 								</li>
@@ -421,19 +427,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</ul>
 									</div>
 								</li>
-								<li class="item">
-									<form action="" class="search">
-										<div class="search-group">
-											<input type="search" placeholder="Search" class="search-text"/>
-											<input type="submit" class="search-submit iconfont" value="&#xe618;"/>
-										</div>
-									</form>
-								</li>
 							</ul>
 						</div>
 						<div class="fr">
 							<ul class="list">
-								<li class="item"><a href="javascript:;" id="addData" class="add iconfont link">&#xe627;&nbsp;添加数据</a></li>
+								<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li>
+								<li class="item"><a href="javascript:;"  class="exportData iconfont link">&#xe649;&nbsp;导出数据</a></li>
+								<li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li>
 							</ul>
 						</div>
 						<div class="tablename">用户权限</div>
@@ -451,6 +451,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
+												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -458,7 +459,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" οnkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -544,6 +545,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<input type="checkbox" class="replenishDataCheb">
 									所有页
 								</th>
+								<th class="colscreen-td">
+									<span class="colscreen iconfont"><span class="text">&#xe83b;</span></span>
+								</th>
 							</tr>
 							<!-- 表格数据 -->
 							<c:forEach items="${datas }" var="data" varStatus="idx">
@@ -581,7 +585,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--添加页面-->
-		<div id="addBox">
+		<div id="addBox" class="dialog">
 			<div class="box-head">
 				<span class="title">添加账户</span>
 				<div class="fr">
@@ -625,7 +629,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--编辑页面-->
-		<div id="editBox">
+		<div id="editBox" class="dialog">
 			<div class="box-head">
 				<span class="title">编辑账户</span>
 				<div class="fr">
@@ -671,12 +675,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 		</div>
+<!-- 显示完整数据-对话框 -->
 		<div class="completeValBox">
-			<div class="cont">
-				<span class="text"></span>
-				<div class="iconfont close">×</div>
-			</div>
-		</div>
+	        <div class="cont">
+	            <span class="text"></span>
+	            <div class="iconfont close">×</div>
+	        </div>
+	    </div>
+<!-- 导入数据的选择文件-对话框 -->
+	    <div class="export-chooseFileBox dialog" >
+	    	<form action="http://192.168.1.142:5000/Uploader" method="POST" enctype="multipart/form-data">
+				<div class="box-head">
+					<span class="title">导入数据</span>
+					<div class="fr">
+						<a href="javascript:;" class="close" id="close-box">×</a>
+					</div>
+				</div>
+		    	<div class="box-body">
+			    		<input type="file" name="file" />
+		    	</div>
+				<div class="box-foot">
+					<ul class="footBT-list">
+						<li class="footBT-item"><input type="submit" class="footBT cur-poi" id="submit-edit" value="导入" /></li>
+						<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
+					</ul>
+				</div>
+	    	</form>
+	    </div>
+	    
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
 			function getAddDatas(){
@@ -725,6 +751,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(2).html(datas[i].user);
 					$vals.eq(2).html(datas[i].role);
 					$vals.eq(2).html(datas[i].state);
+					$newRow.find(".dataCheb").val(datas[i].id);
 					$newRow.find(".editData").attr("name",datas[i].id);
 					$newRow.find(".delData").attr("name",datas[i].id);
 					$('.datatable').append($newRow);
@@ -739,12 +766,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$editTbody.find(".role").val(data.strRole);
 				$editTbody.find(".state").val(data.strRole);
 			}
+			
+			function refreshTotalInfoSuc(hash){
+				var totalInfo = hash.totalInfo;
+				var refreshTime = hash.refreshTime;
+				//填入统计信息
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.tardinessSingular').text(totalInfo.tardinessSingular);
+					$('.tardinessNumber').text(totalInfo.tardinessNumber);
+					$('.inventoryError').text(totalInfo.inventoryError);
+				}
+				console.log($('.totalInfoRefreshTime'));
+				$('.totalInfoRefreshTime').text(refreshTime);
+			}
 			//隐藏列表
-			var hiddenCols = [];
+			var hiddenCols = null;
 		</script>
-		<script charset="UTF-8" src="js/init.js"></script>
-		<script charset="UTF-8" src="js/funcsOfAjax.js"></script>
-		<script charset="UTF-8" src="js/event.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/funcsOfAjax.js"></script>
+		<script src="js/event.js"></script>
 		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

@@ -38,7 +38,7 @@ public class GeneralLedgerController {
 		model.addAttribute("totalInfo",totalInfo);
 		model.addAttribute("totalInfoRefreshTime", UtilFunc.getTime());
 		System.out.println("limitQuery_gl:"+generalLedgers);
-		return "MaterialControl-DynamicGeneralLedger";
+		return "MaterialControl-dynamicGeneralLedger";
 	}
 	/*
 	@RequestMapping("findById")

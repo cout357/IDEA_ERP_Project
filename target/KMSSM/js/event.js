@@ -105,52 +105,54 @@ function closeNav(nav,body,navTargetWidth){
 
 //统计信息功能
 var totalInfoLink = document.getElementById("totalInfoLink");
-var totalInfoIsClose = true;		//统计信息页是否是合并的
-var totalInfoTableBox = document.getElementById("totalInfoTableBox");
-var fullWidth = totalInfoTableBox.getBoundingClientRect().width;
-var fullHeight = totalInfoTableBox.getBoundingClientRect().height;
-//fullWidth = totalInfoTableBox.getBoundingClientRect().width;
-fullWidth = 1500;
-fullHeight = totalInfoTableBox.getBoundingClientRect().height;
-totalInfoTableBox.style.width = 0;
-totalInfoTableBox.style.height = 0;
-var isFirst = true;
-var totalInfoShowSpeed = 0.2;
-TS = null;
-$('#totalInfoLink').on('click',function(){
+if(totalInfoLink!=null){
+	var totalInfoIsClose = true;		//统计信息页是否是合并的
 	var totalInfoTableBox = document.getElementById("totalInfoTableBox");
-	if(totalInfoIsClose){
-//		totalInfoTableBox.style.display = "block";
+	var fullHeight = totalInfoTableBox.getBoundingClientRect().height;
+	//fullWidth = totalInfoTableBox.getBoundingClientRect().width;
+	fullWidth = $('.content-head .totalInfo-box .table-box').width();
+	fullHeight = totalInfoTableBox.getBoundingClientRect().height;
+	totalInfoTableBox.style.width = 0;
+	totalInfoTableBox.style.height = 0;
+	var isFirst = true;
+	var totalInfoShowSpeed = 0.2;
+	TS = null;
+	$('#totalInfoLink').on('click',function(){
+		var totalInfoTableBox = document.getElementById("totalInfoTableBox");
+		if(totalInfoIsClose){
+//			totalInfoTableBox.style.display = "block";
+			clearInterval(TS);
+			TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight,totalInfoShowSpeed);
+			
+			totalInfoLink.style.backgroundColor="#000";
+			totalInfoLink.style.color = "#fff";
+		}
+		else{
+//			totalInfoTableBox.style.display = "none";
+			clearInterval(TS);
+			TS = setInterval(toSize,10,totalInfoTableBox,0,0,totalInfoShowSpeed);
+			totalInfoLink.style.backgroundColor="#fff";
+			totalInfoLink.style.color = "#000";
+		}
+		totalInfoIsClose = !totalInfoIsClose;
+	});
+
+	totalInfoLink.onmouseenter = function(){
+		if(isFirst){
+			isFirst = false;
+			console.log(fullWidth);console.log(fullHeight);
+		}
 		clearInterval(TS);
 		TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight,totalInfoShowSpeed);
-		
-		totalInfoLink.style.backgroundColor="#000";
-		totalInfoLink.style.color = "#fff";
 	}
-	else{
-//		totalInfoTableBox.style.display = "none";
+
+	totalInfoLink.onmouseleave = function(){
+		if(!totalInfoIsClose)return;		/*展开状态就不做关闭动画*/
 		clearInterval(TS);
 		TS = setInterval(toSize,10,totalInfoTableBox,0,0,totalInfoShowSpeed);
-		totalInfoLink.style.backgroundColor="#fff";
-		totalInfoLink.style.color = "#000";
 	}
-	totalInfoIsClose = !totalInfoIsClose;
-});
-
-totalInfoLink.onmouseenter = function(){
-	if(isFirst){
-		isFirst = false;
-		console.log(fullWidth);console.log(fullHeight);
-	}
-	clearInterval(TS);
-	TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight,totalInfoShowSpeed);
 }
 
-totalInfoLink.onmouseleave = function(){
-	if(!totalInfoIsClose)return;		/*展开状态就不做关闭动画*/
-	clearInterval(TS);
-	TS = setInterval(toSize,10,totalInfoTableBox,0,0,totalInfoShowSpeed);
-}
 
 
 
@@ -246,7 +248,7 @@ function addDataTableEvent(){
 	$('.datatable .row .dataCheb').on("click",dataChebClick);
 }
 addDataTableEvent();
-
+console.log($('.table-top .fl .dropdownLink'));
 $('.table-top .fl .dropdownLink').on('click',function(){
 	var $this = $(this);
 	var isPress = $this.siblings(' .dropdown-content').css("display")=="none"?true:false;
@@ -581,6 +583,11 @@ $('.numscreen-item').mouseenter(function(){
 $('.numscreen-all-submit').click(function(){
 	var sign = $('.numscreen-select').eq(screen_colIdx).val();
 	var num = $('.numscreen-val').eq(screen_colIdx).val();
+	if(num.length==0){
+		alert("筛选条件不能为空!");
+		return;
+	}
+	num = putNum($('.numscreen-val').eq(screen_colIdx));
 	colValuescreen[screen_colIdx] = "&number "+sign+num;
 	console.log(colValuescreen[screen_colIdx]);
 	submitQuery(sign+num);
@@ -658,11 +665,6 @@ function tmp2(){
 	}
 }
 
-//限制输入函数
-//只能输入数字和小数点
-function putNum(_this){
-	console.log(_this.value);
-}
 
 //数据选择
 //当前页数据全选事件
@@ -735,4 +737,21 @@ $('.dialog .close').on('click',function(){
 //更新统计信息按钮事件
 $('.totalInfo-box .table-box .totalInfo-menu .updateTotalInfoBT').on('click',function(){
 	refreshTotalInfoAjax(tableName);
+});
+
+
+//限制输入函数
+//只能输入数字和小数点
+function putNum($this){
+	$this.val( $this.val().replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'') );
+	return $this.val();
+}
+//键入数值筛选事件
+
+$('.numscreen-val').keydown(function(){
+	if(event.keyCode==13)event.keyCode=9
+});
+$('.numscreen-val').keyup(function(){
+	$this = $(this);
+	putNum($this);
 });
