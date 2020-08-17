@@ -29,7 +29,7 @@
             <div class="userInfo-box" id="username-box"><div class="icon iconfont">&#xe602;</div><input type="text" class="userInfo" name="username" id="username" value="888@qq.com"/></div>
             <div class="userInfo-box" id="password-box"><div class="icon iconfont">&#xe626;</div><input type="password" class="userInfo" name="password" id="password" value="123"/></div>
             <div class="verCode-box"><input type="text" class="verCode" name="verCode" /><a href="#" class="verCode-Img"></a></div>
-            <div class="submit-box"><input type="submit" id="submit" value="登录" /></div>
+            <div class="submit-box"><input type="submit" id="submit" class="cur-poi" value="登录" /></div>
         </form>
 
     </div>

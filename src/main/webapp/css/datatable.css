@@ -368,12 +368,6 @@
 	text-align: left;
 	border-bottom: 1px solid #eee;
 }
-.cur-def{
-	cursor:default;
-}
-.cur-poi{
-	cursor:pointer;
-}
 .colscreen-dropdown .valuescreen .list .item .cheb{
 	cursor:pointer;
 }
@@ -515,4 +509,64 @@
 }
 .table-top #dataCheckedMenu-dropdown .dropdownLink{
 	padding-left:20px;
+}
+/*统计信息*/
+.content-head .totalInfo-box{
+	width:100%;
+	margin-top: 72px;
+	margin-bottom: 30px;
+	position: relative;
+}
+.content-head .totalInfo{
+	width:100%;
+	border-collapse: collapse;
+	border: 1px solid #ebebeb;
+}
+.content-head .totalInfo-box .dropdownLink{
+	position: relative;
+	display: block;
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+	margin:0 auto;
+	color:rgba(0,0,0,.6);
+}
+/*从上到下淡入的显示*/
+@keyframes moveDownShow{
+	0%{margin-top:0px;opacity:0;}
+	100%{margin-top:30px;opacity:1;}
+}
+.content-head .totalInfo-box .table-box{
+	width:1500px;
+	margin:0 auto;
+	margin-top: 10px;
+	overflow: hidden;white-space:nowrap;
+/*	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ 	animation:moveDownShow 1s;
+	animation-fill-mode:forwards; */
+}
+.content-head .totalInfo-box .table-box .totalInfo{
+}
+.content-head .totalInfo-box .totalInfo-menu{
+	width:1500px;
+	text-align:right;
+	margin:0 auto;
+	padding:4px 0;
+}
+.content-head .totalInfo-box .totalInfo-menu .refreshTimeText{
+	font-size:12px;
+	color:#444;
+}
+.content-head .totalInfo-box .totalInfo-menu .updateTotalInfoBT{
+	width:60px;
+	height:25px;
+	margin-left:3px;
+	line-height:25px;
+	background-color:limegreen;
+	color:#fff;
+	border:none;
+	border-radius:3px;
 }

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.itheima.model.OrdersAndJournalTotalInfo;
+import com.itheima.otherClass.UtilFunc;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,22 +33,16 @@ public class OrdersAndJournalController {
 	@RequestMapping("limitQuery")
 	public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx,@RequestParam(defaultValue = "30")Integer pageDataCount,Model model) {
 		List<OrdersAndJournal> ordersAndJournals = oService.limitQuery(pageIdx,pageDataCount);
+		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
 		model.addAttribute("ordersAndJournals", ordersAndJournals);
 		model.addAttribute("pageIdx",pageIdx);
 		model.addAttribute("pageDataCount",pageDataCount);
 		model.addAttribute("dataCount",oService.findCount());
-		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
 		model.addAttribute("totalInfo", totalInfo);
+		model.addAttribute("totalInfoRefreshTime", UtilFunc.getTime());
 		return "MaterialControl-ordersAndJournal";
 	}
-	/*
-	@RequestMapping("findById")
-	@ResponseBody
-	public CustomerInfo findById(Integer id) {
-		CustomerInfo customer = cService.findById(id);
-		return customer;
-	}
-	*/
+	
 	@RequestMapping("completeQuery")
 	@ResponseBody
 	public HashMap customerSort(@RequestBody List<String> screenInfo,@RequestParam Integer pageIdx,@RequestParam Integer pageDataCount){
@@ -59,12 +55,20 @@ public class OrdersAndJournalController {
 		hash.put("ordersAndJournals", ordersAndJournals);
 		hash.put("pageIdx",pageIdx);
 		hash.put("dataCount", count);
-		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
-		hash.put("totalInfo", totalInfo);
-
 		return hash;
 	}
-
+	
+	//返回统计信息
+	@RequestMapping("totalInfo")
+	@ResponseBody
+	public HashMap totalInfo() {
+		HashMap hash = new HashMap();
+		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
+		hash.put("totalInfo", totalInfo);
+		hash.put("refreshTime", UtilFunc.getTime());
+		return hash;
+	}
+	
 	@RequestMapping("dataColValues")
 	@ResponseBody
 	public List<String> dataColValue(Integer colIdx){

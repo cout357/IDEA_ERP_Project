@@ -27,6 +27,7 @@ var minWidth_leftNav = 60;
 var maxWidth_leftNav = 280;
 CWLN = null;
 document.getElementById("close-left-nav").onclick = function(){
+	clearInterval(CWLN);
 	if(leftNavIsClose){
 		CWLN = setInterval(closeNav,10,leftNav,body,maxWidth_leftNav);
 //		leftNav.style.width = 250+"px";
@@ -66,9 +67,9 @@ function move(ele,moveValue){
 	}
 }
 /*线性改变元素宽度和高度*/
-function toSize(ele,eleTargetWidth,eleTargetHeight){
-	var thisTargetWidth = ele.getBoundingClientRect().width + (eleTargetWidth - ele.getBoundingClientRect().width)*0.1;	//这次目标宽度
-	var thisTargetHeight = ele.getBoundingClientRect().height + (eleTargetHeight - ele.getBoundingClientRect().height)*0.1;
+function toSize(ele,eleTargetWidth,eleTargetHeight,moveSpeed = 0.1){
+	var thisTargetWidth = ele.getBoundingClientRect().width + (eleTargetWidth - ele.getBoundingClientRect().width)*moveSpeed;	//这次目标宽度
+	var thisTargetHeight = ele.getBoundingClientRect().height + (eleTargetHeight - ele.getBoundingClientRect().height)*moveSpeed;
 //	console.log("navWidth="+nav.getBoundingClientRect().width + ",tarWidth="+navTargetWidth+",thisTargetWidth="+thisTarget);
 	ele.style.width = (Math.abs(thisTargetWidth-eleTargetWidth)<0.5?eleTargetWidth:thisTargetWidth) + "px";
 	ele.style.height = (Math.abs(thisTargetHeight-eleTargetHeight)<0.5?eleTargetHeight:thisTargetHeight) + "px";
@@ -108,18 +109,20 @@ var totalInfoIsClose = true;		//统计信息页是否是合并的
 var totalInfoTableBox = document.getElementById("totalInfoTableBox");
 var fullWidth = totalInfoTableBox.getBoundingClientRect().width;
 var fullHeight = totalInfoTableBox.getBoundingClientRect().height;
-fullWidth = totalInfoTableBox.getBoundingClientRect().width;
+//fullWidth = totalInfoTableBox.getBoundingClientRect().width;
+fullWidth = 1500;
 fullHeight = totalInfoTableBox.getBoundingClientRect().height;
 totalInfoTableBox.style.width = 0;
 totalInfoTableBox.style.height = 0;
 var isFirst = true;
+var totalInfoShowSpeed = 0.2;
 TS = null;
 $('#totalInfoLink').on('click',function(){
 	var totalInfoTableBox = document.getElementById("totalInfoTableBox");
 	if(totalInfoIsClose){
 //		totalInfoTableBox.style.display = "block";
 		clearInterval(TS);
-		TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight);
+		TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight,totalInfoShowSpeed);
 		
 		totalInfoLink.style.backgroundColor="#000";
 		totalInfoLink.style.color = "#fff";
@@ -127,7 +130,7 @@ $('#totalInfoLink').on('click',function(){
 	else{
 //		totalInfoTableBox.style.display = "none";
 		clearInterval(TS);
-		TS = setInterval(toSize,10,totalInfoTableBox,0,0);
+		TS = setInterval(toSize,10,totalInfoTableBox,0,0,totalInfoShowSpeed);
 		totalInfoLink.style.backgroundColor="#fff";
 		totalInfoLink.style.color = "#000";
 	}
@@ -140,13 +143,13 @@ totalInfoLink.onmouseenter = function(){
 		console.log(fullWidth);console.log(fullHeight);
 	}
 	clearInterval(TS);
-	TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight);
+	TS = setInterval(toSize,10,totalInfoTableBox,fullWidth,fullHeight,totalInfoShowSpeed);
 }
 
 totalInfoLink.onmouseleave = function(){
 	if(!totalInfoIsClose)return;		/*展开状态就不做关闭动画*/
 	clearInterval(TS);
-	TS = setInterval(toSize,10,totalInfoTableBox,0,0);
+	TS = setInterval(toSize,10,totalInfoTableBox,0,0,totalInfoShowSpeed);
 }
 
 
@@ -727,4 +730,9 @@ $('.dialog .close').on('click',function(){
 	$this = $(this);
 	console.log($this.closest(".dialog"));
 	$this.closest(".dialog").css("display","none");
+});
+
+//更新统计信息按钮事件
+$('.totalInfo-box .table-box .totalInfo-menu .updateTotalInfoBT').on('click',function(){
+	refreshTotalInfoAjax(tableName);
 });

@@ -381,6 +381,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
+							<div class="totalInfo-menu">
+								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${totalInfoRefreshTime }</span></span>
+								<button class="updateTotalInfoBT cur-poi">更新</button>
+							</div>
 							<table class="totalInfo">
 								<tr class="row">
 									<th class="hor val tinfo-1" colspan="1">开始运行日期</th>
@@ -730,7 +734,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--添加页面-->
-		<div id="addBox">
+		<div id="addBox" class="dialog">
 			<div class="box-head">
 				<span class="title">添加</span>
 				<div class="fr">
@@ -772,7 +776,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<!--编辑页面-->
-		<div id="editBox">
+		<div id="editBox" class="dialog">
 			<div class="box-head">
 				<span class="title">编辑</span>
 				<div class="fr">
@@ -814,12 +818,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 		</div>
+<!-- 显示完整数据-对话框 -->
 		<div class="completeValBox">
 	        <div class="cont">
 	            <span class="text"></span>
 	            <div class="iconfont close">×</div>
 	        </div>
 	    </div>
+<!-- 导入数据的选择文件-对话框 -->
+	    <div class="export-chooseFileBox dialog" >
+	    	<form action="http://192.168.1.142:5000/Uploader" method="POST" enctype="multipart/form-data">
+				<div class="box-head">
+					<span class="title">导入数据</span>
+					<div class="fr">
+						<a href="javascript:;" class="close" id="close-box">×</a>
+					</div>
+				</div>
+		    	<div class="box-body">
+			    		<input type="file" name="file" />
+		    	</div>
+				<div class="box-foot">
+					<ul class="footBT-list">
+						<li class="footBT-item"><input type="submit" class="footBT cur-poi" id="submit-edit" value="导入" /></li>
+						<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
+					</ul>
+				</div>
+	    	</form>
+	    </div>
+	    
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
 			function getAddDatas(){
@@ -854,7 +880,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var datas = hash.generalLedgers;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
-				var totalInfo = hash.totalInfo;
 				refreshDataPageLinks();
 				var datatable = document.getElementsByClassName("datatable")[0];
 				$('.datatable .row').remove();
@@ -891,26 +916,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$('.datatable').append($newRow);
 				}
 
-				//填入统计信息
-				if(totalInfo!=undefined&&totalInfo!=null){
-					$('.startData').text(totalInfo.startData);
-					$('.startDay').text(totalInfo.startDay);
-					$('.noOrderAmount').text(totalInfo.noOrderAmount);
-					$('.noOrderInventory').text(totalInfo.noOrderInventory);
-					$('.errorDataItem').text(totalInfo.errorDataItem);
-					$('.totalNumber').text(totalInfo.totalNumber);
-					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
-					$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
-					$('.prepareQuantity').text(totalInfo.prepareQuantity);
-					$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
-					$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
-					$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
-					$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
-					$('.outboundSpecies').text(totalInfo.outboundSpecies);
-					$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
-					$('.lackOfLoans').text(totalInfo.lackOfLoans);
-					$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
-				}
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
@@ -937,6 +942,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$editTbody.find(".lowMimiNeed").val(data.lowMiniNeed);
 				$editTbody.find(".outHighNeed").val(data.outHighNeed);
 				$editTbody.find(".proposalNumber").val(data.proposalNumber);
+			}
+			
+			function refreshTotalInfoSuc(hash){
+				var totalInfo = hash.totalInfo;
+				var refreshTime = hash.refreshTime;
+				//填入统计信息
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.startData').text(totalInfo.startData);
+					$('.startDay').text(totalInfo.startDay);
+					$('.noOrderAmount').text(totalInfo.noOrderAmount);
+					$('.noOrderInventory').text(totalInfo.noOrderInventory);
+					$('.errorDataItem').text(totalInfo.errorDataItem);
+					$('.totalNumber').text(totalInfo.totalNumber);
+					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+					$('.actualNumberWarehouses').text(totalInfo.actualNumberWarehouses);
+					$('.prepareQuantity').text(totalInfo.prepareQuantity);
+					$('.conclusionDepositNumber').text(totalInfo.conclusionDepositNumber);
+					$('.totalStorageFrequency').text(totalInfo.totalStorageFrequency);
+					$('.totalOutboundFrequency').text(totalInfo.totalOutboundFrequency);
+					$('.warehousingSpecies').text(totalInfo.warehousingSpecies);
+					$('.outboundSpecies').text(totalInfo.outboundSpecies);
+					$('.totalOrderDemand').text(totalInfo.totalOrderDemand);
+					$('.lackOfLoans').text(totalInfo.lackOfLoans);
+					$('.lackOfCreditNumber').text(totalInfo.lackOfCreditNumber);
+				}
+				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表
 			var hiddenCols = ['固定存放库位','产品分类','业务员','盘点数据确认日期','低于最低库存预警款数','高于最大库存总款数'];

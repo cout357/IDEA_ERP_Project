@@ -19,7 +19,7 @@ function getSortTypes(){
 }
 var $dataRowTemp = getDataRowTemp(colSum);
 //根据排序信息和筛选信息重新查询数据
-function refreshDataAjax(isDataChange=false){
+function refreshDataAjax(){
 	var screenInfo = new Array();
 	screenInfo.push("orderItems");
 	screenInfo = screenInfo.concat(getSortTypes());
@@ -31,7 +31,7 @@ function refreshDataAjax(isDataChange=false){
 	$.ajax({
 		type: "post",//注意不能用get
 		dataType: 'json',
-		url: tableName+"CT/completeQuery?pageIdx="+pageIdx+"&pageDataCount="+pageDataCount+"&isDataChange="+isDataChange,
+		url: tableName+"CT/completeQuery?pageIdx="+pageIdx+"&pageDataCount="+pageDataCount,
 		contentType: 'application/json;charset=utf-8',//这个必须是这个格式
 		data: JSON.stringify(screenInfo),//前台要封装成json格式
 		traditional: true,
@@ -78,7 +78,8 @@ function addAjax(tabelName,datas){
 		traditional: true,
 		success: function (count) {
 			console.log("成功添加"+count+"条数据");
-			refreshDataAjax(true);
+			refreshDataAjax();
+			refreshTotalInfoAjax(tableName);
 		}
 	});
 }
@@ -99,7 +100,8 @@ function delAjax(tableName,ids){
 		traditional: true,
 		success: function (count) {
 			console.log("成功删除"+count+"条数据");
-			refreshDataAjax(true);
+			refreshDataAjax();
+			refreshTotalInfoAjax(tableName);
 		}
 	});
 }
@@ -132,12 +134,25 @@ function editDataAjax(tableName,data){
 				alert("更新失败！可能是数据已更新，请重试");
 				refreshDataAjax();
 			}
-			else
-				refreshDataAjax(true);
+			else{
+				refreshDataAjax();
+				refreshTotalInfoAjax(tableName);
+			}
 		}
 	});
 }
 
+function refreshTotalInfoAjax(tableName){
+	console.log("刷新totalInfo");
+	$.post(
+		tableName+"CT/totalInfo",
+		{},
+		function(hash){
+			console.log("刷新成功!");
+			refreshTotalInfoSuc(hash);
+		}
+	);
+}
 //导出
 function exportAjax(tableName){
 	var screenInfo = new Array();

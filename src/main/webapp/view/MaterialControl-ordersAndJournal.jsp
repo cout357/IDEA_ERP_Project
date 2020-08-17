@@ -393,6 +393,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="totalInfo-box">
 						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
 						<div class="table-box" id="totalInfoTableBox">
+							<div class="totalInfo-menu">
+								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${totalInfoRefreshTime }</span></span>
+								<button class="updateTotalInfoBT cur-poi">更新</button>
+							</div>
 							<table class="totalInfo">
 								<tr class="row">
 									<th class="hor val tinfo-1" colspan="1">仓管员</th>
@@ -1016,7 +1020,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			function refreshSuc(hash){
 				console.log(hash);
 				var oajs = hash.ordersAndJournals;
-				var totalInfo = hash.totalInfo;
 				dataCount = hash.dataCount;
 				pageIdx = hash.pageIdx;
 				refreshDataPageLinks();
@@ -1055,25 +1058,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$newRow.find(".delData").attr("name",oajs[i].oaj_id);
 					$('.datatable').append($newRow);
 				}
-				//填入统计信息
-				if(totalInfo!=undefined&&totalInfo!=null){
-					$('.tardinessSingular').text(totalInfo.tardinessSingular);
-					$('.tardinessNumber').text(totalInfo.tardinessNumber);
-					$('.inventoryError').text(totalInfo.inventoryError);
-					$('.orderError').text(totalInfo.orderError);
-					$('.startData').text(totalInfo.startData);
-					$('.startDay').text(totalInfo.startDay);
-					$('.advanceDeliveryNumber').text(totalInfo.advanceDeliveryNumber);
-					$('.advanceDeliverySingular').text(totalInfo.advanceDeliverySingular);
-					$('.sumOrderNeed').text(totalInfo.sumOrderNeed);
-					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
-					$('.sumDelivery').text(totalInfo.sumDelivery);
-					$('.readyForDelivery').text(totalInfo.readyForDelivery);
-					$('.totalNumberOutbound').text(totalInfo.totalNumberOutbound);
-					$('.storageNumber').text(totalInfo.storageNumber);
-					$('.unitsWithoutEarlyWarningNumberIssued').text(totalInfo.unitsWithoutEarlyWarningNumberIssued);
-					$('.aUnitOfDebtIsInvolved').text(totalInfo.aUnitOfDebtIsInvolved);
-				}
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
@@ -1102,6 +1086,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$editTbody.find(".boxNum").val(data.boxNum);
 				$editTbody.find(".remarks").val(data.remarks);
 				$editTbody.find(".version").val(data.version);
+			}
+
+			function refreshTotalInfoSuc(hash){
+				var totalInfo = hash.totalInfo;
+				var refreshTime = hash.refreshTime;
+				//填入统计信息
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.tardinessSingular').text(totalInfo.tardinessSingular);
+					$('.tardinessNumber').text(totalInfo.tardinessNumber);
+					$('.inventoryError').text(totalInfo.inventoryError);
+					$('.orderError').text(totalInfo.orderError);
+					$('.startData').text(totalInfo.startData);
+					$('.startDay').text(totalInfo.startDay);
+					$('.advanceDeliveryNumber').text(totalInfo.advanceDeliveryNumber);
+					$('.advanceDeliverySingular').text(totalInfo.advanceDeliverySingular);
+					$('.sumOrderNeed').text(totalInfo.sumOrderNeed);
+					$('.totalNumberIncoming').text(totalInfo.totalNumberIncoming);
+					$('.sumDelivery').text(totalInfo.sumDelivery);
+					$('.readyForDelivery').text(totalInfo.readyForDelivery);
+					$('.totalNumberOutbound').text(totalInfo.totalNumberOutbound);
+					$('.storageNumber').text(totalInfo.storageNumber);
+					$('.unitsWithoutEarlyWarningNumberIssued').text(totalInfo.unitsWithoutEarlyWarningNumberIssued);
+					$('.aUnitOfDebtIsInvolved').text(totalInfo.aUnitOfDebtIsInvolved);
+				}
+				console.log($('.totalInfoRefreshTime'));
+				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];

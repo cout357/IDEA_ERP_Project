@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
 import com.itheima.model.GeneralLedgerTotalInfo;
+import com.itheima.model.OrdersAndJournalTotalInfo;
+import com.itheima.otherClass.UtilFunc;
 import com.itheima.service.GeneralLedgerService;
 import com.itheima.service.OrdersAndJournalService;
 
@@ -34,6 +36,7 @@ public class GeneralLedgerController {
 		model.addAttribute("pageDataCount",pageDataCount);
 		model.addAttribute("dataCount",gService.findCount());
 		model.addAttribute("totalInfo",totalInfo);
+		model.addAttribute("totalInfoRefreshTime", UtilFunc.getTime());
 		System.out.println("limitQuery_gl:"+generalLedgers);
 		return "MaterialControl-DynamicGeneralLedger";
 	}
@@ -47,8 +50,7 @@ public class GeneralLedgerController {
 	*/
 	@RequestMapping("completeQuery")
 	@ResponseBody
-	public HashMap customerSort(@RequestBody List<String> screenInfo,@RequestParam Integer pageIdx,
-			@RequestParam Integer pageDataCount,@RequestParam(defaultValue = "false")Boolean isDataChange){
+	public HashMap customerSort(@RequestBody List<String> screenInfo,@RequestParam Integer pageIdx,@RequestParam Integer pageDataCount){
 		System.out.println(" pageIdx:"+pageDataCount+" pageDataCount:"+pageDataCount + "screenInfo:" + screenInfo);
 		int count = gService.findScreenCount(screenInfo);
 		//如果筛选后当前页大于筛选条件下的最大页，就把当前页改为最大页
@@ -58,13 +60,20 @@ public class GeneralLedgerController {
 		hash.put("generalLedgers", generalLedgers);
 		hash.put("pageIdx",pageIdx);
 		hash.put("dataCount", count);
-		if(isDataChange) {
-			GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
-			hash.put("totalInfo", totalInfo);
-		}
 		return hash;
 	}
-
+	
+	//返回统计信息
+	@RequestMapping("totalInfo")
+	@ResponseBody
+	public HashMap totalInfo() {
+		HashMap hash = new HashMap();
+		GeneralLedgerTotalInfo totalInfo = gService.queryTotalInfo();
+		hash.put("totalInfo", totalInfo);
+		hash.put("refreshTime", UtilFunc.getTime());
+		return hash;
+	}
+	
 	@RequestMapping("dataColValues")
 	@ResponseBody
 	public List<String> dataColValue(Integer colIdx){
