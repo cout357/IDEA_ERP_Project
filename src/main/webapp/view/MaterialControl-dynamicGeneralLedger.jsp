@@ -45,6 +45,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			.tinfo-4{
 				background-color: #6666cc;
 			}
+			.content-head .totalInfo-box .table-box{
+				width:1500px;
+			}
+			.content-head .totalInfo-box .totalInfo-menu{
+				width:1500px;
+			}
 			/*.tinfo-1,.tinfo-2,.tinfo-3,.tinfo-4,.tinfo-5,.tinfo-6,.tinfo-7{}*/
 		</style>
 	</head>
@@ -496,7 +502,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text"  class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="number"  class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -795,7 +801,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" disabled id="" class="dataInput gl_id" value="" /></td>
+							<td class="data"><input type="number" name="" disabled id="" class="dataInput gl_id" value="" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">产品编号：</td>

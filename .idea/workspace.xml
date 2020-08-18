@@ -28,44 +28,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/model/OrdersAndJournal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/model/OrdersAndJournal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/curd.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/curd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/util.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-PMC.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-PMC.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-supplier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-supplier.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-DynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-injectionMolding.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-metalworking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-metalworking.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-purchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-purchase.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-weeklyScheduling.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-weeklyScheduling.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-finalAssemblyDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-finalAssemblyDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-injectionMoldingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-injectionMoldingDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-metalworkingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-metalworkingDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-process.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-process.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/temp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
@@ -173,14 +147,15 @@
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ERPMod.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-DynamicGeneralLedger.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchase.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-packingMaterial.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-supplierServices.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" />
@@ -288,7 +263,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -302,25 +277,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\js" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\model" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\view" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\test" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\otherClass" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\mapper" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/IDEAERP_war/" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=utf-8" />
@@ -438,6 +402,7 @@
       <workItem from="1597460063507" duration="4267000" />
       <workItem from="1597480891753" duration="2511000" />
       <workItem from="1597622889278" duration="2391000" />
+      <workItem from="1597714036706" duration="2929000" />
     </task>
     <servers />
   </component>
@@ -491,66 +456,66 @@
     </state>
     <state x="974" y="185" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597201457796" />
     <state x="1218" y="233" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597213357328" />
-    <state width="1630" height="334" key="GridCell.Tab.0.bottom" timestamp="1597661861614">
+    <state width="1630" height="334" key="GridCell.Tab.0.bottom" timestamp="1597717358520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861614" />
-    <state width="1630" height="334" key="GridCell.Tab.0.center" timestamp="1597661861614">
+    <state width="1630" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358520" />
+    <state width="1630" height="334" key="GridCell.Tab.0.center" timestamp="1597717358520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861614" />
-    <state width="1630" height="334" key="GridCell.Tab.0.left" timestamp="1597661861614">
+    <state width="1630" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358520" />
+    <state width="1630" height="334" key="GridCell.Tab.0.left" timestamp="1597717358520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861614" />
-    <state width="1630" height="334" key="GridCell.Tab.0.right" timestamp="1597661861614">
+    <state width="1630" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358520" />
+    <state width="1630" height="334" key="GridCell.Tab.0.right" timestamp="1597717358520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514733" />
-    <state width="1630" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861614" />
-    <state width="1630" height="334" key="GridCell.Tab.1.bottom" timestamp="1597661861478">
+    <state width="1630" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358520" />
+    <state width="1630" height="334" key="GridCell.Tab.1.bottom" timestamp="1597717358304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861478" />
-    <state width="1630" height="334" key="GridCell.Tab.1.center" timestamp="1597661861477">
+    <state width="1630" height="334" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358304" />
+    <state width="1630" height="334" key="GridCell.Tab.1.center" timestamp="1597717358304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514685" />
-    <state width="1630" height="334" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861477" />
-    <state width="1630" height="334" key="GridCell.Tab.1.left" timestamp="1597661861477">
+    <state width="1630" height="334" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358304" />
+    <state width="1630" height="334" key="GridCell.Tab.1.left" timestamp="1597717358304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514685" />
-    <state width="1630" height="334" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861477" />
-    <state width="1630" height="334" key="GridCell.Tab.1.right" timestamp="1597661861477">
+    <state width="1630" height="334" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358304" />
+    <state width="1630" height="334" key="GridCell.Tab.1.right" timestamp="1597717358304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861477" />
-    <state width="1630" height="334" key="GridCell.Tab.2.bottom" timestamp="1597661861478">
+    <state width="1630" height="334" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358304" />
+    <state width="1630" height="334" key="GridCell.Tab.2.bottom" timestamp="1597717358305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861478" />
-    <state width="1630" height="334" key="GridCell.Tab.2.center" timestamp="1597661861478">
+    <state width="1630" height="334" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358305" />
+    <state width="1630" height="334" key="GridCell.Tab.2.center" timestamp="1597717358305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861478" />
-    <state width="1630" height="334" key="GridCell.Tab.2.left" timestamp="1597661861478">
+    <state width="1630" height="334" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358305" />
+    <state width="1630" height="334" key="GridCell.Tab.2.left" timestamp="1597717358305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861478" />
-    <state width="1630" height="334" key="GridCell.Tab.2.right" timestamp="1597661861478">
+    <state width="1630" height="334" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358305" />
+    <state width="1630" height="334" key="GridCell.Tab.2.right" timestamp="1597717358305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1212" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1597218514686" />
-    <state width="1630" height="334" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597661861478" />
+    <state width="1630" height="334" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597717358305" />
     <state x="456" y="0" key="SettingsEditor" timestamp="1597218933589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

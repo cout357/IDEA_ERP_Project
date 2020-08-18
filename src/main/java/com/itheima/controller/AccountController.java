@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class AccountController {
@@ -63,8 +64,7 @@ public class AccountController {
      * @return
      */
     @RequestMapping("/AccountUpdate")
-    public String AccountUpdate(Model model, HttpServletRequest request, Account account) {
-
+    public String AccountUpdate(Model model, HttpServletRequest request, Account account, HttpSession httpSession) {
         SecurityContextImpl securityContextImpl = (SecurityContextImpl) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
         // 登录名
         String user = securityContextImpl.getAuthentication().getName();
@@ -73,6 +73,7 @@ public class AccountController {
             String password = account.getPassword();
             account.setPassword(bCryptPasswordEncoder.encode(password));
             accountMapper.AccountAdd(account);
+            httpSession.setAttribute("username",user);
             return "accounts/Succeed";
         }else {
             model.addAttribute("information", "更新失败");

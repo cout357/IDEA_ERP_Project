@@ -8,6 +8,7 @@ import com.itheima.model.OrdersAndJournalTotalInfo;
 import com.itheima.otherClass.UtilFunc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +24,7 @@ import com.itheima.service.OrdersAndJournalService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("OrdersAndJournalCT")
@@ -31,7 +33,7 @@ public class OrdersAndJournalController {
 	private OrdersAndJournalService oService;
 	
 	@RequestMapping("limitQuery")
-	public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx,@RequestParam(defaultValue = "30")Integer pageDataCount,Model model) {
+	public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount,Model model) {
 		List<OrdersAndJournal> ordersAndJournals = oService.limitQuery(pageIdx,pageDataCount);
 		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
 		model.addAttribute("ordersAndJournals", ordersAndJournals);

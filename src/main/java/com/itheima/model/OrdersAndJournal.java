@@ -2,9 +2,12 @@ package com.itheima.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class OrdersAndJournal {
 	private Integer oaj_id;
 	private Integer month;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private String orderDate;
 	private String orderId;
 	private String salesMan;
@@ -88,7 +91,7 @@ public class OrdersAndJournal {
 		return orderDemand;
 	}
 	public void setOrderDemand(Integer orderDemand) {
-		this.orderDemand = orderDemand;
+		this.orderDemand = orderDemand==null?0:orderDemand;
 	}
 	public String getReq() {
 		return req;
@@ -112,13 +115,13 @@ public class OrdersAndJournal {
 		return storageQT;
 	}
 	public void setStorageQT(Integer storageQT) {
-		this.storageQT = storageQT;
+		this.storageQT = storageQT==null?0:storageQT;
 	}
 	public Integer getDeliveryQT() {
 		return deliveryQT;
 	}
 	public void setDeliveryQT(Integer deliveryQT) {
-		this.deliveryQT = deliveryQT;
+		this.deliveryQT = deliveryQT==null?0:deliveryQT;
 	}
 	public String getPreDate() {
 		return preDate;
@@ -166,7 +169,7 @@ public class OrdersAndJournal {
 		return boxNum;
 	}
 	public void setBoxNum(Integer boxNum) {
-		this.boxNum = boxNum;
+		this.boxNum = boxNum==null?0:boxNum;
 	}
 	public String getRemarks() {
 		return remarks;

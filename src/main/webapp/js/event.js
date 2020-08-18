@@ -191,6 +191,7 @@ for(var i = 0;i < navList_menu.length;i++){
 }
 //添加数据功能
 document.getElementsByClassName("addData")[0].onclick = function(){
+	initDateInput();
 	document.getElementById("addBox").style.display = "block";
 }
 
@@ -739,18 +740,14 @@ $('.totalInfo-box .table-box .totalInfo-menu .updateTotalInfoBT').on('click',fun
 	refreshTotalInfoAjax(tableName);
 });
 
-
 //限制输入函数
 //只能输入数字和小数点
 function putNum($this){
 	$this.val( $this.val().replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'') );
 	return $this.val();
 }
-//键入数值筛选事件
 
-$('.numscreen-val').keydown(function(){
-	if(event.keyCode==13)event.keyCode=9
-});
+//键入数值筛选事件（有些不支持number input，还是需要做下检测）
 $('.numscreen-val').keyup(function(){
 	$this = $(this);
 	putNum($this);

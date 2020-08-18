@@ -406,7 +406,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="number" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -559,7 +559,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td class="data"><input type="text" name="" id="" class="dataInput password" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput user" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput state" value="" /></td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -589,7 +589,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" id="" disabled class="dataInput id" value="" /></td>
+							<td class="data"><input type="number" name="" id="" disabled class="dataInput id" value="" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">姓名：</td>
@@ -609,7 +609,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">状态：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput state" value="" /></td>
 						</tr>
 						</tbody>
 					</table>

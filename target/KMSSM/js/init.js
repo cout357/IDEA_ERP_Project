@@ -128,3 +128,12 @@ function initAddBox(){
    	$addBoxTemp = $('#addBox').clone(true);
 }
 initAddBox();
+
+//日期类型input默认设为今天
+function initDateInput(){
+	var dateInputs = document.getElementsByClassName("dateInput");
+	console.log(dateInputs);
+	for(var i = 0;i < dateInputs.length;i++)
+		dateInputs[i].valueAsDate = new Date();
+}
+initDateInput();

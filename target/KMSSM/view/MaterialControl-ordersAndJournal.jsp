@@ -57,7 +57,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			.tinfo-8{
 				background-color:#FF9966;
 			}
-			/*.tinfo-1,.tinfo-2,.tinfo-3,.tinfo-4,.tinfo-5,.tinfo-6,.tinfo-7{}*/
+			
+			.content-head .totalInfo-box .table-box{
+				width:1500px;
+			}
+			.content-head .totalInfo-box .totalInfo-menu{
+				width:1500px;
+			}
 		</style>
 	</head>
 	<body>
@@ -74,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="">Alexander Pierce</a></span>
+				<span class="text"><a href="">${sessionScope.username}</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">
@@ -510,7 +516,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text"  class="numscreen-val"  />		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="number"  class="numscreen-val"  />		<!-- 只能接收数字、小数点、百分号 -->
 												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
@@ -798,23 +804,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</thead>
 						<tbody id="add-tbody">
 						<tr class="data-tr">
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDate" /></td>
+							<td class="data"><input type="date" name="" id="" class="dataInput dateInput orderDate" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput orderId" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput KMId" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput cusName" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput orderDemand" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput req" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput deliveryDate" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput countdown" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput storageQT" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput deliveryQT" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput preDate" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput dyLoc" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput box" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput boxNum" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput remarks" /></td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
@@ -845,11 +851,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" disabled  class="dataInput oaj_id" /></td>
+							<td class="data"><input type="number" name="" disabled  class="dataInput oaj_id" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">订单下达日期：</td>
-							<td class="data"><input type="text" name=""  class="dataInput orderDate" /></td>
+							<td class="data"><input type="date" name=""  class="dataInput dateInput orderDate" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">订单编号：</td>
@@ -877,7 +883,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">订单需求数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderDemand" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput orderDemand" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">要求：</td>
@@ -893,11 +899,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">成品入库数量：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput storageQT" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput storageQT" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">出库数量：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput deliveryQT" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput deliveryQT" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">预出库/备货：</td>
@@ -913,7 +919,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">现有箱数：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput boxNum" /></td>
+							<td class="data"><input type="number" name="" id="" class="dataInput boxNum" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">说明：</td>
