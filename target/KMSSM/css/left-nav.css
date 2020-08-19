@@ -123,7 +123,7 @@
 	color:#000;
 	border-radius: 50%;
 }
-/*业务表*/
+/*涓氬姟琛�*/
 .left-nav .text-icon.head-icon{
 	margin-top:5px;
 	margin-bottom: 5px;
@@ -140,7 +140,7 @@
 .left-nav .select-list .select-item .select-a.selected,
 .left-nav .select-list .menu .select-a.selected{
 	animation:selected 0.5s;
-	animation-fill-mode: forwards;		/*当到达终点时，应用效果*/
+	animation-fill-mode: forwards;		/*褰撳埌杈剧粓鐐规椂锛屽簲鐢ㄦ晥鏋�*/
 	animtaion-timing-function:ease-in;
 }
 .left-nav .select-list .menu{
@@ -151,10 +151,10 @@
 }
 .left-nav .select-list .menu.active .select-a.fa{
 	animation:open 0.5s;
-	animation-fill-mode: forwards;		/*当到达终点时，应用效果*/
+	animation-fill-mode: forwards;		/*褰撳埌杈剧粓鐐规椂锛屽簲鐢ㄦ晥鏋�*/
 	animtaion-timing-function:ease-in;
 }
-.left-nav .select-list .select-item .selected .text-icon{
+.left-nav .select-list  .selected .text-icon{
 	color:#fff;
 	background:rgba(0,0,0,.8);
 }

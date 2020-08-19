@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="">${sessionScope.username}</a></span>
+				<span class="text"><a href="">Alexander Pierce</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">
@@ -808,7 +808,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td class="data"><input type="text" name="" id="" class="dataInput orderId" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput KMId" /></td>
+							<td class="data">
+								<div class="getValue-box getValue-box-kmid">
+									<ul class="list">
+										<li class="item show"><span class="val">k-1001</span></li>
+										<li class="item show"><span class="val">k-1002</span></li>
+										<li class="item show"><span class="val">k-1003</span></li>
+										<li class="item show"><span class="val">k-102</span></li>
+										<li class="item show"><span class="val">r-1543</span></li>
+										<li class="item show"><span class="val">k-121</span></li>
+										<li class="item show"><span class="val">k-211</span></li>
+										<li class="item show"><span class="val">g-1021</span></li>
+										<li class="item show"><span class="val">k-1523</span></li>
+									</ul>
+								</div>
+								<input type="text" name="" id="" class=" withValueList dataInput KMId" />
+							</td>
 							<td class="data"><input type="text" name="" id="" class="dataInput cusLevel" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput cusName" /></td>
 							<td class="data"><input type="number" name="" id="" class="dataInput orderDemand" /></td>
@@ -871,7 +886,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">康明编号：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput KMId" /></td>
+							<td class="data">
+								<div class="getValue-box getValue-box-kmid">
+									<ul class="list">
+										<li class="item show"><span class="val">k-1001</span></li>
+										<li class="item show"><span class="val">k-1002</span></li>
+										<li class="item show"><span class="val">k-1003</span></li>
+										<li class="item show"><span class="val">k-102</span></li>
+										<li class="item show"><span class="val">r-1543</span></li>
+										<li class="item show"><span class="val">k-121</span></li>
+										<li class="item show"><span class="val">k-211</span></li>
+										<li class="item show"><span class="val">g-1021</span></li>
+										<li class="item show"><span class="val">k-1523</span></li>
+									</ul>
+								</div>
+								<input type="text" name="" id="" class="dataInput withValueList KMId" />
+							</td>
 						</tr>
 						<tr class="line">
 							<td class="colName">客户等级：</td>
@@ -955,7 +985,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 		    	<div class="box-body">
-			    		<input type="file" name="file" />
+			    		<input type="file" name="file" accept=".xls,.xlsx"/>
 		    	</div>
 				<div class="box-foot">
 					<ul class="footBT-list">
@@ -1124,9 +1154,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 				console.log($('.totalInfoRefreshTime'));
 				$('.totalInfoRefreshTime').text(refreshTime);
+
 			}
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];
+			
+			
+
+			//获取添加和编辑的康明编号提示li
+			function getKmIdListAjax(){
+				$.post(
+					"BenchmarkData"+"CT/findKMId",
+					{},
+					function(vals){
+						var $itemTemp = $('<li class="item show"><span class="val"></span></li>');
+						var $list = $('.dialog .getValue-box-kmid .list');
+						for(var i = 0;i < vals.length;i++){
+							var $item = $itemTemp.close(true);
+							$item.find('.val').text(vals[i]);
+							$list.append($item);
+						}
+					}
+				);
+			}
+			$(function(){
+				//获取添加和编辑的康明编号提示li
+				getKmIdListAjax();
+			});
 		</script>
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>

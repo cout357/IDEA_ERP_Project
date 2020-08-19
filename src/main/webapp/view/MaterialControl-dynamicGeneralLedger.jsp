@@ -475,9 +475,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						<div class="fr">
 							<ul class="list">
-								<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li>
+							<!-- 	<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li> -->
 								<li class="item"><a href="javascript:;"  class="exportData iconfont link">&#xe649;&nbsp;导出数据</a></li>
-								<li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li>
+								<!-- <li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li> -->
 							</ul>
 						</div>
 						<div class="tablename">动态总账表</div>
@@ -847,7 +847,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 		    	<div class="box-body">
-			    		<input type="file" name="file" />
+			    		<input type="file" name="file"  accept=".xls,.xlsx"/>
 		    	</div>
 				<div class="box-foot">
 					<ul class="footBT-list">

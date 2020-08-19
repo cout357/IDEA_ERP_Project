@@ -7,6 +7,9 @@
 	overflow: hidden;
 	z-index: 2;
 }
+.dialog .data{
+	position:relative;
+}
 #addBox{
 	width:1000px;
 	height:500px;
@@ -53,7 +56,7 @@
 #addBox .box-body .addTable-box{
 	width:980px;
 	margin:0 auto;
-	max-height: 340px;
+	height: 340px;
 	margin-top: 40px;
 	overflow: auto;
 }
@@ -153,7 +156,7 @@
 	padding:0 5px;
 	border-radius: 5px;
 	outline: none;
-	margin:10px 10px;
+	margin:10px 0px;
 }
 .export-chooseFileBox{
 	width:400px;
@@ -164,4 +167,35 @@
 .export-chooseFileBox .box-body{
 	padding:30px 10px;
 	text-align:center;
+}
+.dialog .getValue-box{
+	position:absolute;
+	width:100%;
+	max-height:150px;
+	display:none; 
+	overflow:auto;
+	top:35px;
+	left:0;
+	border:1px solid #ddd;
+	z-index:5;
+	background:#fff;
+}
+.dialog .getValue-box .list .item .val{
+    display: block;
+    padding: 0px 6px;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;	
+    cursor:pointer;
+}
+.dialog .getValue-box .list .keySelected .val,
+.dialog .getValue-box .list .item .val:hover{
+	background-color:#4c555d;
+	color:#fff;
+}
+.dialog .getValue-box .list .item{
+	display:none;
+}
+.dialog .getValue-box .list .show{
+	display:block;
 }

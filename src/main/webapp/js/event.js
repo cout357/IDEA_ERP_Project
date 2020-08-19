@@ -190,10 +190,14 @@ for(var i = 0;i < navList_menu.length;i++){
 	}
 }
 //添加数据功能
-document.getElementsByClassName("addData")[0].onclick = function(){
-	initDateInput();
-	document.getElementById("addBox").style.display = "block";
-}
+(function(){
+	var addData = document.getElementsByClassName("addData")[0];
+	if(addData!=null)
+		addData.onclick = function(){
+			initDateInput();
+			document.getElementById("addBox").style.display = "block";
+		}
+})();
 
 var closeAddBox = function(){
 	var addTbody = $('#add-tbody');
@@ -249,7 +253,6 @@ function addDataTableEvent(){
 	$('.datatable .row .dataCheb').on("click",dataChebClick);
 }
 addDataTableEvent();
-console.log($('.table-top .fl .dropdownLink'));
 $('.table-top .fl .dropdownLink').on('click',function(){
 	var $this = $(this);
 	var isPress = $this.siblings(' .dropdown-content').css("display")=="none"?true:false;
@@ -258,12 +261,7 @@ $('.table-top .fl .dropdownLink').on('click',function(){
 	$this.css("color",isPress?"#fff":"#444");
 });
 /*显示|隐藏列功能*/
-//$('#showColMenu-dropdown .dropdownLink').on('click',function(){
-//	var isPress = $('#showColMenu-dropdown .dropdown-content').css("display")=="none"?true:false;
-//	$('#showColMenu-dropdown .dropdown-content').css("display",isPress?"block":"none");
-//	$('#showColMenu-dropdown .dropdownLink ').css("background-color",isPress?"#48545c":"rgba(0,0,0,0)");
-//	$('#showColMenu-dropdown .dropdownLink ').css("color",isPress?"#fff":"#444");
-//});
+
 var showColMenu = document.getElementById("showColMenu-dropdown");
 var showColMenu_cheb = showColMenu.getElementsByClassName('cheb');
 showColMenu.getElementsByClassName("cheb-all")[0].onclick = function(){
@@ -419,7 +417,6 @@ function showScreenReminder(colIdx,reminder){
 	reminder = reminder.length<10?reminder:reminder.substring(0,10)+"...";
 	$('.colscreen-td').eq(colIdx).children('.colscreen').addClass('filtered');
 	$('.colscreen-td').eq(colIdx).children().children('.text').html(reminder);
-	console.log($('.colscreen-td').eq(colIdx).children().children('.text'));
 }
 //关闭提示
 function closeScreenReminder(colIdx){
@@ -528,14 +525,20 @@ $('.valuescreen-all-submit').on('click',function(){
 	var reminder = "";
 	document.getElementsByClassName("colscreen-dropdown")[screen_colIdx].style.display="none";
 	/*可优化选项：选中的少就提交选中的给后台，选中的多就提交没选中的给后台*/
-	if($('.valuescreen-all-checkbox').eq(screen_colIdx).prop('checked')==false){		//如果没有全选
+
+	//如果勾了全选且搜索框为空就不进行查询
+	if(!($('.valuescreen-all-checkbox').eq(screen_colIdx).prop('checked')==true
+			&&$('.colValueSearch-text').eq(screen_colIdx).val().length==0)){
 		str = "&value ";		//告诉后台，按值筛选
 		var chebs = document.getElementsByClassName('valuescreen-all-checkbox-box-list')[screen_colIdx].
 			getElementsByClassName('cheb');
+		var items = document.getElementsByClassName('valuescreen-all-checkbox-box-list')[screen_colIdx].
+			getElementsByClassName('item');
 		var texts = document.getElementsByClassName('valuescreen-all-checkbox-box-list')[screen_colIdx].
 			getElementsByClassName('text');
 		for(var i = 0;i < chebs.length;i++){
-			if(chebs[i].checked==true){
+			//只有满足筛选且勾选了的选项就显示
+			if(chebs[i].checked==true&&items[i].style.display!="none"){
 				str+="'"+texts[i].innerHTML+"'" + ",";
 				if(reminder.length==0)reminder += texts[i].innerHTML;
 				else reminder += ","+texts[i].innerHTML;
@@ -549,8 +552,8 @@ $('.valuescreen-all-submit').on('click',function(){
 			colValuescreen[screen_colIdx] = "";
 			showScreenReminder(screen_colIdx,"全不显示");
 			return;
-		}		
-	}
+		}	
+	}	
 	colValuescreen[screen_colIdx] = str;
 	submitQuery(reminder);
 });
@@ -571,7 +574,13 @@ $('.colValueSearch-text').bind('input propertychange',function(){
 		}
 	}
 	console.log(reg);
-	
+});
+$('.colValueSearch-text').on('keydown',function(ev){
+	console.log("搜索值keydown事件");
+	if(ev.keyCode == 13){
+		console.log("按下回车");
+		$('.valuescreen-all-submit').trigger("click");
+	}
 });
 
 //按数字筛选
@@ -731,7 +740,6 @@ $('.table-top .importData').on('click',function(){
 //dialog基础事件
 $('.dialog .close').on('click',function(){
 	$this = $(this);
-	console.log($this.closest(".dialog"));
 	$this.closest(".dialog").css("display","none");
 });
 
@@ -752,3 +760,147 @@ $('.numscreen-val').keyup(function(){
 	$this = $(this);
 	putNum($this);
 });
+
+
+//带有提示输入的输入框 事件
+
+
+function setWithValueListEvent(){
+	var chooseLi;
+	
+	$('.dialog .withValueList').on('focus',function(){
+		$this = $(this);
+		chooseLi = new ChooseLi($this.siblings('.getValue-box'),$this.siblings('.getValue-box').find(' .item'),$this);
+		$this.siblings('.getValue-box').css("display","block");
+	});
+	$('.dialog .withValueList').on('blur',function(){
+		$this = $(this);
+		$this.siblings('.getValue-box').css("display","none");
+		if(chooseLi!=null){
+			chooseLi.destroy();
+			chooseLi = null;
+		}
+	});
+	$('.dialog .getValue-box .val').on("mousedown",function(){
+		$this = $(this);
+		$this.parents('.getValue-box').siblings('.withValueList').val($this.text());
+		console.log(	$this.parents('.getValue-box').siblings('.withValueList'));
+		$this.parents('.getValue-box').css("display","none");
+	});
+	$('.dialog .withValueList').on('keydown',function(ev){
+		console.log("进入keydown方法");
+		if(chooseLi!=null)chooseLi.keydown(ev);
+		if(ev.keyCode==13){
+			chooseLi = null;
+			$this = $(this);
+			$this.siblings('.getValue-box').css("display","none");
+		}
+	});
+	$('.dialog .withValueList').bind('input propertychange',function(){
+		$this = $(this);
+		chooseLi.matchValue();
+	})
+}
+setWithValueListEvent();
+
+function ChooseLi($listBox,$lis,$input){
+	this.$listBox = $listBox;
+	this.index = -1;			//在所有li中的下标
+	this.showIndex = -1;		//在显示的li中的下标
+	this.$items = $lis;
+	this.itemsLen = this.$items.length;
+	this.showLen = this.$items.length;
+	this.$input = $input;
+	
+	this.setItemsColor = function(){
+		for(var i = 0;i < this.$items.length;i++){
+			if(i==this.index)
+				this.$items.eq(i).addClass('keySelected');
+			else
+				this.$items.eq(i).removeClass('keySelected');
+		}
+	}
+	this.changeIndex = function(move){
+		if(this.showLen==0){
+			this.index = -1;
+			this.showIndex = -1;
+			return;
+		}
+		//设置showIndex
+		this.showIndex = this.showIndex+move;
+		if(this.showIndex<0)this.showIndex = this.showLen-1;
+		if(this.showIndex>=this.showLen)this.showIndex = 0;
+		//设置index
+		do{
+			this.index = this.index+move;
+			if(this.index<0)this.index = this.itemsLen-1;
+			if(this.index>=this.itemsLen)this.index = 0;
+		}while(this.$items.eq(this.index).hasClass('show')==false);
+		console.log("index:"+this.index+",showIndex:"+this.showIndex);
+	}
+	this.move = function(move){
+		this.changeIndex(move);
+		this.setItemsColor();
+		this.setScrollTop_auto();
+	}
+	this.keydown = function(ev){
+		switch(ev.keyCode){
+			case 13:
+				$input.val(this.$items.eq(this.index).find('.val').text());
+				this.destroy();
+				return;
+			case 38:this.move(-1);break;		//上键
+			case 40:this.move(1);break;		//下键
+		}
+		
+	}
+	//结束，还原
+	this.destroy = function(){
+		for(var i = 0;i < this.$items.length;i++){
+			this.$items.eq(i).removeClass('keySelected');
+			this.$items.eq(i).addClass('show');
+		}
+	}
+	//并不是直接把index设置为i,而是把index设为显示的item中第i个的index
+	this.toIndex = function(i){
+		this.index = -1;
+		this.showIndex = -1;
+		this.changeIndex(1);
+		for(var t = 0;t < i;t--)
+			this.changeIndex(1);
+		this.setItemsColor();
+	}
+	//input值改变，只显示值正则匹配的items
+	this.matchValue = function(){
+		var val = this.$input.val();
+		console.log("匹配值:"+val);
+		var reg = eval("/[\\s\\S]*" + val.replace(/ /g,"[\\s\\S]*") + "[\\s\\S]*/i");
+		this.showLen = 0;
+		for(var i = 0;i < this.itemsLen;i++){
+			var itemStr = this.$items.eq(i).find('.val').text();
+			if(reg.exec(itemStr)){
+				this.$items.eq(i).addClass("show");
+				this.showLen++;
+			}
+			else{
+				this.$items.eq(i).removeClass("show");
+			}
+			if(i == this.index){
+				this.showIndex = this.showLen-1;
+			}
+		}
+		this.toIndex(0);
+		this.$listBox.scrollTop(0);
+	}
+	this.setScrollTop_auto = function(){
+		if(this.showLen==0)return;
+		let boxHeight = this.$listBox.height();
+		let itemHeight = this.$items.eq(this.index).height();
+		var boxShowSum = boxHeight/itemHeight;
+		console.log("boxHeight:"+boxHeight+",itemHeight:"+itemHeight+",boxShowSum:"+boxShowSum+",showIndex:"+this.showIndex);
+		var scrollTop = (this.showIndex-Math.floor(boxShowSum/2))*itemHeight;
+		if(scrollTop<0)scrollTop = 0;
+		this.$listBox.scrollTop(scrollTop);
+		console.log("boxScrollTop="+this.$listBox.scrollTop());
+	}
+}

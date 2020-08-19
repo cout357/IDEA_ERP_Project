@@ -48,7 +48,7 @@ $colscreen_dropdownTemp.remove();
 //分页信息
 var pageIdx = parseInt($("#pageIdx").val());					//第几页 初始值		下标从0开始
 var dataCount = parseInt($("#dataCount").val());				//共有多少行数据 初始值
-var roundCount = 20;											//当前页周围链接个数
+var roundCount = 10;											//当前页周围链接个数
 var pageDataCount = parseInt($("#pageDataCount").val());		//每页显示数量
 console.log(pageIdx);
 console.log(dataCount);
@@ -113,8 +113,11 @@ function initAddBox(){
     tbody.on("click", " #addBT", function () {
     	//$('.addTable-box').scrollLeft(0);
     	var $trN = trNode.clone();
-        tbody.append(trNode.clone());
+    	var dateInput = $trN.find('.dateInput')[0];
+    	dateInput.valueAsDate = new Date();
+        tbody.append($trN);
         $trN.find('.data')[0].focus();
+        setWithValueListEvent();
     });
 
     tbody.on("click","#delBT",function () {
@@ -132,7 +135,6 @@ initAddBox();
 //日期类型input默认设为今天
 function initDateInput(){
 	var dateInputs = document.getElementsByClassName("dateInput");
-	console.log(dateInputs);
 	for(var i = 0;i < dateInputs.length;i++)
 		dateInputs[i].valueAsDate = new Date();
 }
