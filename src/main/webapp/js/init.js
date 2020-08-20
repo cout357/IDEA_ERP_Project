@@ -64,11 +64,8 @@ function appendItem(text,value,valueClassName = "val"){
 }
 
 function refreshDataPageLinks(){
-	console.log("创建数据页面跳转导航");
 	$('.pageLink-box .list').empty();
 	var maxPageIdx = Math.floor((dataCount-1)/pageDataCount);
-	console.log("maxPageIdx:"+maxPageIdx);
-	console.log("pageIdx:"+pageIdx);
 	if(pageIdx!=0){appendItem("<",pageIdx-1,"val");}
 	if(pageIdx-roundCount>0){
 		appendItem(1,0,"val");

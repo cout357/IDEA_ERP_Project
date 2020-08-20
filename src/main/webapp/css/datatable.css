@@ -202,18 +202,21 @@
 	color:#fff;
 	line-height: 20px;
 	position: relative;
+	cursor:pointer;
+	animation-fill-mode: forwards;
 }
 .colscreen-td{
+	cursor:pointer;
 	height:20px;
 }
 @keyframes colscreen{
 	0%{height:3px;}
 	100%{height:20px;}
 }
-.colscreen-td:hover .colscreen:not(.filtered):not(.sortcol){
+/* .colscreen-td:hover .colscreen:not(.filtered):not(.sortcol){
 	animation: colscreen 0.3s;
-	animation-fill-mode: forwards;
-}
+	animation-fill-mode:forwards;
+}  */  
 .datatable .hor .dataCheb{
 	width:17px;
 	height:17px;
@@ -225,6 +228,8 @@
 .colscreen-dropdown{
 	min-width:100px;
 	width:100%;
+	animation : dropdown 0.3s;
+	animation-fill-mode : forwards;
 }
 .colscreen-dropdown,
 .sub-dropdown{

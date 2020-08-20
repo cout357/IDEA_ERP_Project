@@ -82,12 +82,22 @@ function toSize(ele,eleTargetWidth,eleTargetHeight,moveSpeed = 0.1){
 }
 TH = null;
 /*线性改变元素高度*/
-function toHeight(ele,eleTargetHeight,displayType){
+/*function toHeight(ele,eleTargetHeight,displayType="block"){
 	var thisTargetHeight = ele.getBoundingClientRect().height + (eleTargetHeight - ele.getBoundingClientRect().height)*0.1;
 	ele.style.height = (Math.abs(thisTargetHeight-eleTargetHeight)<0.5?eleTargetHeight:thisTargetHeight) + "px";
 	if(ele.getBoundingClientRect().height == eleTargetHeight){
 		ele.style.height = eleTargetHeight + "px";
 		ele.style.display = displayType;
+		clearInterval(TH);
+	}
+}*/
+function toHeight($ele,eleTargetHeight,displayType="block"){
+	var thisTargetHeight = $ele.height() + (eleTargetHeight - $ele.height())*0.1;
+	console.log("$ele.height():"+$ele.height()+"targetHeight:"+thisTargetHeight);
+	$ele.height((Math.abs(thisTargetHeight-eleTargetHeight)<0.5?eleTargetHeight:thisTargetHeight) + "px");
+	if($ele.height() == eleTargetHeight){
+		$ele.height(eleTargetHeight + "px");
+		$ele.css(displayType);
 		clearInterval(TH);
 	}
 }
@@ -391,7 +401,7 @@ for(var i = 0;i < colSum;i++)
 var colscreens = document.getElementsByClassName("colscreen");
 var colscreen_dropdowns = document.getElementsByClassName("colscreen-dropdown");
 var CSDIsCloses = new Array();
-var screen_colIdx;
+var screen_colIdx;			//当前打开的筛选菜单的列下标
 function recoveryColValue(){}
 recoveryColValue.$valuescreenClone = null;
 recoveryColValue.valueIsChange = false;
@@ -425,30 +435,31 @@ function closeScreenReminder(colIdx){
 }
 //隐藏与展开筛选下拉框
 function closeColscreenDropdown(){
-	colscreen_dropdowns[this.index].style.display = "none";
-	CSDIsCloses[this.index] = true;
+	console.log("关闭:"+screen_colIdx);
+	colscreen_dropdowns[screen_colIdx].style.display = "none";
+	CSDIsCloses[screen_colIdx] = true;
 	recoveryColValue.recover();		//如果没有提交筛选条件的修改，就恢复
+	$(".colscreen").eq(screen_colIdx).css("animation","none");
 }
-function openColscreenDropdown(){
-	for(var i = 0;i < CSDIsCloses.length;i++)
+function openColscreenDropdown(idx){
+	screen_colIdx = idx;
+	for(var i = 0;i < CSDIsCloses.length;i++){
 		CSDIsCloses[i] = true;
-	screen_colIdx = this.index;
-	var colscreen_dropdown = colscreen_dropdowns[this.index];
-	colscreen_dropdown.style.display = "block";
-	colscreen_dropdown.style.animation = "dropdown 0.3s";
-	colscreen_dropdown.style.animationFillMode = "forwards";
-	CSDIsCloses[this.index] = false;
-	//this.appendChild(colscreen_dropdown);
-	
+	}
+	CSDIsCloses[idx] = false;
+	for(var i = 0;i < colscreen_dropdowns.length;i++)
+		colscreen_dropdowns[i].style.display = "none";
+	colscreen_dropdowns[idx].style.display = "block";
 	var left = document.documentElement.clientWidth;
-	//console.log("colwidth = " + colscreen_dropdown.getBoundingClientRect().width);
-	//如果浏览器的宽度减去colscreen_dropdown的y坐标小于colscreen_dropdown的宽度（右边不能完全显示该元素）,就在左边显示
-//	if(document.documentElement.clientWidth-colscreen_dropdown.getBoundingClientRect().left < colscreen_dropdown.getBoundingClientRect().width + 10){
-//		console.log("太右了");
-//		colscreen_dropdown.style.left = -1*colscreen_dropdown.getBoundingClientRect().width + "px";
-//		
-//	}
-//	console.log("浏览器宽度 = " + left + ",colDropdown.left = " + colscreen_dropdown.getBoundingClientRect().left);
+}
+function turnColscreenDropdown(){
+	if(event.target!=this&&event.target!=this.getElementsByClassName('text')[0])return;
+	$this = $(this);
+	if($this.children('.colscreen-dropdown').css('display')=='none')
+		openColscreenDropdown(this.index);
+	else
+		closeColscreenDropdown();
+	$('.colscreen-td').trigger("mouseleave");
 }
 //元素的坐标+元素宽度是否大于浏览器宽度
 function isTooRight(ele){
@@ -457,6 +468,7 @@ function isTooRight(ele){
 	}
 	return false;
 }
+
 function fixLeft(ele){
 	if(isTooRight(ele)){
 		ele.style.left = -1*ele.getBoundingClientRect().width+"px";
@@ -466,10 +478,22 @@ function fixLeft(ele){
 for(var i = 0;i < colscreens.length;i++){
 	CSDIsCloses[i] = true;
 	colscreens[i].index = i;
-//	colscreens[i].onclick = closeColscreenDropdown;
-	colscreens[i].onmouseenter = openColscreenDropdown;
-	colscreens[i].onmouseleave = closeColscreenDropdown;
+	colscreens[i].onclick = turnColscreenDropdown;
 }
+$('.colscreen-td').on("mouseenter",function(){
+	$this = $(this);
+	var $colscreen = $this.find(".colscreen");
+	if($colscreen.hasClass("filtered")==false){
+		$colscreen.css("animation","colscreen 0.3s")
+		.css("animation-fill-mode","forwards");
+	}
+});
+$('.colscreen-td').on("mouseleave",function(){
+	//如果离开时，该下拉框是打开状态就不隐藏
+	if(CSDIsCloses[this.getElementsByClassName("colscreen")[0].index]==false)return;
+	$this = $(this);
+	$this.find(".colscreen").css("animation","none");
+});
 //数据筛选
 //按值筛选
 var valuescreen_items = document.getElementsByClassName("valuescreen-item");
@@ -516,7 +540,6 @@ function submitQuery(reminder){
 	else
 		showScreenReminder(screen_colIdx,reminder);
 	refreshDataAjax();
-	document.getElementsByClassName("colscreen-dropdown")[screen_colIdx].style.display="none";
 }
 //提交值筛选
 $('.valuescreen-all-submit').on('click',function(){
@@ -576,10 +599,9 @@ $('.colValueSearch-text').bind('input propertychange',function(){
 	console.log(reg);
 });
 $('.colValueSearch-text').on('keydown',function(ev){
-	console.log("搜索值keydown事件");
 	if(ev.keyCode == 13){
 		console.log("按下回车");
-		$('.valuescreen-all-submit').trigger("click");
+		$('.valuescreen-all-submit').eq(screen_colIdx).trigger("click");
 	}
 });
 
@@ -904,3 +926,6 @@ function ChooseLi($listBox,$lis,$input){
 		console.log("boxScrollTop="+this.$listBox.scrollTop());
 	}
 }
+$('.colscreen-td .submit').on("click",function(){
+	closeColscreenDropdown();
+});

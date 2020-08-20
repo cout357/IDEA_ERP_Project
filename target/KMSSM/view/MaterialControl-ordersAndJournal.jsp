@@ -517,7 +517,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<=">小于或等于</option>
 											</select>
 												<input type="number"  class="numscreen-val"  />		<!-- 只能接收数字、小数点、百分号 -->
-												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
+												<input type="submit" class="numscreen-all-submit cur-poi submit"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
 									</span>
@@ -536,7 +536,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<div class="valuescreen">
 												<div class="valuescreen-all-checkbox-box"><input class="valuescreen-all-checkbox" class="cur-poi" type="checkbox" checked='true' />全选</div>
 												<!-- <form action="" method="post"> -->
-													<input type="button" class="valuescreen-all-submit cur-poi" value="确定"/>
+													<input type="button" class="valuescreen-all-submit cur-poi submit" value="确定"/>
 													<ul class="list valuescreen-all-checkbox-box-list">
 
 													</ul>
@@ -546,7 +546,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</span>
 								</li>
 								<li class="item cancelscreen-item">
-									<a class="dropitem vec cancelscreen-link" >取消筛选</a>
+									<a class="dropitem vec cancelscreen-link submit" >取消筛选</a>
 								</li>
 							</ul>
 						</div>
@@ -995,6 +995,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 	    	</form>
 	    </div>
+	    <div class="back-top iconfont" >&#xe619;</div>
 	    
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">

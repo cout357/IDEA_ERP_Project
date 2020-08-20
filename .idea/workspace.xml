@@ -28,195 +28,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/GeneralLedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/GeneralLedgerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/OrdersAndJournalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/curd.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/curd.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/left-nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/left-nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/util.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/endInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/endInit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/UtilFunc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/test/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/springmvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/aspectjweaver-1.6.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/commons-io-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-annotations-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-core-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jackson-databind-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jsqlparser-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jsr250-api-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/log4j-1.2.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mybatis-3.4.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/pagehelper-5.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/slf4j-api-1.6.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-aspects-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-jdbc-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-orm-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-acl-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-config-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-core-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-taglibs-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-security-web-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-test-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-web-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/lib/spring-webmvc-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/curd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/datatable.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/left-nav.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/util.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/img/AdminLTELogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/img/userImg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/funcsOfAjax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/jquery-3.4.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-customerValue.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-manufacturing.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-orderBigData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-partsConsumption.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-productionImprovement.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-department.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ERPMod.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchase.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-packingMaterial.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-supplierServices.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-metalworking.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-purchase.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-weeklyScheduling.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-finalAssemblyDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-injectionMoldingDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-metalworkingDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-process.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer_old.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/jsp.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/jsp.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/materialControl-finishedProduct.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/script.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/script.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/temp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/UtilFunc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/test/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/CustomerInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/GeneralLedgerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/OrdersAndJournalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/CustomerInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/GeneralLedgerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/RoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/BenchmarkData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/CustomerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/GeneralLedgerTotalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/QueryInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/UtilFunc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/otherClass/UtilFunc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/CustomerInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/GeneralLedgerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/OrdersAndJournalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/FavUserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/test/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/datatable.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/datatable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/util.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/jquery-3.4.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/CustomerInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/CustomerInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/GeneralLedgerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/OrdersAndJournalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/CustomerInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/GeneralLedgerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/RoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/BenchmarkData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/BenchmarkData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/CustomerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/CustomerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedgerTotalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/GeneralLedgerTotalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/OrdersAndJournalTotalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/QueryInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/QueryInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/UtilFunc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/otherClass/UtilFunc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/CustomerInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/CustomerInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/GeneralLedgerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/OrdersAndJournalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/CustomerInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/GeneralLedgerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/OrdersAndJournalServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/FavUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/security/FavUserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/test/Test.class" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,8 +145,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
-        <option name="userSettingsFile" value="D:\apache maven 3.6.1\conf\settings.xml" />
+        <option name="mavenHome" value="D:/developmentTools/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\developmentTools\maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -262,7 +160,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -272,7 +170,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -283,9 +181,21 @@
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\model" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/IDEAERP_war/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/IDEAERP_war/" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=utf-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -297,6 +207,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_KMSSM" />
+        <option name="HTTP_PORT" value="8888" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -360,7 +271,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -403,23 +314,27 @@
       <workItem from="1597622889278" duration="2391000" />
       <workItem from="1597714036706" duration="5349000" />
       <workItem from="1597808261612" duration="351000" />
+      <workItem from="1597910931380" duration="1217000" />
+      <workItem from="1597912255139" duration="151000" />
+      <workItem from="1597912423055" duration="818000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="643" y="173" key="#Tomcat_9.0.37" timestamp="1596845101143">
