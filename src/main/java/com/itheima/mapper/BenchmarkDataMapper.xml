@@ -3,54 +3,95 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.BenchmarkDataMapper">
 
-    <select id="BenchmarkDataAll" resultType="com.itheima.model.BenchmarkData">
+
+    <!-- 全查 -->
+    <select id="findAll" resultType="BenchmarkData">
+		select * from benchmarkdata
+	</select>
+    <!-- 单查 -->
+    <select id="findById" parameterType="int" resultType="BenchmarkData">
+		select * from benchmarkdata where id=#{id}
+	</select>
+    <!-- 排序全查 -->
+    <select id="findAllAndSort" parameterType="java.util.List" resultType="BenchmarkData">
         select * from benchmarkdata
+        <foreach collection="orderItems" open="order by "  item="orderItem" separator=",">
+            ${orderItem}
+        </foreach>
+    </select>
+    <!-- 排序+筛选全查 -->
+    <select id="completeQuery" parameterType="QueryInfo" resultType="BenchmarkData">
+        select * from benchmarkdata
+        <where>
+            <if test="colValueItems!=null and colValueItems.size>0">
+                <foreach collection="colValueItems" open="" item="colValueItem">
+                    AND ${colValueItem}
+                </foreach>
+            </if>
+        </where>
+        <if test="orderItems!=null and orderItems.size>0">
+            <foreach collection="orderItems" open="order by "  item="orderItem" separator=",">
+                ${orderItem}
+            </foreach>
+        </if>
+        <if test="limitBegin!=null and pageDataCount!=null">
+            Limit ${limitBegin},${pageDataCount}
+        </if>
+    </select>
+    <!-- 查询单列存在的值 -->
+    <select id="findColValues" parameterType="String" resultType="String">
+		select DISTINCT ${colName} from benchmarkdata order by ${colName}
+	</select>
+    <!-- 查询行数 -->
+    <select id="findCount" resultType="INTEGER">
+		select Count(*) from benchmarkdata
+	</select>
+    <!-- 查询筛选后的行数 -->
+    <select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
+        select Count(*) from benchmarkdata
+        <where>
+            <foreach collection="colValueItems" open="" item="colValueItem">
+                AND ${colValueItem}
+            </foreach>
+        </where>
     </select>
 
-    <update id="BenchmarkDataUpdate" parameterType="com.itheima.model.BenchmarkData">
-        update benchmarkdata set
-
-        <if test="kangMingId != null and kangMingId != ''">
-            kangMingId=#{kangMingId},
-        </if>
-        <if test="packingStandard != null and packingStandard != ''">
-            packingStandard=#{packingStandard},
-        </if>
-        <if test="grossWeightOfEachBox != null and grossWeightOfEachBox != ''">
-            grossWeightOfEachBox=#{grossWeightOfEachBox},
-        </if>
-        <if test="tankSize != null and tankSize != ''">
-            tankSize=#{tankSize},
-        </if>
-        <if test="aStandardCardBoardBox != null and aStandardCardBoardBox != ''">
-            aStandardCardBoardBox=#{aStandardCardBoardBox},
-        </if>
-        <if test="aStandardCardBoardLongWide != null and aStandardCardBoardLongWide != ''">
-            aStandardCardBoardLongWide=#{aStandardCardBoardLongWide},
-        </if>
-        <if test="instructions != null and instructions != ''">
-            instructions=#{instructions},
-        </if>
-        benchmarkDataVersionNumber =(#{benchmarkDataVersionNumber}+1)
-        where id = #{id}
-    </update>
-
-
-    <delete id="BenchmarkDataDelete" parameterType="int">
-        delete  from benchmarkdata where id = #{id}
-    </delete>
-
-
-    <insert id="BenchmarkDataInsert" parameterType="com.itheima.model.BenchmarkData">
-        insert into benchmarkdata
-        (kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)
+    <!-- 插入多行数据 -->
+    <insert id="adds" parameterType="List">
+        insert into customerInfo(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)
         values
-        (#{kangMingId},#{packingStandard},#{grossWeightOfEachBox},#{tankSize},#{aStandardCardBoardBox},#{aStandardCardBoardLongWide},#{instructions})
+        <foreach collection="datas" separator="," item="data">
+            ('${data.kangMingId}','${data.packingStandard}','${data.grossWeightOfEachBox}','${data.tankSize}','${data.aStandardCardBoardBox}','${data.aStandardCardBoardLongWide}','${data.instructions}')
+        </foreach>
     </insert>
 
-    <select id="BenchmarkDataOne" parameterType="int" resultType="com.itheima.model.BenchmarkData">
-        select * from benchmarkdata where id = #{id}
-    </select>
+    <!-- 删除多行数据 -->
+    <delete id="dels" parameterType="List">
+        delete from benchmarkdata
+        <where>
+            <if test="ids!=null and ids.size>0">
+                <foreach collection="ids" open="id in (" separator="," close=")" item="id">
+                    '${id}'
+                </foreach>
+            </if>
+        </where>
+    </delete>
+
+    <!-- 更新一行数据 -->
+    <!-- 只更新可以更新的部分 -->
+    <update id="edit" parameterType="BenchmarkData" >
+        update customerInfo
+        <set>
+            kangMingId=#{kangMingId},
+            packingStandard=#{packingStandard},
+            grossWeightOfEachBox=#{grossWeightOfEachBox},
+            tankSize=#{tankSize},
+            aStandardCardBoardBox=#{aStandardCardBoardBox},
+            aStandardCardBoardLongWide=#{aStandardCardBoardLongWide},
+            instructions=#{instructions},
+        </set>
+        where id=#{id}
+    </update>
 
 
 </mapper>

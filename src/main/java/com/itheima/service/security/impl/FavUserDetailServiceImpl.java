@@ -2,9 +2,7 @@ package com.itheima.service.security.impl;
 
 
 import com.itheima.mapper.AccountMapper;
-import com.itheima.mapper.RoleMapper;
 import com.itheima.model.Account;
-import com.itheima.model.Role;
 import com.itheima.service.security.FavUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,8 +27,6 @@ public class FavUserDetailServiceImpl implements FavUserDetailService {
     @Autowired
     private AccountMapper accountMapper;
 
-    @Autowired
-    private RoleMapper roleMapper;
 
 
     /**
@@ -67,6 +63,12 @@ public class FavUserDetailServiceImpl implements FavUserDetailService {
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "SALES"));
         }else if (role.equals("ADMIN")){
             authList.add(new SimpleGrantedAuthority("ROLE_"+ "ADMIN"));
+        }
+        else if (role.equals("SUPER")){
+            authList.add(new SimpleGrantedAuthority("ROLE_"+ "SUPER"));
+            authList.add(new SimpleGrantedAuthority("ROLE_"+ "SALES"));
+            authList.add(new SimpleGrantedAuthority("ROLE_"+ "ADMIN"));
+            authList.add(new SimpleGrantedAuthority("ROLE_"+ "ROOT"));
         }
         return authList;
     }

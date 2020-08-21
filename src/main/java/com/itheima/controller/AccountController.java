@@ -1,22 +1,22 @@
 package com.itheima.controller;
 
 import com.itheima.mapper.AccountMapper;
-import com.itheima.mapper.RoleMapper;
 import com.itheima.model.Account;
-import com.itheima.model.Role;
+import com.itheima.model.BenchmarkData;
+import com.itheima.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
 
 @Controller
 public class AccountController {
@@ -24,105 +24,81 @@ public class AccountController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    private AccountMapper accountMapper;
+    private AccountService accountService;
 
-    @Autowired
-    private RoleMapper roleMapper;
 
-    /**
-     * 添加用户
-     * @param model
-     * @param request
-     * @param account
-     * @return
-     */
-    @RequestMapping("/AccountAdd")
-    public String AccountAdd(Model model, HttpServletRequest request, Account account) {
 
-        //判断账户是否被注册
-        if (account.getName()!=null && account.getUser()!=null &&account.getPassword()!=null&& account.getRole()!=null &&account.getName().equals("")
-                && !account.getUser().equals("") &&!account.getPassword().equals("") && !account.getRole().equals("")){
-            if (accountMapper.AccountFindByEmail(account.getUser())==null){
-                String password = account.getPassword();
-                account.setPassword(bCryptPasswordEncoder.encode(password));
-                accountMapper.AccountAdd(account);
-                return "redirect:/AccountController/Succeed";
-            }else {
-                return "redirect:/AccountController/Failure";
-            }
-        }else {
-            return "redirect:/AccountController/Failure";
-        }
+    @RequestMapping("allQuery")
+    public String findAll(Model model) {
+        List<Account> customerInfos = accountService.findAll();
+        model.addAttribute("customerInfos", customerInfos);
+        model.addAttribute("pageIdx",0);
+        model.addAttribute("dataCount",accountService.findCount());
+        return "basic-customer";
+    }
+    @RequestMapping("limitQuery")
+    public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
+        List<Account> customerInfos = accountService.limitQuery(pageIdx,pageDataCount);
+        model.addAttribute("customerInfos", customerInfos);
+        model.addAttribute("pageIdx",pageIdx);
+        model.addAttribute("pageDataCount",pageDataCount);
+        model.addAttribute("dataCount",accountService.findCount());
+        return "Basic-customer";
+    }
+    @RequestMapping("findById")
+    @ResponseBody
+    public Account findById(Integer id) {
+        Account customer = accountService.findById(id);
+        return customer;
+    }
+    @RequestMapping("completeQuery")
+    @ResponseBody
+    public HashMap customerSort(@RequestBody List<String> screenInfo, @RequestParam Integer pageIdx, @RequestParam Integer pageDataCount){
+        System.out.println(" pageIdx:"+pageDataCount+" pageDataCount:"+pageDataCount + "screenInfo:" + screenInfo);
+        int count = accountService.findScreenCount(screenInfo);
+        //如果筛选后当前页大于筛选条件下的最大页，就把当前页改为最大页
+        pageIdx = count>pageIdx*pageDataCount?pageIdx:(count-1)/pageDataCount;
+        List<Account> customerInfos = accountService.completeQuery(screenInfo,pageIdx,pageDataCount);
+        HashMap hash = new HashMap();
+        hash.put("customerInfos", customerInfos);
+        hash.put("pageIdx",pageIdx);
+        hash.put("dataCount", count);
+        System.out.println("--------排序后---------");
+        System.out.println(customerInfos);
 
+        return hash;
+    }
+    @RequestMapping("dataColValues")
+    @ResponseBody
+    public List<String> dataColValue(Integer colIdx){
+        System.out.println("colIdx:"+colIdx);
+        return accountService.findColValues(colIdx);
     }
 
-    /**
-     * 更新密码，口令
-     * @param model
-     * @param request
-     * @param account
-     * @return
-     */
-    @RequestMapping("/AccountUpdate")
-    public String AccountUpdate(Model model, HttpServletRequest request, Account account, HttpSession httpSession) {
-        SecurityContextImpl securityContextImpl = (SecurityContextImpl) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
-        // 登录名
-        String user = securityContextImpl.getAuthentication().getName();
-        //   判断bean 中用户是否等于已经登录账户
-        if (account.getUser().equals(user)){
-            String password = account.getPassword();
-            account.setPassword(bCryptPasswordEncoder.encode(password));
-            accountMapper.AccountAdd(account);
-            httpSession.setAttribute("username",user);
-            return "accounts/Succeed";
-        }else {
-            model.addAttribute("information", "更新失败");
-            return "accounts/Failure";
-        }
+    @RequestMapping("add")
+    @ResponseBody			//要返回Integer就需要加这个注解
+    public Integer add(@RequestBody List<Account> datas) {
+        System.out.println("要添加的数据:"+datas);
+        int count = accountService.adds(datas);
+        return count;
+    }
+    @RequestMapping("del")
+    @ResponseBody			//要返回Integer就需要加这个注解
+    public Integer del(@RequestBody List<Integer> ids) {
+        System.out.println("要删除的数据:"+ids);
+        int count = accountService.dels(ids);
+        return count;
     }
 
-
-    @RequestMapping("/ForgetPassword")
-    public String ForgetPassword(Model model, HttpServletRequest request, Account account) {
-
-        //  需要user 验证码
-        //  database 查询
-        Account account1 = accountMapper.AccountFindByEmail(account.getUser());
-        if (account1.getRole().equals(account.getRole())){
-            accountMapper.AccountUpdate(account);
-        }
-        return  null;
-    }
-
-
-
-   //  *****************************************************************************************************
-
-
-    /**
-     * 添加角色
-     * @param role  需要belong account， 和角色， 必须不为空，
-     * @return
-     */
-    @RequestMapping("/AccountAddRole")
-    @RolesAllowed("ROLE_ROOT")
-    public String AccountAddRole(Role role) {
-        roleMapper.RoseAdd(role);
-        return null;
+    @RequestMapping("edit")
+    @ResponseBody
+    public Integer edit(@RequestBody Account data) {
+        return accountService.edit(data);
     }
 
 
-    /**
-     * 删除用户角色
-     * @param role
-     * @return
-     */
-    @RequestMapping("/AccountDeleteRole")
-    @RolesAllowed("ROLE_ROOT")
-    public String AccountDeleteRole(Role role) {
-        roleMapper.RoleDelete(role);
-        return null;
-    }
+
+
 
 
 

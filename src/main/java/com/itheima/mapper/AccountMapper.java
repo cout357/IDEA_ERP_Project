@@ -2,6 +2,9 @@ package com.itheima.mapper;
 
 
 import com.itheima.model.Account;
+import com.itheima.model.BenchmarkData;
+import com.itheima.otherClass.QueryInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,37 +12,17 @@ import java.util.List;
 @Repository
 public interface AccountMapper {
 
-    /**
-     * 查找所有用户
-     * @return
-     */
-    List<Account> AccountAll();
 
-    /**
-     * 增加用户
-     * @param account
-     */
-    void AccountAdd(Account account);
-
-    /**
-     * 更新用户
-     * @param account
-     */
-    void AccountUpdate(Account account);
-
-    /**
-     * 删除用户
-     * @param account
-     */
-    void AccountDelete(Account account);
-
-
-    /**
-     * 查找用户
-     * @param conditions
-     * @return
-     */
-    Account AccountFindByEmail(String conditions);
+    List<Account> findAll();
+    List<Account> findAllAndSort(@Param(value = "orderItems") List<String> orderItems);
+    List<Account> completeQuery(QueryInfo queryInfoByCustomerInfo);
+    List<String> findColValues(@Param("colName") String colName);
+    Account findById(int id);
+    Integer findCount();
+    Integer findScreenCount(QueryInfo queryInfoByCustomerInfo);
+    Integer adds(@Param("datas") List<Account> datas);
+    Integer dels(@Param("ids") List<Integer> ids);
+    Integer edit(Account customerInfo);
 
 
 }

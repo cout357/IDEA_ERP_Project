@@ -1,44 +1,25 @@
 package com.itheima.mapper;
 
 import com.itheima.model.BenchmarkData;
+import com.itheima.otherClass.QueryInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface BenchmarkDataMapper {
 
-    /**
-     * 查找全部信息
-     * @return
-     */
-    List<BenchmarkData> BenchmarkDataAll();
 
+    List<BenchmarkData> findAll();
+    List<BenchmarkData> findAllAndSort(@Param(value = "orderItems") List<String> orderItems);
+    List<BenchmarkData> completeQuery(QueryInfo queryInfoByCustomerInfo);
+    List<String> findColValues(@Param("colName") String colName);
+    BenchmarkData findById(int id);
+    Integer findCount();
+    Integer findScreenCount(QueryInfo queryInfoByCustomerInfo);
+    Integer adds(@Param("datas") List<BenchmarkData> datas);
+    Integer dels(@Param("ids") List<Integer> ids);
+    Integer edit(BenchmarkData customerInfo);
 
-    /**
-     * 更新信息
-     * @param benchmarkData
-     */
-    void BenchmarkDataUpdate(BenchmarkData benchmarkData);
-
-    /**
-     * 根据id删除信息
-     * @param id
-     */
-    void BenchmarkDataDelete(int id);
-
-
-    /**
-     * 插入
-     * @param benchmarkData
-     */
-    void  BenchmarkDataInsert(BenchmarkData benchmarkData);
-
-
-    /**
-     * 按照id查询
-     * @param id
-     * @return
-     */
-    BenchmarkData BenchmarkDataOne(int id);
 
 
 }
