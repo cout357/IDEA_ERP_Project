@@ -121,7 +121,8 @@ function getEditDataAjax(tableName,id){
 }
 //提交编辑数据
 function editDataAjax(tableName,data){
-	console.log("编辑后的内容:"+data);
+	console.log("编辑后的内容:");
+	console.log(data);
 	$.ajax({
 		type: "post",//注意不能用get
 		dataType: 'json',

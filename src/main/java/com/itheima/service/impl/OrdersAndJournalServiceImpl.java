@@ -82,5 +82,10 @@ public class OrdersAndJournalServiceImpl implements OrdersAndJournalService{
 		// TODO Auto-generated method stub
 		return ordersAndJournalMapper.queryTotalInfo();
 	}
+	@Override
+	public Integer findMaxId() {
+		// TODO Auto-generated method stub
+		return ordersAndJournalMapper.findMaxId();
+	}
 	
 }

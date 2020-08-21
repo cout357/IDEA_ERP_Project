@@ -6,7 +6,7 @@ Array.prototype.remove = function(val) {
 	console.log(index+"删除元素"+val);
 	
 };
-var datatable = document.getElementsByClassName("long")[0];
+var datatable = document.getElementsByClassName("datatable")[0];
 //左右调整表单显示
 document.onkeydown = function(event){
 	var e = event || window.event || arguments.callee.caller.arguments[0];
@@ -82,7 +82,7 @@ function toSize(ele,eleTargetWidth,eleTargetHeight,moveSpeed = 0.1){
 }
 TH = null;
 /*线性改变元素高度*/
-/*function toHeight(ele,eleTargetHeight,displayType="block"){
+function toHeight(ele,eleTargetHeight,displayType="block"){
 	var thisTargetHeight = ele.getBoundingClientRect().height + (eleTargetHeight - ele.getBoundingClientRect().height)*0.1;
 	ele.style.height = (Math.abs(thisTargetHeight-eleTargetHeight)<0.5?eleTargetHeight:thisTargetHeight) + "px";
 	if(ele.getBoundingClientRect().height == eleTargetHeight){
@@ -90,8 +90,8 @@ TH = null;
 		ele.style.display = displayType;
 		clearInterval(TH);
 	}
-}*/
-function toHeight($ele,eleTargetHeight,displayType="block"){
+}
+/*function toHeight($ele,eleTargetHeight,displayType="block"){
 	var thisTargetHeight = $ele.height() + (eleTargetHeight - $ele.height())*0.1;
 	console.log("$ele.height():"+$ele.height()+"targetHeight:"+thisTargetHeight);
 	$ele.height((Math.abs(thisTargetHeight-eleTargetHeight)<0.5?eleTargetHeight:thisTargetHeight) + "px");
@@ -100,7 +100,7 @@ function toHeight($ele,eleTargetHeight,displayType="block"){
 		$ele.css(displayType);
 		clearInterval(TH);
 	}
-}
+}*/
 /*关闭/打开导航*/
 function closeNav(nav,body,navTargetWidth){
 	var thisTarget = nav.getBoundingClientRect().width + (navTargetWidth - nav.getBoundingClientRect().width)*0.1;	//这次目标宽度

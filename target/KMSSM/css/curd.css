@@ -73,18 +73,6 @@
 	background-color:#fff;
 	padding-bottom: 10px;
 }
-.box-body .addTable-box .dataInput{
-	width:110px;
-	height:25px;
-	background-color:#fff;
-	padding:0 5px;
-	border-radius: 2px;
-	outline: none;
-	margin:5px 2px;
-	font-size:16px;
-	font-weight:700;
-	text-align:center;
-}
 .box-body .addTable-box .adBT{
 	width:25px;
 	height:25px;
@@ -149,15 +137,6 @@
 }
 
 
-#editBox .box-body .table-box .dataInput{
-	width:150px;
-	height:25px;
-	background-color:#fff;
-	padding:0 5px;
-	border-radius: 5px;
-	outline: none;
-	margin:10px 0px;
-}
 .export-chooseFileBox{
 	width:400px;
 	top:400px;
@@ -198,4 +177,38 @@
 }
 .dialog .getValue-box .list .show{
 	display:block;
+}
+
+
+.box-body .addTable-box .dataInput{
+	width:110px;
+	height:25px;
+	padding:0 5px;
+	border-radius: 2px;
+	margin:5px 2px;
+	font-size:16px;
+	font-weight:700;
+	text-align:center;
+}
+#editBox .box-body .table-box .dataInput{
+	width:150px;
+	height:25px;
+	padding:0 5px;
+	border-radius: 2px;
+	margin:10px 0px;
+}
+.dialog .dataSelect,
+.dialog .dataInput{
+	background-color:#fff;
+	border-radius: 2px;
+	border:2px solid;
+}
+.dialog .dataSelect{
+	width:164px;
+	height:29px;
+	padding:0 5px;
+	margin:10px 0px;
+}
+#addBox .dataSelect{
+	width:124px;
 }

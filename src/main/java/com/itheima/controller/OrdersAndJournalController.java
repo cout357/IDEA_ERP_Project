@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.itheima.model.OrdersAndJournalTotalInfo;
 import com.itheima.otherClass.UtilFunc;
 
@@ -20,9 +24,6 @@ import com.itheima.model.GeneralLedger;
 import com.itheima.model.OrdersAndJournal;
 import com.itheima.service.OrdersAndJournalService;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("OrdersAndJournalCT")
@@ -84,6 +85,12 @@ public class OrdersAndJournalController {
 	@ResponseBody			//要返回Integer就需要加这个注解
 	public Integer add(@RequestBody List<OrdersAndJournal> datas) {
 		System.out.println("要添加的数据:"+datas);
+		//在获取最大id后到插入表中期间，如果有新数据添加进表，可能会出现重复订单编号的情况
+		//如果用时间+随机数的方式生成订单编号可以避免这一问题
+		Integer maxId = oService.findMaxId();
+		for(OrdersAndJournal data:datas) {
+			data.setOrderId("KM"+(++maxId));
+		}
 		int count = oService.adds(datas);
 		return count;
 	}
@@ -108,9 +115,8 @@ public class OrdersAndJournalController {
 	}	
 	@RequestMapping("export")
 	@ResponseBody
-	public HashMap export(@RequestBody List<String> screenInfo, HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+	public HashMap export(@RequestBody List<String> screenInfo) throws IOException{
 		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo);
-
 		String url ="http://192.168.1.142:5000/OrderCurrentAccount?";
 
 		for (int i=0; i<datas.size();i++){

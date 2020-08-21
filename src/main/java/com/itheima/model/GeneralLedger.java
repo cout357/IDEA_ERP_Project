@@ -179,7 +179,7 @@ public class GeneralLedger implements Serializable {
 				+ ", averageMouth2020=" + averageMouth2020 + ", averageMouth=" + averageMouth + ", orderNumber="
 				+ orderNumber + ", storageNumber=" + storageNumber + ", checkoutNumber=" + checkoutNumber
 				+ ", lowMiniNeed=" + lowMiniNeed + ", outHighNeed=" + outHighNeed + ", proposalNumber=" + proposalNumber
-				+ "]";
+				+ "]\n";
 	}
     
     

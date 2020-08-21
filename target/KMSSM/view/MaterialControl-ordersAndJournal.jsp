@@ -234,7 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</li>
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/Basic-user.jsp">用户权限管理</a>
+										<a class="droplink" href="AccountCT/limitQuery">用户权限管理</a>
 									</li>
                                     
 								</ul>

@@ -1,8 +1,9 @@
 package com.itheima.service.impl;
 
 import com.itheima.mapper.BenchmarkDataMapper;
+import com.itheima.model.Account;
 import com.itheima.model.BenchmarkData;
-import com.itheima.model.CustomerInfo;
+import com.itheima.model.BenchmarkData;
 import com.itheima.otherClass.QueryInfo;
 import com.itheima.service.BenchmarkDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,12 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
 
     @Override
     public List<BenchmarkData> findAllAndSort(List<String> sortTypes) {
-        return benchmarkDataMapper.findAllAndSort(new QueryInfo(CustomerInfo.class,sortTypes).getOrderItems());
+        return benchmarkDataMapper.findAllAndSort(new QueryInfo(BenchmarkData.class,sortTypes).getOrderItems());
     }
 
     @Override
     public List<BenchmarkData> completeQuery(List<String> screenInfo, Integer pageIdx, Integer pageDataCount) {
-        return benchmarkDataMapper.completeQuery(new QueryInfo(CustomerInfo.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
+        return benchmarkDataMapper.completeQuery(new QueryInfo(BenchmarkData.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
     }
 
     @Override
@@ -40,9 +41,7 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
 
     @Override
     public List<String> findColValues(int colIdx) {
-        String colName = CustomerInfo.getColName(colIdx);
-        System.out.println("colName:"+colName);
-        return colName==null?null:benchmarkDataMapper.findColValues(colName);
+        return benchmarkDataMapper.findColValues(BenchmarkData.class.getDeclaredFields()[colIdx].getName());
     }
 
     @Override
@@ -57,7 +56,7 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
 
     @Override
     public Integer findScreenCount(List<String> screenInfo) {
-        return benchmarkDataMapper.findScreenCount(new QueryInfo(CustomerInfo.class,screenInfo));
+        return benchmarkDataMapper.findScreenCount(new QueryInfo(BenchmarkData.class,screenInfo));
     }
 
     @Override
@@ -71,7 +70,7 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
     }
 
     @Override
-    public Integer edit(BenchmarkData customerInfo) {
-        return benchmarkDataMapper.edit(customerInfo);
+    public Integer edit(BenchmarkData benchmarkData) {
+        return benchmarkDataMapper.edit(benchmarkData);
     }
 }

@@ -42,7 +42,7 @@
 	
 	<!-- 查询筛选后的行数 -->
 	<select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
-		select Count(*) from completeOaj
+		select Count(oaj_id) from ordersAndJournal
 		<where>
 			<foreach collection="colValueItems" open="" item="colValueItem">
 				AND ${colValueItem}
@@ -50,6 +50,10 @@
 		</where>
 	</select>
 	
+	<!-- 获取最大id值 -->
+	<select id="findMaxId" resultType="INTEGER">
+		select Max(oaj_id) from OrdersAndJournal
+	</select>
 	<insert id="adds" parameterType="List">
 		insert into ordersAndJournal(orderDate,orderId,salesMan,OEId,KMId,cusLevel,cusName,orderDemand,req,
 		deliveryDate,countdown,storageQT,deliveryQT,preDate,dyLoc,box,boxNum,remarks) 

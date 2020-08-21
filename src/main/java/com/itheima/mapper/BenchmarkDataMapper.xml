@@ -58,7 +58,7 @@
 
     <!-- 插入多行数据 -->
     <insert id="adds" parameterType="List">
-        insert into customerInfo(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)
+        insert into BenchmarkData(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)
         values
         <foreach collection="datas" separator="," item="data">
             ('${data.kangMingId}','${data.packingStandard}','${data.grossWeightOfEachBox}','${data.tankSize}','${data.aStandardCardBoardBox}','${data.aStandardCardBoardLongWide}','${data.instructions}')
@@ -80,7 +80,7 @@
     <!-- 更新一行数据 -->
     <!-- 只更新可以更新的部分 -->
     <update id="edit" parameterType="BenchmarkData" >
-        update customerInfo
+        update benchmarkData
         <set>
             kangMingId=#{kangMingId},
             packingStandard=#{packingStandard},

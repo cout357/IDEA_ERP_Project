@@ -212,12 +212,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
                         
 						<li class="head-item tablelink">
-							<a class="mainlink" href="view/MaterialControl-ordersAndJournal.jsp">物控管理</a>
+							<a class="mainlink" href="OrdersAndJournalCT/limitQuery">物控管理</a>
 							<div class="dropdown-content">
 								<ul class="droplist">
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/MaterialControl-ordersAndJournal.jsp">成品库存标准及库存动态</a>
+										<a class="droplink" href="OrdersAndJournalCT/limitQuery">成品库存标准及库存动态</a>
 									</li>
                                     
 									<li class="dropitem">
@@ -503,8 +503,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="hor val">${data.name}</th>
 									<th class="hor val">${data.password}</th>
 									<th class="hor val">${data.user}</th>
-									<th class="hor val">${data.role}</th>
-									<th class="hor val">${data.state}</th>
+									<th class="hor val">
+										<c:choose>
+											<c:when test="${data.role=='ROOT' }">管理员</c:when>
+											<c:when test="${data.role=='SALES' }">销售员</c:when>
+											<c:when test="${data.role=='ADMIN' }">仓库管理员</c:when>
+											<c:when test="${data.role=='SUPER' }">超级管理员</c:when>
+										</c:choose>
+									</th>
+									<th class="hor val">
+										<c:choose>
+											<c:when test="${data.state==1 }">可用</c:when>
+											<c:when test="${data.state==0 }">禁用</c:when>
+										</c:choose>
+									</th>
 									<th class="hor iconfont sep-hor">
 										<a href="javascript:;" class="editData" name="${data.id }" style="font-size:1.3rem;">&#xe612;</a>
 										&emsp;
@@ -557,8 +569,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td class="data"><input type="text" name="" id="" class="dataInput name" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput password" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput user" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
-							<td class="data"><input type="number" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect role" >
+								    <option value="ROOT" >&nbsp;&nbsp;管理员</option>
+								    <option value="SALES" >&nbsp;&nbsp;销售员</option>
+								    <option value="ADMIN" >&nbsp;&nbsp;仓库管理员</option>
+								    <option value="SUPER" >&nbsp;&nbsp;超级管理员</option>
+						        </select>
+							</td>
+							<td class="data">
+						        <select class="dataSelect state" >
+								    <option value="1" >&nbsp;&nbsp;可用</option>
+								    <option value="0" >&nbsp;&nbsp;禁用</option>
+						        </select>
+							</td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -604,11 +628,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">权限：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect role" >
+								    <option value="ROOT" >&nbsp;&nbsp;管理员</option>
+								    <option value="SALES" >&nbsp;&nbsp;销售员</option>
+								    <option value="ADMIN" >&nbsp;&nbsp;仓库管理员</option>
+								    <option value="SUPER" >&nbsp;&nbsp;超级管理员</option>
+						        </select>
+							</td>
 						</tr>
 						<tr class="line">
 							<td class="colName">状态：</td>
-							<td class="data"><input type="number" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect state" >
+								    <option value="1" >&nbsp;&nbsp;可用</option>
+								    <option value="0" >&nbsp;&nbsp;禁用</option>
+						        </select>
+							</td>
 						</tr>
 						</tbody>
 					</table>
@@ -673,7 +709,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var $editTbody = $('#editBox .edit-tbody');
 				//接收时全部接收，修改哪些取决于后台mapper语句
 				var data = {
-					id:             $editTbody.find(".roleId").val(),
+					id:             $editTbody.find(".id").val(),
 					name:             $editTbody.find(".name").val(),
 					password:              $editTbody.find(".password").val(),
 					user:              $editTbody.find(".user").val(),
@@ -696,9 +732,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(0).html(datas[i].id);
 					$vals.eq(1).html(datas[i].name);
 					$vals.eq(2).html(datas[i].password);
-					$vals.eq(2).html(datas[i].user);
-					$vals.eq(2).html(datas[i].role);
-					$vals.eq(2).html(datas[i].state);
+					$vals.eq(3).html(datas[i].user);
+					$vals.eq(4).html(datas[i].role);
+					$vals.eq(5).html(datas[i].state);
 					$newRow.find(".dataCheb").val(datas[i].id);
 					$newRow.find(".editData").attr("name",datas[i].id);
 					$newRow.find(".delData").attr("name",datas[i].id);
@@ -707,15 +743,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
-				$editTbody.find(".id").val(data.roleId);
-				$editTbody.find(".name").val(data.roleUser);
-				$editTbody.find(".password").val(data.strRole);
-				$editTbody.find(".user").val(data.strRole);
-				$editTbody.find(".role").val(data.strRole);
-				$editTbody.find(".state").val(data.strRole);
+				$editTbody.find(".id").val(data.id);
+				$editTbody.find(".name").val(data.name);
+				$editTbody.find(".password").val(data.password);
+				$editTbody.find(".user").val(data.user);
+				$editTbody.find(".role").val(data.role);
+				$editTbody.find(".state").val(data.state);
 			}
 			//隐藏列表
-			var hiddenCols = null;
+			var hiddenCols = [];
 		</script>
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>

@@ -21,4 +21,5 @@ public interface OrdersAndJournalService {
 	OrdersAndJournal findById(Integer id);
 	boolean edit(OrdersAndJournal ordersAndJournal);
 	OrdersAndJournalTotalInfo queryTotalInfo();
+	Integer findMaxId();
 }

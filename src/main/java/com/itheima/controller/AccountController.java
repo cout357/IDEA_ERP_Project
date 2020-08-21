@@ -6,7 +6,6 @@ import com.itheima.model.BenchmarkData;
 import com.itheima.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextImpl;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,31 +18,19 @@ import java.util.HashMap;
 import java.util.List;
 
 @Controller
+@RequestMapping("AccountCT")
 public class AccountController {
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
     @Autowired
     private AccountService accountService;
 
-
-
-    @RequestMapping("allQuery")
-    public String findAll(Model model) {
-        List<Account> customerInfos = accountService.findAll();
-        model.addAttribute("customerInfos", customerInfos);
-        model.addAttribute("pageIdx",0);
-        model.addAttribute("dataCount",accountService.findCount());
-        return "basic-customer";
-    }
     @RequestMapping("limitQuery")
     public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
-        List<Account> customerInfos = accountService.limitQuery(pageIdx,pageDataCount);
-        model.addAttribute("customerInfos", customerInfos);
+        List<Account> datas = accountService.limitQuery(pageIdx,pageDataCount);
+        model.addAttribute("datas", datas);
         model.addAttribute("pageIdx",pageIdx);
         model.addAttribute("pageDataCount",pageDataCount);
         model.addAttribute("dataCount",accountService.findCount());
-        return "Basic-customer";
+        return "Basic-user";
     }
     @RequestMapping("findById")
     @ResponseBody
@@ -58,13 +45,11 @@ public class AccountController {
         int count = accountService.findScreenCount(screenInfo);
         //如果筛选后当前页大于筛选条件下的最大页，就把当前页改为最大页
         pageIdx = count>pageIdx*pageDataCount?pageIdx:(count-1)/pageDataCount;
-        List<Account> customerInfos = accountService.completeQuery(screenInfo,pageIdx,pageDataCount);
+        List<Account> datas = accountService.completeQuery(screenInfo,pageIdx,pageDataCount);
         HashMap hash = new HashMap();
-        hash.put("customerInfos", customerInfos);
+        hash.put("datas", datas);
         hash.put("pageIdx",pageIdx);
         hash.put("dataCount", count);
-        System.out.println("--------排序后---------");
-        System.out.println(customerInfos);
 
         return hash;
     }

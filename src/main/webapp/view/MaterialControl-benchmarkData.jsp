@@ -773,14 +773,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var $editTbody = $('#editBox .edit-tbody');
 				//接收时全部接收，修改哪些取决于后台mapper语句
 				var data = {
+					id:                   		  $editTbody.find(".id").val(),
 					kangMingId:                   $editTbody.find(".kangMingId").val(),
 					packingStandard:              $editTbody.find(".packingStandard").val(),
 					grossWeightOfEachBox:         $editTbody.find(".grossWeightOfEachBox").val(),
 					tankSize:                     $editTbody.find(".tankSize").val(),
 					aStandardCardBoardBox:        $editTbody.find(".aStandardCardBoardBox").val(),
 					aStandardCardBoardLongWide:   $editTbody.find(".aStandardCardBoardLongWide").val(),
-					instructions:                 $editTbody.find(".instructions").val(),
-					benchmarkDataVersionNumber:   $editTbody.find(".benchmarkDataVersionNumber").val()
+					instructions:                 $editTbody.find(".instructions").val()
 				};
 				return data;
 			}
@@ -819,7 +819,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$editTbody.find(".aStandardCardBoardBox").val(data.aStandardCardBoardBox);
 				$editTbody.find(".aStandardCardBoardLongWide").val(data.aStandardCardBoardLongWide);
 				$editTbody.find(".instructions").val(data.instructions);
-				$editTbody.find(".benchmarkDataVersionNumber").val(data.benchmarkDataVersionNumber);
 			}
 			
 			function refreshTotalInfoSuc(hash){
@@ -832,7 +831,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表
-			var hiddenCols = null;
+			var hiddenCols = [];
 		</script>
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>

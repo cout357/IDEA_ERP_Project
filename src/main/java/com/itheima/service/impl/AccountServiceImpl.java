@@ -2,7 +2,8 @@ package com.itheima.service.impl;
 
 import com.itheima.mapper.AccountMapper;
 import com.itheima.model.Account;
-import com.itheima.model.CustomerInfo;
+import com.itheima.model.Account;
+import com.itheima.model.OrdersAndJournal;
 import com.itheima.otherClass.QueryInfo;
 import com.itheima.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> findAllAndSort(List<String> sortTypes) {
-        return accountMapper.findAllAndSort(new QueryInfo(CustomerInfo.class,sortTypes).getOrderItems());
+        return accountMapper.findAllAndSort(new QueryInfo(Account.class,sortTypes).getOrderItems());
     }
 
     @Override
     public List<Account> completeQuery(List<String> screenInfo, Integer pageIdx, Integer pageDataCount) {
-        return accountMapper.completeQuery(new QueryInfo(CustomerInfo.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
+        return accountMapper.completeQuery(new QueryInfo(Account.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
     }
 
     @Override
@@ -40,9 +41,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<String> findColValues(int colIdx) {
-        String colName = CustomerInfo.getColName(colIdx);
-        System.out.println("colName:"+colName);
-        return colName==null?null:accountMapper.findColValues(colName);
+        return accountMapper.findColValues(Account.class.getDeclaredFields()[colIdx].getName());
     }
 
     @Override
@@ -57,7 +56,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Integer findScreenCount(List<String> screenInfo) {
-        return accountMapper.findScreenCount(new QueryInfo(CustomerInfo.class,screenInfo));
+        return accountMapper.findScreenCount(new QueryInfo(Account.class,screenInfo));
     }
 
     @Override
@@ -71,7 +70,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Integer edit(Account customerInfo) {
-        return accountMapper.edit(customerInfo);
+    public Integer edit(Account account) {
+        return accountMapper.edit(account);
     }
 }

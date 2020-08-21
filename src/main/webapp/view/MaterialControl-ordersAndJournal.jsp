@@ -234,7 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</li>
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/Basic-user.jsp">用户权限管理</a>
+										<a class="droplink" href="AccountCT/limitQuery">用户权限管理</a>
 									</li>
                                     
 								</ul>
@@ -781,7 +781,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<thead>
 						<tr class="colName-tr">
 							<th class="colName">订单下达日期</th>
-							<th class="colName">订单编号</th>
 							<th class="colName">业务员</th>
 							<th class="colName">OE编号</th>
 							<th class="colName">康明编号</th>
@@ -805,7 +804,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody id="add-tbody">
 						<tr class="data-tr">
 							<td class="data"><input type="date" name="" id="" class="dataInput dateInput orderDate" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput orderId" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
 							<td class="data">
@@ -1006,7 +1004,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					var $data = $dataTrs.eq(i);		//单行数据
 					datas[i] = {
 							orderDate:				$data.find('.orderDate').val(),
-							orderId:				$data.find('.orderId').val(),
 							salesMan:				$data.find('.salesMan').val(),
 							oeId:			$data.find('.OEId').val(),
 							kmId:			$data.find('.KMId').val(),

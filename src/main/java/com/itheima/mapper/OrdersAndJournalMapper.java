@@ -21,4 +21,5 @@ public interface OrdersAndJournalMapper {
 	OrdersAndJournal findById(Integer id);
 	Integer edit(OrdersAndJournal ordersAndJournal);
 	OrdersAndJournalTotalInfo queryTotalInfo();
+	Integer findMaxId();
 }

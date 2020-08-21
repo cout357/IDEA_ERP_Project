@@ -111,7 +111,8 @@ function initAddBox(){
     	//$('.addTable-box').scrollLeft(0);
     	var $trN = trNode.clone();
     	var dateInput = $trN.find('.dateInput')[0];
-    	dateInput.valueAsDate = new Date();
+    	if(dateInput!=null)
+    		dateInput.valueAsDate = new Date();
         tbody.append($trN);
         $trN.find('.data')[0].focus();
         setWithValueListEvent();
