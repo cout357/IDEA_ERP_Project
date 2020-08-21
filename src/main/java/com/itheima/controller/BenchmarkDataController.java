@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Controller
-@RequestMapping("BenchmarkDataControllerCT")
+@RequestMapping("BenchmarkDataCT")
 public class BenchmarkDataController {
 
     @Autowired
@@ -32,8 +32,8 @@ public class BenchmarkDataController {
     }
     @RequestMapping("limitQuery")
     public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
-        List<BenchmarkData> customerInfos = benchmarkDataService.limitQuery(pageIdx,pageDataCount);
-        model.addAttribute("customerInfos", customerInfos);
+        List<BenchmarkData> datas = benchmarkDataService.limitQuery(pageIdx,pageDataCount);
+        model.addAttribute("datas", datas);
         model.addAttribute("pageIdx",pageIdx);
         model.addAttribute("pageDataCount",pageDataCount);
         model.addAttribute("dataCount",benchmarkDataService.findCount());

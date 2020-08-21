@@ -92,4 +92,10 @@
     </update>
 
 
+
+    <select id="AccountFindByEmail" parameterType="String" resultType="Account">
+        select * from account where user=#{user}
+    </select>
+
+
 </mapper>

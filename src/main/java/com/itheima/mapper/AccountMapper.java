@@ -25,4 +25,9 @@ public interface AccountMapper {
     Integer edit(Account customerInfo);
 
 
+
+
+    Account AccountFindByEmail(String user);
+
+
 }
