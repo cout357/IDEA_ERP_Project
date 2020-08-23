@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,6 +85,7 @@ public class BenchmarkDataController {
     }
 
     @RequestMapping("add")
+    @RolesAllowed({"ROLE_SUPER","ROLE_ROOT"})
     @ResponseBody			//要返回Integer就需要加这个注解
     public Integer add(@RequestBody List<BenchmarkData> datas) {
         System.out.println("要添加的数据:"+datas);
@@ -100,6 +102,7 @@ public class BenchmarkDataController {
         return count;
     }
     @RequestMapping("del")
+    @RolesAllowed({"ROLE_SUPER","ROLE_ROOT"})
     @ResponseBody			//要返回Integer就需要加这个注解
     public Integer del(@RequestBody List<Integer> ids) {
         System.out.println("要删除的数据:"+ids);
@@ -108,6 +111,7 @@ public class BenchmarkDataController {
     }
 
     @RequestMapping("edit")
+    @RolesAllowed({"ROLE_SUPER","ROLE_ROOT"})
     @ResponseBody
     public Integer edit(@RequestBody BenchmarkData data) {
         return benchmarkDataService.edit(data);

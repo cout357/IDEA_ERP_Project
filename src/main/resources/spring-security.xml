@@ -18,6 +18,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
     <security:http security="none" pattern="/js/**" />
     <security:http security="none" pattern="/index.jsp" />
     <security:http security="none" pattern="/login.jsp" />
+    <security:http security="none" pattern="/403.jsp" />
 
 <!--    <security:http security="none" pattern="/OrdersAndJournalCT/limitQuery" />-->
 

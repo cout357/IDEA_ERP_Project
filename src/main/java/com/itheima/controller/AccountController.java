@@ -24,6 +24,7 @@ public class AccountController {
     private AccountService accountService;
 
     @RequestMapping("limitQuery")
+    @RolesAllowed("ROLE_SUPER")
     public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
         List<Account> datas = accountService.limitQuery(pageIdx,pageDataCount);
         model.addAttribute("datas", datas);
@@ -33,12 +34,14 @@ public class AccountController {
         return "Basic-user";
     }
     @RequestMapping("findById")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody
     public Account findById(Integer id) {
         Account customer = accountService.findById(id);
         return customer;
     }
     @RequestMapping("completeQuery")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody
     public HashMap customerSort(@RequestBody List<String> screenInfo, @RequestParam Integer pageIdx, @RequestParam Integer pageDataCount){
         System.out.println(" pageIdx:"+pageDataCount+" pageDataCount:"+pageDataCount + "screenInfo:" + screenInfo);
@@ -54,6 +57,7 @@ public class AccountController {
         return hash;
     }
     @RequestMapping("dataColValues")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody
     public List<String> dataColValue(Integer colIdx){
         System.out.println("colIdx:"+colIdx);
@@ -61,6 +65,7 @@ public class AccountController {
     }
 
     @RequestMapping("add")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody			//要返回Integer就需要加这个注解
     public Integer add(@RequestBody List<Account> datas) {
         System.out.println("要添加的数据:"+datas);
@@ -68,6 +73,7 @@ public class AccountController {
         return count;
     }
     @RequestMapping("del")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody			//要返回Integer就需要加这个注解
     public Integer del(@RequestBody List<Integer> ids) {
         System.out.println("要删除的数据:"+ids);
@@ -76,6 +82,7 @@ public class AccountController {
     }
 
     @RequestMapping("edit")
+    @RolesAllowed("ROLE_SUPER")
     @ResponseBody
     public Integer edit(@RequestBody Account data) {
         return accountService.edit(data);
