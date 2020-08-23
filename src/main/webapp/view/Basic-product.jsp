@@ -129,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						
 						<li class="select-item">
-							<a href="view/Basic-user.jsp" class="select-a ">
+							<a href="AccountCT/limitQuery" class="select-a ">
 								<div class="text-icon icon"><span class="icon-text">用</span></div>
 								<span class="select-text text">用户权限管理</span>
 								
@@ -175,7 +175,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</li>
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/Basic-user.jsp">用户权限管理</a>
+										<a class="droplink" href="AccountCT/limitQuery">用户权限管理</a>
 									</li>
                                     
 								</ul>

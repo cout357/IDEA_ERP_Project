@@ -1,6 +1,8 @@
 package com.itheima.mapper;
 
 import com.itheima.model.BenchmarkData;
+import com.itheima.model.BenchmarkDataTotalInfo;
+import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.otherClass.QueryInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,7 +21,7 @@ public interface BenchmarkDataMapper {
     Integer adds(@Param("datas") List<BenchmarkData> datas);
     Integer dels(@Param("ids") List<Integer> ids);
     Integer edit(BenchmarkData customerInfo);
-
+	BenchmarkDataTotalInfo queryTotalInfo();
 
 
 }

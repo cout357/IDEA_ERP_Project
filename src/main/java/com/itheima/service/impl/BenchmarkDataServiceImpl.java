@@ -3,6 +3,7 @@ package com.itheima.service.impl;
 import com.itheima.mapper.BenchmarkDataMapper;
 import com.itheima.model.Account;
 import com.itheima.model.BenchmarkData;
+import com.itheima.model.BenchmarkDataTotalInfo;
 import com.itheima.model.BenchmarkData;
 import com.itheima.otherClass.QueryInfo;
 import com.itheima.service.BenchmarkDataService;
@@ -73,4 +74,10 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
     public Integer edit(BenchmarkData benchmarkData) {
         return benchmarkDataMapper.edit(benchmarkData);
     }
+
+	@Override
+	public BenchmarkDataTotalInfo queryTotalInfo() {
+		// TODO Auto-generated method stub
+		return benchmarkDataMapper.queryTotalInfo();
+	}
 }

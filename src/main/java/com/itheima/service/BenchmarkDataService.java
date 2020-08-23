@@ -1,6 +1,7 @@
 package com.itheima.service;
 
 import com.itheima.model.BenchmarkData;
+import com.itheima.model.BenchmarkDataTotalInfo;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface BenchmarkDataService {
     Integer adds(List<BenchmarkData> datas);
     Integer dels(List<Integer> ids);
     Integer edit(BenchmarkData customerInfo);
+	BenchmarkDataTotalInfo queryTotalInfo();
 }

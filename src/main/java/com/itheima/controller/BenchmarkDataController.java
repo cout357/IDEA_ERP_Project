@@ -2,8 +2,11 @@ package com.itheima.controller;
 
 import com.itheima.mapper.BenchmarkDataMapper;
 import com.itheima.model.BenchmarkData;
+import com.itheima.model.BenchmarkDataTotalInfo;
 import com.itheima.model.CustomerInfo;
 import com.itheima.model.GeneralLedger;
+import com.itheima.model.GeneralLedgerTotalInfo;
+import com.itheima.otherClass.UtilFunc;
 import com.itheima.service.BenchmarkDataService;
 import com.itheima.service.GeneralLedgerService;
 
@@ -28,21 +31,16 @@ public class BenchmarkDataController {
 	@Autowired
 	private GeneralLedgerService gService;
 
-    @RequestMapping("allQuery")
-    public String findAll(Model model) {
-        List<BenchmarkData> customerInfos = benchmarkDataService.findAll();
-        model.addAttribute("customerInfos", customerInfos);
-        model.addAttribute("pageIdx",0);
-        model.addAttribute("dataCount",benchmarkDataService.findCount());
-        return "basic-customer";
-    }
     @RequestMapping("limitQuery")
     public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
         List<BenchmarkData> datas = benchmarkDataService.limitQuery(pageIdx,pageDataCount);
+        HashMap hash = totalInfo();
         model.addAttribute("datas", datas);
         model.addAttribute("pageIdx",pageIdx);
         model.addAttribute("pageDataCount",pageDataCount);
         model.addAttribute("dataCount",benchmarkDataService.findCount());
+        model.addAttribute("totalInfo", hash.get("totalInfo"));
+        model.addAttribute("refreshTime", hash.get("refreshTime"));
         return "MaterialControl-benchmarkData";
     }
     @RequestMapping("findById")
@@ -66,6 +64,18 @@ public class BenchmarkDataController {
 
         return hash;
     }
+    
+	
+	//返回统计信息
+	@RequestMapping("totalInfo")
+	@ResponseBody
+	public HashMap totalInfo() {
+		HashMap hash = new HashMap();
+		BenchmarkDataTotalInfo totalInfo = benchmarkDataService.queryTotalInfo();
+		hash.put("totalInfo", totalInfo);
+		hash.put("refreshTime", UtilFunc.getTime());
+		return hash;
+	}
     @RequestMapping("dataColValues")
     @ResponseBody
     public List<String> dataColValue(Integer colIdx){
