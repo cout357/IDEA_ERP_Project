@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="">Alexander Pierce</a></span>
+				<span class="text"><a href="javascript:;">${SessionScope.username }</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">
@@ -378,9 +378,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="head-right">
 					<ul class="head-list">
-						<li class="head-item iconfont"><a href="">&#xe607;</a></li>
-						<li class="head-item iconfont"><a href="">&#xe638;</a></li>
-						<li class="head-item iconfont"><a href="" style="font-size:1.3rem;">&#xe624;</a></li>
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe607;</a></li>	<!-- 菜单 -->
+						<li class="head-item iconfont">	<!-- 注销 -->
+							<a class="link" href="logout">&#xe62a;
+								<span class="tipText">注销</span>
+							</a>
+						</li> 
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe638;</a></li> <!-- 消息 -->
+						<li class="head-item iconfont"><a class="link" href="javascript:;" style="font-size:1.3rem;">&#xe624;</a></li>
 						<form action="" class="search">
 							<div class="search-group">
 								<input type="search" placeholder="Search" class="search-text"/>
@@ -407,7 +412,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="table-box" id="totalInfoTableBox">
 							<div class="totalInfo-menu">
 								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${totalInfoRefreshTime }</span></span>
-								<button class="updateTotalInfoBT cur-poi">更新</button>
+								<button class="updateTotalInfoBT cur-poi">更新统计</button>
 							</div>
 							<table class="totalInfo">
 								<tr class="row">
@@ -1154,11 +1159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$('.totalInfoRefreshTime').text(refreshTime);
 
 			}
-			//隐藏列表
-			var hiddenCols = ['要求','说明'];
 			
-			
-
 			//获取添加和编辑的康明编号提示li
 			function getKmIdListAjax(){
 				$.post(
@@ -1179,6 +1180,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				//获取添加和编辑的康明编号提示li
 				getKmIdListAjax();
 			});
+			//隐藏列表
+			var hiddenCols = ['要求','说明'];
+			
+			
+
+
 		</script>
 		<script src="js/init.js"></script>
 		<script src="js/funcsOfAjax.js"></script>

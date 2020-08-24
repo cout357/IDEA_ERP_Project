@@ -17,6 +17,19 @@
     </error-page>
 
 
+    <!--出现404权限信息时跳转到404页面-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+
+    <!--出现500权限信息时跳转到500页面-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
     <session-config>
         <session-timeout>240</session-timeout>
     </session-config>

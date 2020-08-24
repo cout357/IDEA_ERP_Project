@@ -56,6 +56,11 @@
         </where>
     </select>
 
+	<!-- 查询统计信息 -->
+	<select id="queryTotalInfo" resultType="BenchmarkDataTotalInfo">
+		select Count(kangmingid) as totalAmount from BenchmarkData
+	</select>
+	
     <!-- 插入多行数据 -->
     <insert id="adds" parameterType="List">
         insert into BenchmarkData(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)

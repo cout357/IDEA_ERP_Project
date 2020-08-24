@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="">Alexander Pierce</a></span>
+				<span class="text"><a href="javascript:;">${SessionScope.username }</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">
@@ -128,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						
 						<li class="select-item">
-							<a href="view/Basic-user.jsp" class="select-a  selected">
+							<a href="AccountCT/limitQuery" class="select-a  selected">
 								<div class="text-icon icon"><span class="icon-text">用</span></div>
 								<span class="select-text text">用户权限管理</span>
 								
@@ -175,7 +175,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</li>
                                     
 									<li class="dropitem">
-										<a class="droplink" href="view/Basic-user.jsp">用户权限管理</a>
+										<a class="droplink" href="AccountCT/limitQuery">用户权限管理</a>
 									</li>
                                     
 								</ul>
@@ -319,9 +319,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="head-right">
 					<ul class="head-list">
-						<li class="head-item iconfont"><a href="">&#xe607;</a></li>
-						<li class="head-item iconfont"><a href="">&#xe638;</a></li>
-						<li class="head-item iconfont"><a href="" style="font-size:1.3rem;">&#xe624;</a></li>
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe607;</a></li>	<!-- 菜单 -->
+						<li class="head-item iconfont">	<!-- 注销 -->
+							<a class="link" href="logout">&#xe62a;
+								<span class="tipText">注销</span>
+							</a>
+						</li> 
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe638;</a></li> <!-- 消息 -->
+						<li class="head-item iconfont"><a class="link" href="javascript:;" style="font-size:1.3rem;">&#xe624;</a></li>
 						<form action="" class="search">
 							<div class="search-group">
 								<input type="search" placeholder="Search" class="search-text"/>
@@ -749,6 +754,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$editTbody.find(".user").val(data.user);
 				$editTbody.find(".role").val(data.role);
 				$editTbody.find(".state").val(data.state);
+			}
+			
+			function refreshTotalInfoSuc(hash){
+				var totalInfo = hash.totalInfo;
+				var refreshTime = hash.refreshTime;
+				//填入统计信息
+				if(totalInfo!=undefined&&totalInfo!=null){
+					$('.totalAmount').text(totalInfo.totalAmount);
+				}
+				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表
 			var hiddenCols = [];

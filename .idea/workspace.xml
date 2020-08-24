@@ -27,7 +27,62 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="" />
+    <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/500.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/403.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/403.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/datatable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/util.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/BenchmarkDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/BenchmarkDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/BenchmarkDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/BenchmarkDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/impl/BenchmarkDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/curd.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/curd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/basic-customer_old.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/BenchmarkDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/BenchmarkDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/BenchmarkDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/BenchmarkDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/BenchmarkDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-security.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +133,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/service/impl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/view" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,12 +146,15 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\view" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\model" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service\impl" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\mapper" />
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,6 +297,8 @@
       <workItem from="1597969708744" duration="3746000" />
       <workItem from="1597976085493" duration="11000" />
       <workItem from="1597976098833" duration="3731000" />
+      <workItem from="1598185836945" duration="770000" />
+      <workItem from="1598227910399" duration="4679000" />
     </task>
     <task id="LOCAL-00001" summary="添加SUPER 超级用户权限，BenchmarkData,Account的modelmapper sql,service, 删除无用ROLE  Java model">
       <created>1597979338989</created>
