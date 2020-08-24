@@ -1,5 +1,6 @@
 package com.itheima.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,11 @@ public class GeneralLedgerServiceImpl implements GeneralLedgerService{
 	@Override
 	public List<GeneralLedger> limitQuery(Integer pageIdx, Integer pageDataCount) {
 		// TODO Auto-generated method stub
-		return generalLedgerMapper.completeQuery(new QueryInfo(pageIdx*pageDataCount,pageDataCount));
+		//第一次访问默认按编号降序
+		List<String> screenInfo = new ArrayList<String>();
+		screenInfo.add("orderItems");
+		screenInfo.add("0 -1");
+		return generalLedgerMapper.completeQuery(new QueryInfo(GeneralLedger.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
 	}
 
 	@Override

@@ -33,9 +33,6 @@ public class OrdersAndJournalController {
 	
 	@RequestMapping("limitQuery")
 	public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx,@RequestParam(defaultValue = "30")Integer pageDataCount,Model model) {
-		//默认跳转最后一页
-		int count = oService.findCount();
-		pageIdx = (count-1)/pageDataCount;
 		List<OrdersAndJournal> ordersAndJournals = oService.limitQuery(pageIdx,pageDataCount);
 		OrdersAndJournalTotalInfo totalInfo = oService.queryTotalInfo();
 		

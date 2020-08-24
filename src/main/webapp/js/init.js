@@ -137,3 +137,10 @@ function initDateInput(){
 		dateInputs[i].valueAsDate = new Date();
 }
 initDateInput();
+
+//修改第一个sortSign，默认按编号降序排序
+(function initSortSign(){
+	var $sortSigns = $('.sortSign');
+	$sortSigns.eq(0).addClass("sort-down");
+	$sortSigns.eq(0).html("&#xe738;");
+})();

@@ -800,29 +800,37 @@ function setWithValueListEvent(){
 		for(var i = 0;i < $vals.length;i++){
 			maxWidth = $vals.eq(i).outerWidth()>maxWidth?$vals.eq(i).outerWidth():maxWidth;
 		}
-		console.log(maxWidth);
 		$list.width(maxWidth);
 	});
+	function withValueListBlur(_this){
+		var $this = $(_this);
+		console.log("blur");
+		$this.siblings('.getValue-box').css("display","none");
+		if(chooseLi!=null){
+			chooseLi.destroy();
+			chooseLi = null;
+		}
+	}
 	$('.dialog .withValueList').on('blur',function(){
-		$this = $(this);
+		var $this = $(this);
+		console.log("blur");
 		$this.siblings('.getValue-box').css("display","none");
 		if(chooseLi!=null){
 			chooseLi.destroy();
 			chooseLi = null;
 		}
 	});
-	$('.dialog .getValue-box .val').on("mousedown",function(){
+	$('.dialog .getValue-box .item').on("mousedown",function(){
+		console.log("mousedown");
 		$this = $(this);
-		$this.parents('.getValue-box').siblings('.withValueList').val($this.text());
-		console.log(	$this.parents('.getValue-box').siblings('.withValueList'));
-		$this.parents('.getValue-box').css("display","none");
+		$this.parents('.getValue-box').siblings('.withValueList').val($this.find(".val").text());
 	});
 	$('.dialog .withValueList').on('keydown',function(ev){
 		if(chooseLi!=null)chooseLi.keydown(ev);
 		if(ev.keyCode==13){
 			chooseLi = null;
 			$this = $(this);
-			$this.siblings('.getValue-box').css("display","none");
+			$this.trigger("blur");
 		}
 	});
 	$('.dialog .withValueList').bind('input propertychange',function(){

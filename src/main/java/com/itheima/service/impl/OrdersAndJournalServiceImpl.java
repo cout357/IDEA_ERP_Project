@@ -1,6 +1,7 @@
 package com.itheima.service.impl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,11 @@ public class OrdersAndJournalServiceImpl implements OrdersAndJournalService{
 	@Override
 	public List<OrdersAndJournal> limitQuery(Integer pageIdx, Integer pageDataCount) {
 		// TODO Auto-generated method stub
-		return ordersAndJournalMapper.completeQuery(new QueryInfo(pageIdx*pageDataCount,pageDataCount));
+		//第一次访问默认按编号降序
+		List<String> screenInfo = new ArrayList<String>();
+		screenInfo.add("orderItems");
+		screenInfo.add("0 -1");
+		return ordersAndJournalMapper.completeQuery(new QueryInfo(OrdersAndJournal.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
 	}
 	@Override
 	public List<OrdersAndJournal> completeQuery(List<String> screenInfo) {

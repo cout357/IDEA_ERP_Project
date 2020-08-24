@@ -132,9 +132,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="head-right">
 					<ul class="head-list">
-						<li class="head-item iconfont"><a href="">&#xe607;</a></li>
-						<li class="head-item iconfont"><a href="">&#xe638;</a></li>
-						<li class="head-item iconfont"><a href="" style="font-size:1.3rem;">&#xe624;</a></li>
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe607;</a></li>	<!-- 菜单 -->
+						<li class="head-item iconfont">	<!-- 注销 -->
+							<a class="link" href="/logout">&#xe62a;
+								<span class="tipText">注销</span>
+							</a>
+						</li> 
+						<li class="head-item iconfont"><a class="link" href="javascript:;">&#xe638;</a></li> <!-- 消息 -->
+						<li class="head-item iconfont"><a class="link" href="javascript:;" style="font-size:1.3rem;">&#xe624;</a></li>
 						<form action="" class="search">
 							<div class="search-group">
 								<input type="search" placeholder="Search" class="search-text"/>
@@ -156,58 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="sep">/</span>
 						<span>用户权限管理</span>
 					</div>
-<!-- 统计信息 -->
-					<div class="totalInfo-box">
-						<a class="dropdownLink" id="totalInfoLink" href="javascript:;">统计信息</a>
-						<div class="table-box" id="totalInfoTableBox">
-							<div class="totalInfo-menu">
-								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${totalInfoRefreshTime }</span></span>
-								<button class="updateTotalInfoBT cur-poi">更新</button>
-							</div>
-							<table class="totalInfo">
-								<tr class="row">
-									<th class="hor val tinfo-1" colspan="1">开始运行日期</th>
-									<th class="hor val tinfo-1 startData" colspan="1">${totalInfo.startData }</th>
-									<th class="hor val tinfo-1" colspan="1">运行天数</th>
-									<th class="hor val tinfo-1 startDay" colspan="1">${totalInfo.startDay }</th>
-									<th class="hor val tinfo-2" colspan="1">无订单款数</th>
-									<th class="hor val tinfo-2 noOrderAmount" colspan="1">${totalInfo.noOrderAmount }</th>
-									<th class="hor val tinfo-2" colspan="1">无订单库存</th>
-									<th class="hor val tinfo-2 noOrderInventory" colspan="1">${totalInfo.noOrderInventory }</th>
-									<th class="hor val tinfo-2" colspan="1">错误数据项</th>
-									<th class="hor val tinfo-2 errorDataItem" colspan="1">${totalInfo.errorDataItem }</th>
-									<th class="hor val tinfo-3" colspan="2">总结存数</th>
-								</tr>
-								<tr class="row title-tr">
-									<th class="hor val tinfo-4" colspan="1">入库种数</th>
-									<th class="hor val tinfo-4 warehousingSpecies" colspan="1">${totalInfo.warehousingSpecies }</th>
-									<th class="hor val tinfo-4 " colspan="1">出库种数</th>
-									<th class="hor val tinfo-4 outboundSpecies" colspan="1">${totalInfo.outboundSpecies }</th>
-									<th class="hor val tinfo-4" colspan="1">订单总需求</th>
-									<th class="hor val tinfo-4 totalOrderDemand" colspan="1">${totalInfo.totalOrderDemand }</th>
-									<th class="hor val tinfo-4" colspan="1">缺货款数</th>
-									<th class="hor val tinfo-4 lackOfLoans" colspan="1">${totalInfo.lackOfLoans }</th>
-									<th class="hor val tinfo-4" colspan="1">缺货数量</th>
-									<th class="hor val tinfo-4 lackOfCreditNumber" colspan="1">${totalInfo.lackOfCreditNumber }</th>
-									<th class="hor val tinfo-3 conclusionDepositNumber" colspan="2">${totalInfo.conclusionDepositNumber }</th>
-								</tr>
-								<tr class="row" >
-									<th class="hor val tinfo-3" colspan="1">总款数</th>
-									<th class="hor val tinfo-3 totalNumber" colspan="1">${totalInfo.totalNumber }</th>
-									<th class="hor val tinfo-3" colspan="1">总入库数</th>
-									<th class="hor val tinfo-3 totalNumberIncoming" colspan="1">${totalInfo.totalNumberIncoming }</th>
-									<th class="hor val tinfo-3" colspan="1">实际出库数</th>
-									<th class="hor val tinfo-3 actualNumberWarehouses" colspan="1">${totalInfo.actualNumberWarehouses }</th>
-									<th class="hor val tinfo-3" colspan="1">备货预出库数</th>
-									<th class="hor val tinfo-3 prepareQuantity" colspan="1">${totalInfo.prepareQuantity }</th>
-									<th class="hor val tinfo-3" colspan="1">总入库频次数</th>
-									<th class="hor val tinfo-3 totalStorageFrequency" colspan="1">${totalInfo.totalStorageFrequency }</th>
-									<th class="hor val tinfo-3" colspan="1">总出库频次数</th>
-									<th class="hor val tinfo-3 totalOutboundFrequency" colspan="1">${totalInfo.totalOutboundFrequency }</th>
-								</tr>
-							</table>
-						</div>
-					</div>
+
 				</div>
 				<!-- 数据表格 -->
 				<div class="content-body">
@@ -262,7 +216,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										数字筛选<span class="fr">></span>
 										<div class="sub-dropdown">
 											<select class="numscreen-select">
-												<option value="cancel">无</option>
 												<option value="=" selected>等于</option>
 												<option value="!=">不等于</option>
 												<option value=">">大于</option>
@@ -270,8 +223,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<option value="<">小于</option>
 												<option value="<=">小于或等于</option>
 											</select>
-												<input type="text" class="numscreen-val">		<!-- 只能接收数字、小数点、百分号 -->
-												<input type="submit" class="numscreen-all-submit cur-poi"  value="确定"/>
+												<input type="number"  class="numscreen-val"  />		<!-- 只能接收数字、小数点、百分号 -->
+												<input type="submit" class="numscreen-all-submit cur-poi submit"  value="确定"/>
 											<div class="bottom"></div>
 										</div>
 									</span>
@@ -290,7 +243,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<div class="valuescreen">
 												<div class="valuescreen-all-checkbox-box"><input class="valuescreen-all-checkbox" class="cur-poi" type="checkbox" checked='true' />全选</div>
 												<!-- <form action="" method="post"> -->
-													<input type="button" class="valuescreen-all-submit cur-poi" value="确定"/>
+													<input type="button" class="valuescreen-all-submit cur-poi submit" value="确定"/>
 													<ul class="list valuescreen-all-checkbox-box-list">
 
 													</ul>
@@ -300,7 +253,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</span>
 								</li>
 								<li class="item cancelscreen-item">
-									<a class="dropitem vec cancelscreen-link" >取消筛选</a>
+									<a class="dropitem vec cancelscreen-link submit" >取消筛选</a>
 								</li>
 							</ul>
 						</div>
@@ -368,8 +321,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<th class="hor val">${data.name}</th>
 									<th class="hor val">${data.password}</th>
 									<th class="hor val">${data.user}</th>
-									<th class="hor val">${data.role}</th>
-									<th class="hor val">${data.state}</th>
+									<th class="hor val">
+										<c:choose>
+											<c:when test="${data.role=='ROOT' }">管理员</c:when>
+											<c:when test="${data.role=='SALES' }">销售员</c:when>
+											<c:when test="${data.role=='ADMIN' }">仓库管理员</c:when>
+											<c:when test="${data.role=='SUPER' }">超级管理员</c:when>
+										</c:choose>
+									</th>
+									<th class="hor val">
+										<c:choose>
+											<c:when test="${data.state==1 }">可用</c:when>
+											<c:when test="${data.state==0 }">禁用</c:when>
+										</c:choose>
+									</th>
 									<th class="hor iconfont sep-hor">
 										<a href="javascript:;" class="editData" name="${data.id }" style="font-size:1.3rem;">&#xe612;</a>
 										&emsp;
@@ -422,8 +387,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td class="data"><input type="text" name="" id="" class="dataInput name" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput password" value="" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput user" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect role" >
+								    <option value="ROOT" >&nbsp;&nbsp;管理员</option>
+								    <option value="SALES" >&nbsp;&nbsp;销售员</option>
+								    <option value="ADMIN" >&nbsp;&nbsp;仓库管理员</option>
+								    <option value="SUPER" >&nbsp;&nbsp;超级管理员</option>
+						        </select>
+							</td>
+							<td class="data">
+						        <select class="dataSelect state" >
+								    <option value="1" >&nbsp;&nbsp;可用</option>
+								    <option value="0" >&nbsp;&nbsp;禁用</option>
+						        </select>
+							</td>
 							<td class="addBT-td"><input type="button" name=""  class="adBT" id="addBT" value="+" /></td>
 							<td class="delBT-td"><input type="button" name=""  class="adBT" id="delBT" value="-" /></td>
 						</tr>
@@ -453,7 +430,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody class="edit-tbody">
 						<tr class="line">
 							<td class="colName">序号：</td>
-							<td class="data"><input type="text" name="" id="" disabled class="dataInput id" value="" /></td>
+							<td class="data"><input type="number" name="" id="" disabled class="dataInput id" value="" /></td>
 						</tr>
 						<tr class="line">
 							<td class="colName">姓名：</td>
@@ -469,11 +446,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr class="line">
 							<td class="colName">权限：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput role" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect role" >
+								    <option value="ROOT" >&nbsp;&nbsp;管理员</option>
+								    <option value="SALES" >&nbsp;&nbsp;销售员</option>
+								    <option value="ADMIN" >&nbsp;&nbsp;仓库管理员</option>
+								    <option value="SUPER" >&nbsp;&nbsp;超级管理员</option>
+						        </select>
+							</td>
 						</tr>
 						<tr class="line">
 							<td class="colName">状态：</td>
-							<td class="data"><input type="text" name="" id="" class="dataInput state" value="" /></td>
+							<td class="data">
+						        <select class="dataSelect state" >
+								    <option value="1" >&nbsp;&nbsp;可用</option>
+								    <option value="0" >&nbsp;&nbsp;禁用</option>
+						        </select>
+							</td>
 						</tr>
 						</tbody>
 					</table>
@@ -514,6 +503,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	</form>
 	    </div>
 	    
+	    <div class="back-top iconfont" >&#xe619;</div>
+	    
 		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 		<script type="text/javascript">
 			function getAddDatas(){
@@ -536,7 +527,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var $editTbody = $('#editBox .edit-tbody');
 				//接收时全部接收，修改哪些取决于后台mapper语句
 				var data = {
-					id:             $editTbody.find(".roleId").val(),
+					id:             $editTbody.find(".id").val(),
 					name:             $editTbody.find(".name").val(),
 					password:              $editTbody.find(".password").val(),
 					user:              $editTbody.find(".user").val(),
@@ -559,9 +550,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(0).html(datas[i].id);
 					$vals.eq(1).html(datas[i].name);
 					$vals.eq(2).html(datas[i].password);
-					$vals.eq(2).html(datas[i].user);
-					$vals.eq(2).html(datas[i].role);
-					$vals.eq(2).html(datas[i].state);
+					$vals.eq(3).html(datas[i].user);
+					$vals.eq(4).html(datas[i].role);
+					$vals.eq(5).html(datas[i].state);
 					$newRow.find(".dataCheb").val(datas[i].id);
 					$newRow.find(".editData").attr("name",datas[i].id);
 					$newRow.find(".delData").attr("name",datas[i].id);
@@ -570,12 +561,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
-				$editTbody.find(".id").val(data.roleId);
-				$editTbody.find(".name").val(data.roleUser);
-				$editTbody.find(".password").val(data.strRole);
-				$editTbody.find(".user").val(data.strRole);
-				$editTbody.find(".role").val(data.strRole);
-				$editTbody.find(".state").val(data.strRole);
+				$editTbody.find(".id").val(data.id);
+				$editTbody.find(".name").val(data.name);
+				$editTbody.find(".password").val(data.password);
+				$editTbody.find(".user").val(data.user);
+				$editTbody.find(".role").val(data.role);
+				$editTbody.find(".state").val(data.state);
 			}
 			
 			function refreshTotalInfoSuc(hash){
@@ -583,11 +574,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var refreshTime = hash.refreshTime;
 				//填入统计信息
 				if(totalInfo!=undefined&&totalInfo!=null){
-					$('.tardinessSingular').text(totalInfo.tardinessSingular);
-					$('.tardinessNumber').text(totalInfo.tardinessNumber);
-					$('.inventoryError').text(totalInfo.inventoryError);
+					$('.totalAmount').text(totalInfo.totalAmount);
 				}
-				console.log($('.totalInfoRefreshTime'));
 				$('.totalInfoRefreshTime').text(refreshTime);
 			}
 			//隐藏列表

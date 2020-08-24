@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 @Transactional
@@ -37,7 +38,11 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
 
     @Override
     public List<BenchmarkData> limitQuery(Integer pageIdx, Integer pageDataCount) {
-        return benchmarkDataMapper.completeQuery(new QueryInfo(pageIdx*pageDataCount,pageDataCount));
+		//第一次访问默认按编号降序
+		List<String> screenInfo = new ArrayList<String>();
+		screenInfo.add("orderItems");
+		screenInfo.add("0 -1");
+        return benchmarkDataMapper.completeQuery(new QueryInfo(BenchmarkData.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
     }
 
     @Override

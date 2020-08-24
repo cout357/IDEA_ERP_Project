@@ -40,7 +40,10 @@ public class QueryInfo {
 				infos.add(screenInfo);
 			}
 		}
-		setColValueItems(infos);
+		if(flag == 1)
+			setOrderItems(infos);
+		else
+			setColValueItems(infos);
 	}
 	public QueryInfo(Class modelClass,List<String> screenInfoPackage,int limitBegin,int pageDataCount) {
 		this(modelClass,screenInfoPackage);

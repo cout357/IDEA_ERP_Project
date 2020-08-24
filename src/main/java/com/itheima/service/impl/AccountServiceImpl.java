@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,7 +36,11 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> limitQuery(Integer pageIdx, Integer pageDataCount) {
-        return accountMapper.completeQuery(new QueryInfo(pageIdx*pageDataCount,pageDataCount));
+		//第一次访问默认按编号降序
+		List<String> screenInfo = new ArrayList<String>();
+		screenInfo.add("orderItems");
+		screenInfo.add("0 -1");
+        return accountMapper.completeQuery(new QueryInfo(Account.class,screenInfo,pageIdx*pageDataCount,pageDataCount));
     }
 
 
