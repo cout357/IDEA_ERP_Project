@@ -29,16 +29,18 @@
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/BenchmarkDataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/BenchmarkDataMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/security/impl/FavUserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/service/security/impl/FavUserDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BenchmarkDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/security/impl/FavUserDetailServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-security.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -258,7 +260,7 @@
       <workItem from="1597976098833" duration="3731000" />
       <workItem from="1598185836945" duration="770000" />
       <workItem from="1598227910399" duration="7050000" />
-      <workItem from="1598250012085" duration="236000" />
+      <workItem from="1598250012085" duration="1098000" />
     </task>
     <task id="LOCAL-00001" summary="添加SUPER 超级用户权限，BenchmarkData,Account的modelmapper sql,service, 删除无用ROLE  Java model">
       <created>1597979338989</created>
