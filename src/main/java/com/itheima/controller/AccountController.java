@@ -94,12 +94,16 @@ public class AccountController {
 
 
     @RequestMapping("/getname")
-    @ResponseBody
-    public String getname(HttpServletRequest request) {
+    public String getname(HttpServletRequest request, HttpSession session) {
         SecurityContextImpl securityContextImpl = (SecurityContextImpl) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
         // 登录名
         String user = securityContextImpl.getAuthentication().getName();
-         return accountMapper.AccountFindByEmail(user).getName();   //  获取用户名
+        session.setAttribute("getname", accountMapper.AccountFindByEmail(user).getName());
+
+        System.out.println("getname = "+ accountMapper.AccountFindByEmail(user).getName());
+
+         return "redirect:/OrdersAndJournalCT/limitQuery";   //  获取用户名
+
         //  return  accountMapper.AccountFindByEmail(user);       获取Account bean
     }
 

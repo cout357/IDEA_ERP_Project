@@ -20,6 +20,16 @@
         <location>/403.jsp</location>
     </error-page>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
     <!--  session超时时间为30分钟，可以根据需要修改，负数或0为不限制session失效时间。-->
     <session-config>
         <session-timeout>240</session-timeout>
