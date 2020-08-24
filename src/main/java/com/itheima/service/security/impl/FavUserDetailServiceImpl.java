@@ -21,8 +21,6 @@ import java.util.List;
 
 public class FavUserDetailServiceImpl implements FavUserDetailService {
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
     private AccountMapper accountMapper;
