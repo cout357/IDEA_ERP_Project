@@ -409,7 +409,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="table-box" id="totalInfoTableBox">
 							<div class="totalInfo-menu">
 								<span class="refreshTimeText">上次更新于<span class="totalInfoRefreshTime">${refreshTime }</span></span>
-								<button class="updateTotalInfoBT cur-poi">更新</button>
+								<button class="updateTotalInfoBT cur-poi">更新统计</button>
 							</div>
 							<table class="totalInfo">
 								<tr class="row">

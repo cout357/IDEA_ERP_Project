@@ -16,7 +16,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
     <security:http security="none" pattern="/font/**" />
     <security:http security="none" pattern="/img/**" />
     <security:http security="none" pattern="/js/**" />
-    <security:http security="none" pattern="/index.jsp" />
+    <security:http security="none" pattern="/login.jsp" />
     <security:http security="none" pattern="/login.jsp" />
     <security:http security="none" pattern="/403.jsp" />
 
@@ -35,9 +35,9 @@ http://www.springframework.org/schema/security/spring-security.xsd">
         default-target-url 登陆成功后跳转的页面。 注：登陆页面用户名固定 username，密码
         password，action:login -->
 
-        <security:form-login login-page="/index.jsp"
+        <security:form-login login-page="/login.jsp"
                              login-processing-url="/login" username-parameter="username"
-                             password-parameter="password" authentication-failure-url="/register.jsp"
+                             password-parameter="password" authentication-failure-url="/login.jsp"
                              default-target-url="/OrdersAndJournalCT/limitQuery"
 
         />
@@ -46,7 +46,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
         登出成功页面
         注：登出操作 只需要链接到 logout即可登出当前用户 -->
         <security:logout invalidate-session="true" logout-url="/logout"
-                         logout-success-url="/index.jsp"
+                         logout-success-url="/login.jsp"
         />
         <!-- 关闭CSRF,默认是开启的 -->
         <security:csrf disabled="true" />

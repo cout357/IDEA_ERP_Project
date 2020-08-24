@@ -23,6 +23,9 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private AccountMapper accountMapper;
+
     @RequestMapping("limitQuery")
     @RolesAllowed("ROLE_SUPER")
     public String limitQuery(@RequestParam(defaultValue = "0")Integer pageIdx, @RequestParam(defaultValue = "30")Integer pageDataCount, Model model) {
@@ -86,6 +89,18 @@ public class AccountController {
     @ResponseBody
     public Integer edit(@RequestBody Account data) {
         return accountService.edit(data);
+    }
+
+
+
+    @RequestMapping("/getname")
+    @ResponseBody
+    public String getname(HttpServletRequest request) {
+        SecurityContextImpl securityContextImpl = (SecurityContextImpl) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
+        // 登录名
+        String user = securityContextImpl.getAuthentication().getName();
+         return accountMapper.AccountFindByEmail(user).getName();   //  获取用户名
+        //  return  accountMapper.AccountFindByEmail(user);       获取Account bean
     }
 
 
