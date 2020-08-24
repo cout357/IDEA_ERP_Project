@@ -5,10 +5,9 @@ import com.itheima.model.BenchmarkDataTotalInfo;
 import com.itheima.model.GeneralLedgerTotalInfo;
 import com.itheima.otherClass.QueryInfo;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
-@Repository
+
 public interface BenchmarkDataMapper {
 
 
@@ -23,6 +22,7 @@ public interface BenchmarkDataMapper {
     Integer dels(@Param("ids") List<Integer> ids);
     Integer edit(BenchmarkData customerInfo);
 	BenchmarkDataTotalInfo queryTotalInfo();
+	List<String> queryKMId();
 
 
 }

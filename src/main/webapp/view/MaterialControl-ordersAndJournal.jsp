@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="javascript:;">${SessionScope.username }</a></span>
+				<span class="text"><a href="javascript:;">${sessionScope.username }</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">
@@ -781,12 +781,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 			<div class="box-body">
+				<div class="body-head">
+					<span>业务员：<span class="salesMan">${sessionScope.username }</span></span>
+				</div>
 				<div class="addTable-box">
 					<table id="add-table">
 						<thead>
 						<tr class="colName-tr">
 							<th class="colName">订单下达日期</th>
-							<th class="colName">业务员</th>
 							<th class="colName">OE编号</th>
 							<th class="colName">康明编号</th>
 							<th class="colName">客户等级</th>
@@ -809,20 +811,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tbody id="add-tbody">
 						<tr class="data-tr">
 							<td class="data"><input type="date" name="" id="" class="dataInput dateInput orderDate" /></td>
-							<td class="data"><input type="text" name="" id="" class="dataInput salesMan" /></td>
 							<td class="data"><input type="text" name="" id="" class="dataInput OEId" /></td>
 							<td class="data">
 								<div class="getValue-box getValue-box-kmid">
 									<ul class="list">
-										<li class="item show"><span class="val">k-1001</span></li>
-										<li class="item show"><span class="val">k-1002</span></li>
-										<li class="item show"><span class="val">k-1003</span></li>
-										<li class="item show"><span class="val">k-102</span></li>
-										<li class="item show"><span class="val">r-1543</span></li>
-										<li class="item show"><span class="val">k-121</span></li>
-										<li class="item show"><span class="val">k-211</span></li>
-										<li class="item show"><span class="val">g-1021</span></li>
-										<li class="item show"><span class="val">k-1523</span></li>
 									</ul>
 								</div>
 								<input type="text" name="" id="" class=" withValueList dataInput KMId" />
@@ -892,15 +884,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td class="data">
 								<div class="getValue-box getValue-box-kmid">
 									<ul class="list">
-										<li class="item show"><span class="val">k-1001</span></li>
-										<li class="item show"><span class="val">k-1002</span></li>
-										<li class="item show"><span class="val">k-1003</span></li>
-										<li class="item show"><span class="val">k-102</span></li>
-										<li class="item show"><span class="val">r-1543</span></li>
-										<li class="item show"><span class="val">k-121</span></li>
-										<li class="item show"><span class="val">k-211</span></li>
-										<li class="item show"><span class="val">g-1021</span></li>
-										<li class="item show"><span class="val">k-1523</span></li>
 									</ul>
 								</div>
 								<input type="text" name="" id="" class="dataInput withValueList KMId" />
@@ -1007,9 +990,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var datas = new Array();
 				for(var i = 0;i < $dataTrs.length;i++){
 					var $data = $dataTrs.eq(i);		//单行数据
+					var salesManVal = $('#addBox .salesMan').text();
 					datas[i] = {
 							orderDate:				$data.find('.orderDate').val(),
-							salesMan:				$data.find('.salesMan').val(),
+							salesMan:				salesManVal,
 							oeId:			$data.find('.OEId').val(),
 							kmId:			$data.find('.KMId').val(),
 							cusLevel:			$data.find('.cusLevel').val(),
@@ -1161,24 +1145,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 			
 			//获取添加和编辑的康明编号提示li
-			function getKmIdListAjax(){
+			function getKmIdListAjax($list){
 				$.post(
-					"BenchmarkData"+"CT/findKMId",
+					"BenchmarkData"+"CT/queryKMId",
 					{},
 					function(vals){
+						var maxWidth = 0;
 						var $itemTemp = $('<li class="item show"><span class="val"></span></li>');
-						var $list = $('.dialog .getValue-box-kmid .list');
+						var $item;
 						for(var i = 0;i < vals.length;i++){
-							var $item = $itemTemp.close(true);
+							$item = $itemTemp.clone(true);
 							$item.find('.val').text(vals[i]);
 							$list.append($item);
 						}
+						//添加值提示事件
+						setWithValueListEvent();
 					}
 				);
 			}
 			$(function(){
 				//获取添加和编辑的康明编号提示li
-				getKmIdListAjax();
+				getKmIdListAjax($('.dialog .getValue-box-kmid .list'));
 			});
 			//隐藏列表
 			var hiddenCols = ['要求','说明'];

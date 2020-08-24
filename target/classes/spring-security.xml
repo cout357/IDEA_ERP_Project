@@ -18,6 +18,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
     <security:http security="none" pattern="/js/**" />
     <security:http security="none" pattern="/login.jsp" />
     <security:http security="none" pattern="/403.jsp" />
+    <security:http security="none" pattern="/405.jsp" />
+    <security:http security="none" pattern="/500.jsp" />
 
 
     <!--    <security:http security="none" pattern="/NoFound"/>-->
@@ -35,8 +37,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
         <security:form-login login-page="/login.jsp"
                              login-processing-url="/login" username-parameter="username"
-                             password-parameter="password" authentication-failure-url="/register.jsp"
-                             default-target-url="/OrdersAndJournalCT/limitQuery"
+                             password-parameter="password" authentication-failure-url="/login.jsp"
+                             default-target-url="/AccountCT/getname"
 
         />
 

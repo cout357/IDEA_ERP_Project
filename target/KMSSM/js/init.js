@@ -109,13 +109,13 @@ function initAddBox(){
     trNode = line.clone(true);
     tbody.on("click", " #addBT", function () {
     	//$('.addTable-box').scrollLeft(0);
-    	var $trN = trNode.clone();
+    	var $trN = trNode.clone(true);
     	var dateInput = $trN.find('.dateInput')[0];
     	if(dateInput!=null)
     		dateInput.valueAsDate = new Date();
         tbody.append($trN);
         $trN.find('.data')[0].focus();
-        setWithValueListEvent();
+		getKmIdListAjax($trN.find('.getValue-box-kmid .list'));
     });
 
     tbody.on("click","#delBT",function () {

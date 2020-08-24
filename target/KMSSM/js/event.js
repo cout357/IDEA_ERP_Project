@@ -794,6 +794,14 @@ function setWithValueListEvent(){
 		$this = $(this);
 		chooseLi = new ChooseLi($this.siblings('.getValue-box'),$this.siblings('.getValue-box').find(' .item'),$this);
 		$this.siblings('.getValue-box').css("display","block");
+		var $list = $this.siblings('.getValue-box').find(".list");
+		var $vals = $list.find(".val");
+		var maxWidth = 0;
+		for(var i = 0;i < $vals.length;i++){
+			maxWidth = $vals.eq(i).outerWidth()>maxWidth?$vals.eq(i).outerWidth():maxWidth;
+		}
+		console.log(maxWidth);
+		$list.width(maxWidth);
 	});
 	$('.dialog .withValueList').on('blur',function(){
 		$this = $(this);
@@ -810,7 +818,6 @@ function setWithValueListEvent(){
 		$this.parents('.getValue-box').css("display","none");
 	});
 	$('.dialog .withValueList').on('keydown',function(ev){
-		console.log("进入keydown方法");
 		if(chooseLi!=null)chooseLi.keydown(ev);
 		if(ev.keyCode==13){
 			chooseLi = null;
@@ -823,8 +830,6 @@ function setWithValueListEvent(){
 		chooseLi.matchValue();
 	})
 }
-setWithValueListEvent();
-
 function ChooseLi($listBox,$lis,$input){
 	this.$listBox = $listBox;
 	this.index = -1;			//在所有li中的下标

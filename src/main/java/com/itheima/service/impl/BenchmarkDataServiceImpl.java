@@ -80,4 +80,10 @@ public class BenchmarkDataServiceImpl  implements BenchmarkDataService {
 		// TODO Auto-generated method stub
 		return benchmarkDataMapper.queryTotalInfo();
 	}
+
+	@Override
+	public List<String> queryKMId() {
+		// TODO Auto-generated method stub
+		return benchmarkDataMapper.queryKMId();
+	}
 }

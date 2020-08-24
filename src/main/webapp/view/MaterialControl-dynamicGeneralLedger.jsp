@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="user-imgdiv icon">
 					<img src="img/userImg.png" /> 
 				</div>
-				<span class="text"><a href="javascript:;">${SessionScope.username }</a></span>
+				<span class="text"><a href="javascript:;">${sessionScope.username }</a></span>
 			</div>
 			<!-- 导航 -->
 			<ul class="nav-list">

@@ -8,10 +8,12 @@
     <select id="findAll" resultType="BenchmarkData">
 		select * from benchmarkdata
 	</select>
+	
     <!-- 单查 -->
     <select id="findById" parameterType="int" resultType="BenchmarkData">
 		select * from benchmarkdata where id=#{id}
 	</select>
+	
     <!-- 排序全查 -->
     <select id="findAllAndSort" parameterType="java.util.List" resultType="BenchmarkData">
         select * from benchmarkdata
@@ -19,6 +21,7 @@
             ${orderItem}
         </foreach>
     </select>
+    
     <!-- 排序+筛选全查 -->
     <select id="completeQuery" parameterType="QueryInfo" resultType="BenchmarkData">
         select * from benchmarkdata
@@ -38,14 +41,17 @@
             Limit ${limitBegin},${pageDataCount}
         </if>
     </select>
+    
     <!-- 查询单列存在的值 -->
     <select id="findColValues" parameterType="String" resultType="String">
 		select DISTINCT ${colName} from benchmarkdata order by ${colName}
 	</select>
+	
     <!-- 查询行数 -->
     <select id="findCount" resultType="INTEGER">
 		select Count(*) from benchmarkdata
 	</select>
+	
     <!-- 查询筛选后的行数 -->
     <select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
         select Count(*) from benchmarkdata
@@ -61,6 +67,10 @@
 		select Count(kangmingid) as totalAmount from BenchmarkData
 	</select>
 	
+	<!-- 获取全部kmid -->
+	<select id="queryKMId" resultType="String">
+		select kangMingId from BenchmarkData
+	</select>
     <!-- 插入多行数据 -->
     <insert id="adds" parameterType="List">
         insert into BenchmarkData(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)

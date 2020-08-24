@@ -12,7 +12,6 @@
 }
 #addBox{
 	width:1000px;
-	height:500px;
 	top:180px;
 	left: 50%;
 }
@@ -50,14 +49,14 @@
 
 #addBox .box-body{
 	width:100%;
-	height:430px;
+	height:530px;
 	overflow: hidden;
 }
 #addBox .box-body .addTable-box{
 	width:980px;
 	margin:0 auto;
-	height: 340px;
-	margin-top: 40px;
+	height: 440px;
+	margin-top: 20px;
 	overflow: auto;
 }
 
@@ -160,19 +159,20 @@
 	background:#fff;
 }
 .dialog .getValue-box .list .item .val{
-    display: block;
     padding: 0px 6px;
     height:30px;
     line-height: 30px;
     font-size: 14px;	
-    cursor:pointer;
+    white-space:nowrap;
 }
-.dialog .getValue-box .list .keySelected .val,
-.dialog .getValue-box .list .item .val:hover{
+.dialog .getValue-box .list .keySelected ,
+.dialog .getValue-box .list .item:hover {
 	background-color:#4c555d;
 	color:#fff;
 }
 .dialog .getValue-box .list .item{
+	width:100%;
+    cursor:pointer;
 	display:none;
 }
 .dialog .getValue-box .list .show{
@@ -211,4 +211,9 @@
 }
 #addBox .dataSelect{
 	width:124px;
+}
+
+#addBox .box-body .body-head{
+	margin:10px 10px;
+	text-indent:5px;
 }

@@ -84,6 +84,12 @@ public class BenchmarkDataController {
         return benchmarkDataService.findColValues(colIdx);
     }
 
+    @RequestMapping("queryKMId")
+    @ResponseBody
+    public List<String> queryKMId(){
+        List<String> vals = benchmarkDataService.queryKMId();
+        return vals;
+    }
     @RequestMapping("add")
     @RolesAllowed({"ROLE_SUPER","ROLE_ROOT"})
     @ResponseBody			//要返回Integer就需要加这个注解

@@ -19,4 +19,5 @@ public interface BenchmarkDataService {
     Integer dels(List<Integer> ids);
     Integer edit(BenchmarkData customerInfo);
 	BenchmarkDataTotalInfo queryTotalInfo();
+	List<String> queryKMId();
 }

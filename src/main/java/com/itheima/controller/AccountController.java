@@ -98,9 +98,9 @@ public class AccountController {
         SecurityContextImpl securityContextImpl = (SecurityContextImpl) request.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
         // 登录名
         String user = securityContextImpl.getAuthentication().getName();
-        session.setAttribute("getname", accountMapper.AccountFindByEmail(user).getName());
+        session.setAttribute("username", accountMapper.AccountFindByEmail(user).getName());
 
-        System.out.println("getname = "+ accountMapper.AccountFindByEmail(user).getName());
+        System.out.println("username = "+ session.getAttribute("username"));
 
          return "redirect:/OrdersAndJournalCT/limitQuery";   //  获取用户名
 
