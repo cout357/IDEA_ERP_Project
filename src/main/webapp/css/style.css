@@ -51,10 +51,6 @@ body,ul,li,h2{
 ul{
 	list-style-type: none;
 }
-a{
-	text-decoration: none;
-	color:#007bff;
-}
 .body{
 	width:auto;
 	margin-left:280px;
