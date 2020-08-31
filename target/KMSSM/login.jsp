@@ -22,13 +22,13 @@
     <link rel="stylesheet" href="css/util.css" />
 </head>
 <body>
-<div class="title">科尔智造信息科技有限公司ERP系统2.0</div>
+<div class="title">工厂管家企业管理咨询有限公司ERP系统2.0</div>
 <div class="loginBox">
     <div class="login-content">
         <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="userInfo-box" id="username-box"><div class="icon iconfont">&#xe602;</div><input type="text" class="userInfo" name="username" id="username" /></div>
             <div class="userInfo-box" id="password-box"><div class="icon iconfont">&#xe626;</div><input type="password" class="userInfo" name="password" id="password" /></div>
-            <div class="verCode-box"><input type="text" class="verCode" name="verCode" /><a href="#" class="verCode-Img"></a></div>
+            <!-- <div class="verCode-box"><input type="text" class="verCode" name="verCode" /><a href="#" class="verCode-Img"></a></div> -->
             <div class="submit-box"><input type="submit" id="submit" class="cur-poi" value="登录" /></div>
         </form>
 

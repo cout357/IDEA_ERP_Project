@@ -1,10 +1,13 @@
+@charset "utf-8";
 *{
     padding:0;
     margin:0;
 }
 
 html{
+	/*
 	background-image: -webkit-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%), -webkit-linear-gradient(-45deg, #1fddff 0%,#FFEDBC 100%);
+	*/
 }
 /*
 @font-face {
@@ -24,6 +27,10 @@ html{
   url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.woff') format('woff'),
   url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.svg#iconfont') format('svg');
+}
+@font-face{
+	font-family:"锐字真言体";
+	src:url("../font/锐字真言体.ttf");
 }
 .iconfont {
   font-family: "iconfont" !important;

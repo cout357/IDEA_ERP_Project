@@ -28,15 +28,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/锐字真言体.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/loginBG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/loginBGtmp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/KMSSM/font/锐字真言体.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/KMSSM/img/loginBG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/KMSSM/img/loginBGtmp.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/endInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/endInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/util.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/WEB-INF/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/js/endInit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/OrdersAndJournalMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/css/util.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/login.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +95,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,11 +112,11 @@
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\js" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\view" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\otherClass" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\service\impl" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -257,7 +263,8 @@
       <workItem from="1598227910399" duration="7050000" />
       <workItem from="1598250012085" duration="8160000" />
       <workItem from="1598312037231" duration="3126000" />
-      <workItem from="1598836773377" duration="396000" />
+      <workItem from="1598836773377" duration="2864000" />
+      <workItem from="1598843079507" duration="3149000" />
     </task>
     <task id="LOCAL-00001" summary="添加SUPER 超级用户权限，BenchmarkData,Account的modelmapper sql,service, 删除无用ROLE  Java model">
       <created>1597979338989</created>

@@ -22,7 +22,7 @@
 <body>
 <center><h2>404</h2></center>
 <span class="cont">
-			未找到或无法打开该资源。
+			未找到或无法打开该资源。<a href="${pageContext.request.contextPath}/OrdersAndJournalCT/limitQuery">返回订+单流水账</a>
 		</span>
 </body>
 </html>
