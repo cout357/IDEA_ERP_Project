@@ -738,8 +738,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$vals.eq(1).html(datas[i].name);
 					$vals.eq(2).html(datas[i].password);
 					$vals.eq(3).html(datas[i].user);
-					$vals.eq(4).html(datas[i].role);
-					$vals.eq(5).html(datas[i].state);
+					var role;
+					switch(datas[i].role){
+					case "ROOT":role = "管理员";break;
+					case "SALES":role = "销售员";break;
+					case "ADMIN":role = "仓库管理员";break;
+					case "SUPER":role = "超级管理员";break;
+					}
+					$vals.eq(4).html(role);
+					$vals.eq(5).html(datas[i].state==0?"禁用":"可用");
 					$newRow.find(".dataCheb").val(datas[i].id);
 					$newRow.find(".editData").attr("name",datas[i].id);
 					$newRow.find(".delData").attr("name",datas[i].id);

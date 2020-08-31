@@ -42,7 +42,7 @@
 	
 	<!-- 查询筛选后的行数 -->
 	<select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
-		select Count(oaj_id) from ordersAndJournal
+		select Count(oaj_id) from completeOaj
 		<where>
 			<foreach collection="colValueItems" open="" item="colValueItem">
 				AND ${colValueItem}

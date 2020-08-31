@@ -20,3 +20,5 @@ $(function () {
 $(".back-top").click(function () {
     $("html").animate({ scrollTop: 0 }, "slow"); //回到顶部
 });
+//默认按id倒序
+signsort[0] = document.getElementsByClassName("sortSign")[0];
