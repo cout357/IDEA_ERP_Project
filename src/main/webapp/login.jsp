@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/util.css" />
 </head>
 <body>
-<div class="title">工厂管家企业管理咨询有限公司ERP系统2.0</div>
+<div class="title">工厂管家企业管理咨询有限公司ERP系统</div>
 <div class="loginBox">
     <div class="login-content">
         <form action="${pageContext.request.contextPath}/login" method="post">
