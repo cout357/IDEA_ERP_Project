@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.BenchmarkDataMapper">
+
+
+    <!-- 全查 -->
+    <select id="findAll" resultType="BenchmarkData">
+		select * from benchmarkdata
+	</select>
+	
+    <!-- 单查 -->
+    <select id="findById" parameterType="int" resultType="BenchmarkData">
+		select * from benchmarkdata where id=#{id}
+	</select>
+	
+    <!-- 排序全查 -->
+    <select id="findAllAndSort" parameterType="java.util.List" resultType="BenchmarkData">
+        select * from benchmarkdata
+        <foreach collection="orderItems" open="order by "  item="orderItem" separator=",">
+            ${orderItem}
+        </foreach>
+    </select>
+    
+    <!-- 排序+筛选全查 -->
+    <select id="completeQuery" parameterType="QueryInfo" resultType="BenchmarkData">
+        select * from benchmarkdata
+        <where>
+            <if test="colValueItems!=null and colValueItems.size>0">
+                <foreach collection="colValueItems" open="" item="colValueItem">
+                    AND ${colValueItem}
+                </foreach>
+            </if>
+        </where>
+        <if test="orderItems!=null and orderItems.size>0">
+            <foreach collection="orderItems" open="order by "  item="orderItem" separator=",">
+                ${orderItem}
+            </foreach>
+        </if>
+        <if test="limitBegin!=null and pageDataCount!=null">
+            Limit ${limitBegin},${pageDataCount}
+        </if>
+    </select>
+    
+    <!-- 查询单列存在的值 -->
+    <select id="findColValues" parameterType="String" resultType="String">
+		select DISTINCT ${colName} from benchmarkdata order by ${colName}
+	</select>
+	
+    <!-- 查询行数 -->
+    <select id="findCount" resultType="INTEGER">
+		select Count(*) from benchmarkdata
+	</select>
+	
+    <!-- 查询筛选后的行数 -->
+    <select id="findScreenCount" parameterType="QueryInfo" resultType="INTEGER">
+        select Count(*) from benchmarkdata
+        <where>
+            <foreach collection="colValueItems" open="" item="colValueItem">
+                AND ${colValueItem}
+            </foreach>
+        </where>
+    </select>
+
+	<!-- 查询统计信息 -->
+	<select id="queryTotalInfo" resultType="BenchmarkDataTotalInfo">
+		select Count(kangmingid) as totalAmount from BenchmarkData
+	</select>
+	
+	<!-- 获取全部kmid -->
+	<select id="queryKMId" resultType="String">
+		select kangMingId from BenchmarkData
+	</select>
+    <!-- 插入多行数据 -->
+    <insert id="adds" parameterType="List">
+        insert into BenchmarkData(kangMingId,packingStandard,grossWeightOfEachBox,tankSize,aStandardCardBoardBox,aStandardCardBoardLongWide,instructions)
+        values
+        <foreach collection="datas" separator="," item="data">
+            ('${data.kangMingId}','${data.packingStandard}','${data.grossWeightOfEachBox}','${data.tankSize}','${data.aStandardCardBoardBox}','${data.aStandardCardBoardLongWide}','${data.instructions}')
+        </foreach>
+    </insert>
+
+    <!-- 删除多行数据 -->
+    <delete id="dels" parameterType="List">
+        delete from benchmarkdata
+        <where>
+            <if test="ids!=null and ids.size>0">
+                <foreach collection="ids" open="id in (" separator="," close=")" item="id">
+                    '${id}'
+                </foreach>
+            </if>
+        </where>
+    </delete>
+
+    <!-- 更新一行数据 -->
+    <!-- 只更新可以更新的部分 -->
+    <update id="edit" parameterType="BenchmarkData" >
+        update benchmarkData
+        <set>
+            kangMingId=#{kangMingId},
+            packingStandard=#{packingStandard},
+            grossWeightOfEachBox=#{grossWeightOfEachBox},
+            tankSize=#{tankSize},
+            aStandardCardBoardBox=#{aStandardCardBoardBox},
+            aStandardCardBoardLongWide=#{aStandardCardBoardLongWide},
+            instructions=#{instructions},
+        </set>
+        where id=#{id}
+    </update>
+
+
+</mapper>

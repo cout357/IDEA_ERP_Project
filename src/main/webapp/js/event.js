@@ -6,16 +6,34 @@ Array.prototype.remove = function(val) {
 	console.log(index+"删除元素"+val);
 	
 };
+//将ele元素的left值在范围内移动moveValue
+function moveLeft(ele,moveValue){
+	var boxWid = document.getElementById("data-table-box").offsetWidth;
+	var wid = ele.getBoundingClientRect().width;
+	var min = boxWid-wid;
+	var max = 0;
+	var leftTarget = ele.offsetLeft + moveValue;
+//	console.log(ele.offsetLeft);
+	if(leftTarget<min){
+		ele.style.left = min+"px";
+	}
+	else if(leftTarget>max){
+		ele.style.left = max+"px";
+	}
+	else{
+		ele.style.left = leftTarget+"px";
+	}
+}
 var datatable = document.getElementsByClassName("datatable")[0];
 //左右调整表单显示
 document.onkeydown = function(event){
 	var e = event || window.event || arguments.callee.caller.arguments[0];
 	var moveValue = 100;
 	if(e && e.keyCode==37){//  按下左键
-		move(datatable,moveValue);
+		moveLeft(datatable,moveValue);
 	}
 	if(e && e.keyCode==39){//  按下右键
-		move(datatable,-1*moveValue);
+		moveLeft(datatable,-1*moveValue);
 	}
 }
 
@@ -48,24 +66,7 @@ document.getElementsByClassName("left-nav")[0].onmouseleave = function(){
 		CWLN = setInterval(closeNav,10,leftNav,body,minWidth_leftNav);
 	}
 }
-//将ele元素的left值在范围内移动moveValue
-function move(ele,moveValue){
-	var boxWid = document.getElementById("data-table-box").offsetWidth;
-	var wid = ele.getBoundingClientRect().width;
-	var min = boxWid-wid;
-	var max = 0;
-	var leftTarget = ele.offsetLeft + moveValue;
-//	console.log(ele.offsetLeft);
-	if(leftTarget<min){
-		ele.style.left = min+"px";
-	}
-	else if(leftTarget>max){
-		ele.style.left = max+"px";
-	}
-	else{
-		ele.style.left = leftTarget+"px";
-	}
-}
+
 /*线性改变元素宽度和高度*/
 function toSize(ele,eleTargetWidth,eleTargetHeight,moveSpeed = 0.1){
 	var thisTargetWidth = ele.getBoundingClientRect().width + (eleTargetWidth - ele.getBoundingClientRect().width)*moveSpeed;	//这次目标宽度
@@ -360,11 +361,24 @@ for(var i = 0;i < colSum;i++)
 				this.classList.add('sort-down');
 				this.innerHTML = "&#xe738;";
 			}
-			var tmp = new Array();
+			//排序规则：按队列容器排，如果点击已存在队列的列，则只改变该列排序方向不改变所在队列位置。
+/*			var tmp = new Array();
 			for(var i = 0;i < signsort.length;i++)
 				if(signsort[i]==this)continue;
 				else tmp.push(signsort[i]);
+			tmp.push(this);*/
+			
+			//排序规则：同一时刻只能按一列排
+			var $sortSigns = $('.sortSign');
+			for(var i = 0;i < sortSigns.length;i++){		//复原其他列的排序符号
+				if(sortSigns[i] != this){
+					$sortSigns.eq(i).removeClass('sort-down sort-up');
+					$sortSigns.eq(i).html('&#xe660;');
+				}
+			}
+			var tmp = new Array();
 			tmp.push(this);
+			
 			signsort.length = 0;
 			signsort = tmp;
 			refreshDataAjax();
@@ -658,45 +672,6 @@ $('.datatable .val').on('click',function(){
 $('.completeValBox .close').click(function(){
     $('.completeValBox').css("display","none");
 });
-
-
-//Demo  仅用于看效果
-var dropitems = document.getElementsByClassName("dropitem");
-for(var i = 0;i < dropitems.length;i++){
-	dropitems[i].index = i;
-}
-dropitems[0].onclick = tmp1;
-function tmp1(){
-	var sortcols = document.getElementsByClassName("sortcol");
-	console.log(sortcols.length);
-	for(var i = 0;i < sortcols.length;i++){
-		sortcols[i].innerHTML = "&#xe83b;";
-		sortcols[i].classList.remove("sortcol");
-		console.log("删除sortcol成功!");
-	}
-	for(var i = 0;i < CSDIsCloses.length;i++){
-		if(CSDIsCloses[i]==false){
-			colscreens[i].classList.add("sortcol");
-			colscreens[i].innerHTML = "升序";
-		}
-	}
-}
-dropitems[1].onclick = tmp2;
-function tmp2(){
-	var sortcols = document.getElementsByClassName("sortcol");
-	console.log(sortcols.length);
-	for(var i = 0;i < sortcols.length;i++){
-		sortcols[i].innerHTML = "&#xe83b;";
-		sortcols[i].classList.remove("sortcol");
-	}
-	for(var i = 0;i < CSDIsCloses.length;i++){
-		if(CSDIsCloses[i]==false){
-			colscreens[i].classList.add("sortcol");
-			colscreens[i].innerHTML = "降序";
-		}
-	}
-}
-
 
 //数据选择
 //当前页数据全选事件

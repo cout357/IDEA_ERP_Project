@@ -1,0 +1,85 @@
+@charset "utf-8";
+*{
+    padding:0;
+    margin:0;
+}
+
+html{
+	/*
+	background-image: -webkit-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%), -webkit-linear-gradient(-45deg, #1fddff 0%,#FFEDBC 100%);
+	*/
+}
+a{
+    text-decoration: none;
+    color:#007bff;
+}
+/*
+@font-face {
+ font-family: 'iconfont';
+ src: url('../font/iconfont/iconfont.eot');
+ src: url('../font/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+     url('../font/iconfont/iconfont.woff2') format('woff2'),
+     url('../font/iconfont/iconfont.woff') format('woff'),
+     url('../font/iconfont/iconfont.ttf') format('truetype'),
+     url('../font/iconfont/iconfont.svg#iconfont') format('svg');
+} */
+@font-face {
+  font-family: 'iconfont';  /* project id 1937264 */
+  src: url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.eot');
+  src: url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1937264_2n9fetvnoxd.svg#iconfont') format('svg');
+}
+@font-face{
+	font-family:"锐字真言体";
+	src:url("../font/锐字真言体.ttf");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fr{
+    float:right;
+}
+.fl{
+    float:left;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: rgba(255,255,255,0.95);
+    color: #000;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.cur-def{
+    cursor:default;
+}
+.cur-poi{
+    cursor:pointer;
+}
+.dateInput{
+	min-width:150px;
+}
+
+
+.back-top{
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+    bottom: 40px;
+    right: 50px;
+    font-size:25px !important;
+    z-index:9999;
+    cursor:pointer;
+}
+.back-top:hover{
+	opacity:1;
+}

@@ -1,0 +1,181 @@
+@keyframes selected{
+	100%{margin-right: 0;
+	color: #000;
+	background: #f4f6f9;
+	border-radius:21px 0 0 21px;
+	width:280px;}
+}
+@keyframes open{
+	100%{margin-right: 0;
+	color: #fff;
+	background: limegreen;
+	border-radius:5px;
+	}
+}
+.left-nav{
+	width:280px;
+	height:1000px;
+	background:#343A40;
+	position: fixed;
+	left:0;
+	top:0;
+	color:rgba(255,255,255,.7);
+	font-size: 1.0rem;
+	overflow: hidden;
+	z-index: 2;
+}
+.left-nav a{
+	color:rgba(255,255,255,.7);
+	
+}
+.left-nav a:hover{
+	color:rgba(255,255,255,.9);
+	
+}
+.borb{
+	border-bottom: 1px solid #4b545c;
+}
+.left-nav .icon{
+	float: left;
+	width:34px;
+	height:34px;
+	margin-left:6.8px;
+	margin-right: 8px;
+	font-size:1.05rem;
+	line-height: 34px;
+	text-align: center;
+}
+.left-nav .text{
+	width:auto;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+	font-size: 1rem;
+	line-height: 34px;
+	margin-left: 10px;
+}
+.left-nav .nav-text{
+}
+.left-nav .title{
+	width:264px;
+	height:34px;
+	padding:11px 8px;
+	background: #7266BA;
+}
+.left-nav .user{
+	width:259px;
+	height:34px;
+	padding:13px 8px;
+}
+.left-nav .user .text{
+	width:196px;
+}
+.user-imgdiv{
+	width:34px;
+	height:34px;
+	margin: 0 8px;
+}
+.left-nav .icon img{
+	width:2.1rem;
+	height:auto;
+}
+.left-nav .nav-list{
+	min-width:250px;
+}
+.left-nav .nav-head{
+	height:40px;
+	margin: 0 7.8px;
+	margin-bottom: 10px;
+}
+.left-nav .nav-head .text{
+	font-size: 1.0rem;
+	font-weight: 400;
+	line-height: 40px;
+}
+
+.left-nav .select-list .select-item .select-a,
+.left-nav .select-list .menu .select-a{
+	display: block;
+	width:264px;
+	height:30px;
+	margin:5px 8px;
+	padding:7px 0;
+	border-radius: 8px;
+	color:rgba(255,255,255,.7);
+	
+}
+.left-nav .select-list .select-item .select-a:hover,
+.left-nav .select-list .menu .select-a:hover{
+	background-color: #4B545C;
+	color:rgba(255,255,255,1);
+}
+.left-nav .select-list .menu .subsublist .select-a{
+	/*background:rgba(50,205,50,.05);*/
+	width:256px;
+	margin-left: 16px;
+}
+
+.left-nav .text-icon{
+	width:30px;
+	height:30px;
+	background:rgba(255,255,255,.8);
+	color:#000;
+	border-radius: 50%;
+}
+/*涓氬姟琛�*/
+.left-nav .text-icon.head-icon{
+	margin-top:5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+.left-nav .text-icon .icon-text{
+	display: block;
+	line-height: 30px;
+}
+.left-nav .select-list .select-item .select-text{
+	line-height: 30px;
+}
+
+.left-nav .select-list .select-item .select-a.selected,
+.left-nav .select-list .menu .select-a.selected{
+	animation:selected 0.5s;
+	animation-fill-mode: forwards;		/*褰撳埌杈剧粓鐐规椂锛屽簲鐢ㄦ晥鏋�*/
+	animtaion-timing-function:ease-in;
+}
+.left-nav .select-list .menu{
+	display: table;
+}
+.left-nav .select-list .menu .select-a.fa{
+	position: relative;
+}
+.left-nav .select-list .menu.active .select-a.fa{
+	animation:open 0.5s;
+	animation-fill-mode: forwards;		/*褰撳埌杈剧粓鐐规椂锛屽簲鐢ㄦ晥鏋�*/
+	animtaion-timing-function:ease-in;
+}
+.left-nav .select-list  .selected .text-icon{
+	color:#fff;
+	background:rgba(0,0,0,.8);
+}
+.left-nav .select-list .menu .subsublist{
+	display: none;
+	overflow: hidden;
+}
+.left-nav .select-list .menu.active .subsublist{
+	display: block;
+}
+.left-nav .select-list .menu .open{
+	background-color: #4B545C;
+}
+
+.left-nav .select-list .menu .menu-sign{
+	position: absolute;
+	right: 5px;
+	top:11px;
+	transform: rotate(0deg);
+}
+
+.left-nav .select-list .menu .open .menu-sign{
+	transform: rotate(-90deg);
+}
