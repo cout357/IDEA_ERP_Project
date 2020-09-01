@@ -1,7 +1,12 @@
 package com.itheima.controller;
 
 import java.lang.reflect.Field;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
@@ -114,7 +119,7 @@ public class GeneralLedgerController {
 		List<GeneralLedger> generalLedgers = gService.completeQuery(screenInfo);
 		System.out.println(generalLedgers);
 
-		String url ="http://192.168.1.142:5000/DynamicBill?";
+		String url ="http://" + getRealIP() + ":5000/DynamicBill?";
 
 		for (int i=0; i<generalLedgers.size();i++){
 			if (i==0){
@@ -130,5 +135,35 @@ public class GeneralLedgerController {
 		HashMap hash = new HashMap();
 		hash.put("url",url);
 		return hash;
+	}
+
+	public static String getRealIP() {
+		try {
+			Enumeration<NetworkInterface> allNetInterfaces = NetworkInterface.getNetworkInterfaces();
+			while (allNetInterfaces.hasMoreElements()) {
+				NetworkInterface netInterface = (NetworkInterface) allNetInterfaces.nextElement();
+				// 去除回环接口，子接口，未运行和接口
+				if (netInterface.isLoopback() || netInterface.isVirtual() || !netInterface.isUp()) {
+					continue;
+				}
+				if (!netInterface.getDisplayName().contains("Intel") && !netInterface.getDisplayName().contains("Realtek")) {
+					continue;
+				}
+				Enumeration<InetAddress> addresses = netInterface.getInetAddresses();
+//                System.out.println(netInterface.getDisplayName());
+				while (addresses.hasMoreElements()) {
+					InetAddress ip = addresses.nextElement();
+					if (ip != null) {
+						if (ip instanceof Inet4Address) {
+							return ip.getHostAddress();
+						}
+					}
+				}
+				break;
+			}
+		} catch (SocketException e) {
+			System.err.println("Error when getting host ip address" + e.getMessage());
+		}
+		return null;
 	}
 }

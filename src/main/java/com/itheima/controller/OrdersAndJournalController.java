@@ -1,6 +1,11 @@
 package com.itheima.controller;
 
 import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
@@ -114,7 +119,7 @@ public class OrdersAndJournalController {
 	@ResponseBody
 	public HashMap export(@RequestBody List<String> screenInfo) throws IOException{
 		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo);
-		String url ="http://192.168.1.142:5000/OrderCurrentAccount?";
+		String url ="http://" +getRealIP() + ":5000/OrderCurrentAccount?";
 
 		for (int i=0; i<datas.size();i++){
 			if (i==0){
@@ -129,5 +134,36 @@ public class OrdersAndJournalController {
 		HashMap hash = new HashMap();
 		hash.put("url",url);
 		return hash;
+	}
+
+
+	public static String getRealIP() {
+		try {
+			Enumeration<NetworkInterface> allNetInterfaces = NetworkInterface.getNetworkInterfaces();
+			while (allNetInterfaces.hasMoreElements()) {
+				NetworkInterface netInterface = (NetworkInterface) allNetInterfaces.nextElement();
+				// 去除回环接口，子接口，未运行和接口
+				if (netInterface.isLoopback() || netInterface.isVirtual() || !netInterface.isUp()) {
+					continue;
+				}
+				if (!netInterface.getDisplayName().contains("Intel") && !netInterface.getDisplayName().contains("Realtek")) {
+					continue;
+				}
+				Enumeration<InetAddress> addresses = netInterface.getInetAddresses();
+//                System.out.println(netInterface.getDisplayName());
+				while (addresses.hasMoreElements()) {
+					InetAddress ip = addresses.nextElement();
+					if (ip != null) {
+						if (ip instanceof Inet4Address) {
+							return ip.getHostAddress();
+						}
+					}
+				}
+				break;
+			}
+		} catch (SocketException e) {
+			System.err.println("Error when getting host ip address" + e.getMessage());
+		}
+		return null;
 	}
 }
