@@ -865,8 +865,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    
 	    <div class="back-top iconfont" >&#xe619;</div>
 	    
-		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
-		<script type="text/javascript">
+		<script charset="utf-8" type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+		<script charset="utf-8" type="text/javascript">
 			function getAddDatas(){
 				var $dataTrs = $('#addBox .data-tr');
 				var datas = new Array();
@@ -991,9 +991,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//隐藏列表
 			var hiddenCols = ['固定存放库位','产品分类','业务员','盘点数据确认日期','低于最低库存预警款数','高于最大库存总款数'];
 		</script>
-		<script src="js/init.js"></script>
-		<script src="js/funcsOfAjax.js"></script>
-		<script src="js/event.js"></script>
+		<script charset="utf-8" src="js/init.js"></script>
+		<script charset="utf-8" src="js/funcsOfAjax.js"></script>
+		<script charset="utf-8" src="js/event.js"></script>
 		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

@@ -30,7 +30,7 @@
     <br/><span id="timer">3</span>秒后自动<a href="javascript:history.go(-1);">返回</a></span>
 		</span>
 </body>
-<script>
+<script charset="utf-8">
     var i = 3;
     intervalid = setInterval("fun()", 1000);
     function fun(){

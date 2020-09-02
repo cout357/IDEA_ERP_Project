@@ -983,8 +983,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	    <div class="back-top iconfont" >&#xe619;</div>
 	    
-		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
-		<script type="text/javascript">
+		<script charset="utf-8" type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+		<script charset="utf-8" type="text/javascript">
 			function getAddDatas(){
 				var $dataTrs = $('#addBox .data-tr');
 				var datas = new Array();
@@ -1174,9 +1174,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 		</script>
-		<script src="js/init.js"></script>
-		<script src="js/funcsOfAjax.js"></script>
-		<script src="js/event.js"></script>
+		<script charset="utf-8" src="js/init.js"></script>
+		<script charset="utf-8" src="js/funcsOfAjax.js"></script>
+		<script charset="utf-8" src="js/event.js"></script>
 		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

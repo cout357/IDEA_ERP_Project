@@ -755,9 +755,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
-		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
-		<script src="js/init.js"></script>
-		<script src="js/funcsOfAjax.js"></script>
-		<script src="js/event.js"></script>
+		<script charset="utf-8" type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+		<script charset="utf-8" src="js/init.js"></script>
+		<script charset="utf-8" src="js/funcsOfAjax.js"></script>
+		<script charset="utf-8" src="js/event.js"></script>
 	</body>
 </html>

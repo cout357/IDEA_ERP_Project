@@ -29,6 +29,87 @@
   <component name="ChangeListManager">
     <list default="true" id="23390d8d-c5d8-4171-9eed-eb9c8dd59977" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/403.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/403.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/500.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-customerValue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-manufacturing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-orderBigData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-partsConsumption.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-productionImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Analysis-supplyChainImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-PMC.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-PMC.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-department.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-supplier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-supplier.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-blanksAndRawMaterials.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-matchingIngredients.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchase.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-materialPurchaseAndBatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-packingMaterial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-partsInventory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MaterialControl-supplierServices.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-BOMAndERP.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-injectionMolding.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-metalworking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-metalworking.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-purchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-purchase.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-weeklyScheduling.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionPlan-weeklyScheduling.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-finalAssemblyDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-finalAssemblyDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-injectionMoldingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-injectionMoldingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-metalworkingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-metalworkingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-process.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-process.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-rotorDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-stampingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/ProductionScheduling-statorDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/materialControl-finishedProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/materialControl-finishedProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/403.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/403.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/500.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-customerValue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-customerValue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-manufacturing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-manufacturing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-orderBigData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-orderBigData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-partsConsumption.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-partsConsumption.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-productionImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-productionImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Analysis-supplyChainImprovement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Analysis-supplyChainImprovement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-PMC.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-department.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-department.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-supplier.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/Basic-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-benchmarkData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-blanksAndRawMaterials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-blanksAndRawMaterials.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-dynamicGeneralLedger.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-matchingIngredients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-matchingIngredients.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchase.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchaseAndBatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-materialPurchaseAndBatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-ordersAndJournal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-packingMaterial.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-packingMaterial.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-partsInventory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-supplierServices.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/MaterialControl-supplierServices.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-BOMAndERP.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-BOMAndERP.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-injectionMolding.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-injectionMolding.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-metalworking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-metalworking.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-purchase.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-purchase.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-weeklyScheduling.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionPlan-weeklyScheduling.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-finalAssemblyDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-finalAssemblyDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-injectionMoldingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-injectionMoldingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-metalworkingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-metalworkingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-process.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-process.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-rotorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-rotorDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-stampingDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-stampingDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-statorDaily.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/ProductionScheduling-statorDaily.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/materialControl-finishedProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/materialControl-finishedProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KMSSM/view/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/KMSSM/view/temp.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,16 +171,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\js" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\img" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp" />
-      <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\js" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\webapp\view" />
       <recent name="C:\Users\46361\Desktop\IDEAERP\src\main\java\com\itheima\otherClass" />
     </key>
@@ -121,8 +202,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/IDEAERP_war/" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=utf-8" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="IDEAERP:war">
@@ -253,7 +333,8 @@
       <workItem from="1598312037231" duration="3126000" />
       <workItem from="1598836773377" duration="2864000" />
       <workItem from="1598843079507" duration="7630000" />
-      <workItem from="1598917089385" duration="3081000" />
+      <workItem from="1598917089385" duration="5760000" />
+      <workItem from="1599002346584" duration="3888000" />
     </task>
     <task id="LOCAL-00001" summary="添加SUPER 超级用户权限，BenchmarkData,Account的modelmapper sql,service, 删除无用ROLE  Java model">
       <created>1597979338989</created>
