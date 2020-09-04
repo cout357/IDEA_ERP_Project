@@ -24,13 +24,13 @@ a{
      url('../font/iconfont/iconfont.svg#iconfont') format('svg');
 } */
 @font-face {
-    font-family: 'iconfont';  /* project id 1937264 */
-    src: url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.eot');
-    src: url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 1937264 */
+  src: url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.eot');
+  src: url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1937264_70vfwsbugd4.svg#iconfont') format('svg');
 }
 @font-face{
 	font-family:"锐字真言体";

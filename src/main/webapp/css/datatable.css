@@ -124,11 +124,12 @@
 /*	width:100%;*/
 /*	height:20px;*/
 /*}*/
-
+.datatable{
+	width:100%;
+}
 .datatable,
 .datatable-printing
 {
-	width:100%;
 	border-collapse: collapse;
 	background-color:#fff;
 }

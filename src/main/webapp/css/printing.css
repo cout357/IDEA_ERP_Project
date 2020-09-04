@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .totalInfo{
 	font-size:26px;
+	color:red !important;
 }
 .row,.colname-tr{
 	height:70px;
@@ -9,6 +10,9 @@
 .totalInfo .hor{
 	width:90px;
 }
-.totalInfo  .row{
-	color:rgba(255,255,255,1);
+.datatable-printing {
+	font-size:30px;
+}
+.datatable-printing th{
+	padding:0 10px;
 }
