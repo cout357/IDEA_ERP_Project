@@ -88,4 +88,5 @@ public class CustomerInfoController {
 	public Integer edit(@RequestBody CustomerInfo data) {
 		return cService.edit(data);
 	}
+
 }

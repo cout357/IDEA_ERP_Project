@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.totalInfo{
+	font-size:26px;
+}
+.row,.colname-tr{
+	height:70px;
+	line-height: 40px;
+}
+.totalInfo .hor{
+	width:90px;
+}
+.totalInfo  .row{
+	color:rgba(255,255,255,1);
+}

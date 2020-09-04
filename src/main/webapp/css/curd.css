@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .dialog{
 	background-color: #fff;
 	position: fixed;
@@ -109,10 +110,13 @@
 	border-radius: 5px;
 	outline: none;
 }
-.box-foot #submit-addAll,.box-foot #submit-edit{
+.box-foot #submit-addAll,.box-foot #submit-edit,
+.dialog .box-foot .submit
+{
 	background:#007BFF;
 	color:#fff;
 }
+
 .box-foot .close{
 	background:indianred;
 	color:#fff;
@@ -136,13 +140,13 @@
 }
 
 
-.export-chooseFileBox{
+.import-chooseFileBox{
 	width:400px;
 	top:400px;
 	left: 50%;
 	margin-left: -200px;
 }
-.export-chooseFileBox .box-body{
+.import-chooseFileBox .box-body{
 	padding:30px 10px;
 	text-align:center;
 }
@@ -216,4 +220,102 @@
 #addBox .box-body .body-head{
 	margin:10px 10px;
 	text-indent:5px;
+}
+
+
+/*��ӡ�뵼��*/
+.printing-setBox,
+.export-setBox
+{
+	width:460px;
+	top:200px;
+	left: 50%;
+	margin-left: -230px;
+}
+.printing-setBox .box-body,
+.export-setBox .box-body
+{
+	padding:20px;
+}
+.printing-setBox .box-body .table,
+.export-setBox .box-body .table
+{
+	width:100%;
+	border-collapse: collapse;
+}
+.printing-setBox .box-body .table td,
+.export-setBox .box-body .table td
+{
+	height:30px;
+}
+.printing-setBox .dataInput{
+	width:262px;
+	height:20px;
+	padding:0 5px;
+	border-radius: 2px;
+	margin:5px 2px;
+	font-weight:700;
+}
+.printing-setBox .box-body .table .set-title,
+.export-setBox .box-body .table .set-title
+{
+	width:90px;
+}
+.printing-setBox .box-body .table .data-td,
+.export-setBox .box-body .table .data-td{
+	width:330px;
+	font-size:0;
+}
+.printing-setBox .box-body .table .data-td .dataBox,
+.export-setBox .box-body .table .data-td .dataBox
+{
+	display:inline-block;
+	width:165px;
+	height:20px;
+	line-height:20px;
+}
+.printing-setBox .box-body .table .data-td .dataBox,
+.export-setBox .box-body .table .data-td .dataBox
+{
+	font-size:16px;
+}
+.printing-setBox .box-body .table .data-td .cheb{
+	vertical-align: -2px;
+	width:15px;
+	height:15px;
+}
+.printing-setBox .box-body .table .data-td .text{
+	margin-left:4px;
+}
+.printing-setBox .box-body .table tr{
+	border-bottom:1px solid #999;
+	padding:5px;
+}
+.printing-setBox .box-body .table .printingRow-td .dataBox,
+.export-setBox .box-body .table .putRow-td .dataBox
+{
+	width:110px;
+	height:30px;
+	line-height:30px;
+}
+.printing-setBox .box-body .table .printingRow-td .customBox,
+.export-setBox .box-body .table .putRow-td .customBox
+{
+	width:100%;
+	height:30px;
+	line-height:30px;
+}
+.printing-setBox .box-body .table .printingRow-td .customBox .rowNum,
+.export-setBox .box-body .table .putRow-td .customBox .rowNum
+{
+	width:60px;
+	height:15px;
+	padding:0px 5px;
+	font-size:14px;
+	font-weight:700;
+}
+.printing-setBox .box-body .table .printingRow-td .customBox .reminder,
+.export-setBox .box-body .table .putRow-td .customBox .reminder
+{
+	font-size:12px;
 }

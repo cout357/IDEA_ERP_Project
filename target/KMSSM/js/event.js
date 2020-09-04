@@ -218,12 +218,11 @@ var closeAddBox = function(){
 		lines[i].remove();
 	}
 	$('#addBox .dataInput').val("");
-	document.getElementById("addBox").style.display = "none";
 }
 var addBox = document.getElementById("addBox");
 addBox.getElementsByClassName("close")[0].onclick = closeAddBox;
 addBox.getElementsByClassName("close")[1].onclick = closeAddBox;
-$('#submit-addAll').click(function(){
+$('#addBox .submit').click(function(){
 	addAjax(tableName,getAddDatas());
 	closeAddBox();
 });
@@ -234,7 +233,6 @@ function addDataTableEvent(){
 	//添加编辑按钮事件
 	var closeEditBox = function(){
 		$('#editBox .dataInput').val("");
-		document.getElementById("editBox").style.display = "none";
 	}
 	var editData = document.getElementsByClassName("editData");
 	var editBox = document.getElementById("editBox");
@@ -246,7 +244,7 @@ function addDataTableEvent(){
 		}
 	}
 	//提交编辑内容
-	document.getElementById("submit-edit").onclick = function(){
+	$('#editBox .submit').onclick = function(){
 		editDataAjax(tableName,getEditData());
 		closeEditBox();
 	};
@@ -309,7 +307,7 @@ for(var i = 0;i < showColMenu_cheb.length;i++){
 }
 
 (function(){
-	var $colname = $('.colname-text');
+	var $colname = $('.datatable .colname-text');
 //	console.log("默认隐藏的列:");
 //	console.log(hiddenCols);
 	for(var i = $colname.length-1;i >= 0;i--){
@@ -319,19 +317,7 @@ for(var i = 0;i < showColMenu_cheb.length;i++){
 	}
 
 })();
-//隐藏不显示的列
-function hiddenCol(){
-	var $colname = $('.colname-text');
-	var $chebs = $('#showColMenu-dropdown .droplist .cheb');
-	var trs = document.getElementsByClassName("datatable")[0].getElementsByTagName('tr');
-	for(var i = $colname.length-1;i >= 0;i--){
-		if($.inArray($colname.eq(i).text(),hiddenCols)!=-1){
-			for(var j = 0;j < trs.length;j++){
-					trs[j].children[i+1].style.display = "none";
-			}
-		}
-	}
-}
+
 hiddenCol();
 
 
@@ -709,19 +695,7 @@ $('.datatable .replenishDataCheb-th .replenishDataCheb').on("click",function(){
 
 //导出按钮事件
 function exportDataClick(){
-	//导出至少要勾选一条数据
-	var haveChecked = false;
-	var $dataChebs = $('.datatable .row .dataCheb');
-	for(var i = 0;i < $dataChebs.length;i++){
-		if($dataChebs.eq(i).prop("checked")==true){
-			haveChecked = true;
-			break;
-		}
-	}
-	if(haveChecked==false){
-		return alert("请至少勾选一条数据");
-	}
-	exportAjax(tableName);
+	$('.export-setBox').css('display',"block");
 }
 $('.table-top #dataCheckedMenu-dropdown .exportData').on('click',function(){
 	$('.table-top .fl #dataCheckedMenu-dropdown .dropdownLink').trigger("click");		//关闭
@@ -731,10 +705,21 @@ $('.table-top .fr .exportData').on('click',exportDataClick);
 
 //导入按钮事件
 $('.table-top .importData').on('click',function(){
-	$('.export-chooseFileBox').css('display',"block");
+	$('.import-chooseFileBox').css('display',"block");
+});
+
+//打印按钮事件
+$('.table-top .printingData').on("click",function(){
+	setPrintingInfo();
+	$('.printing-setBox').css('display',"block");
 });
 
 //dialog基础事件
+
+$('.dialog .submit').on('click',function(){
+	$this = $(this);
+	$this.closest(".dialog").css("display","none");
+});
 $('.dialog .close').on('click',function(){
 	$this = $(this);
 	$this.closest(".dialog").css("display","none");
@@ -916,4 +901,31 @@ function ChooseLi($listBox,$lis,$input){
 }
 $('.colscreen-td .submit').on("click",function(){
 	closeColscreenDropdown();
+});
+
+//提交打印事件
+$('.printing-setBox .box-foot .submit').on('click',function(){
+	var title = $('.printing-setBox .box-body .title').val();
+	var colNames = getPrintingColNames();
+	var haveTotalInfo = $('.printing-setBox .box-body .haveTotalInfo').prop("checked");
+	var haveBorder = $('.printing-setBox .box-body .haveBorder').prop("checked");
+	var putRowFamily = $('.printing-setBox .box-body .printingRow-td input[name="put-row"]:checked').val();
+	var printingDataCount;
+	printingAjax(tableName,title,colNames,haveTotalInfo,haveBorder,putRowFamily);
+	
+});
+
+//切换打印行类别
+$(".put-row").on('change',function(){
+	var $this = $(this);
+	if($this.val()=='custom')
+		$this.parent().siblings('.customBox').css('display','block');
+	else
+		$this.parent().siblings('.customBox').css('display','none');
+});
+
+//导出事件
+$('.export-setBox .box-foot .submit').on('click',function(){
+	var putRowFamily = $('.export-setBox .box-body .putRow-td .put-row:checked').val();
+	exportAjax(tableName,putRowFamily);
 });

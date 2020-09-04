@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 .content-body .table-box{
 	width:100%;
 	overflow: hidden;
@@ -125,12 +125,16 @@
 /*	height:20px;*/
 /*}*/
 
-.datatable{
+.datatable,
+.datatable-printing
+{
 	width:100%;
 	border-collapse: collapse;
 	background-color:#fff;
 }
-.datatable.long{
+.datatable.long,
+.datatable-printing.long
+{
 	width:2600px;
 	position:relative;
 	left:0px;
@@ -139,16 +143,22 @@
 	height:40px;
 	line-height: 40px;
 }
-.datatable .colname-th,.datatable .hor{
+.datatable .colname-th,.datatable .hor
+{
 	border:1px solid #eee;
 }
-.datatable .hor{
+
+.datatable .hor,
+.datatable-printing .hor
+{
 	overflow:hidden;
 	max-width:300px;
 	white-space:nowrap;
     text-overflow: ellipsis;
 }
-.datatable .colname-th{
+.datatable .colname-th,
+.datatable-printing .colname-th
+{
 	position: relative;
 	white-space:nowrap;
 	padding:0 6px;
@@ -526,13 +536,13 @@
 .content-head .totalInfo-box{
 	width:100%;
 	margin-top: 72px;
-	margin-bottom: 30px;
 	position: relative;
 }
-.content-head .totalInfo{
+.totalInfo{
 	width:100%;
 	border-collapse: collapse;
 	border: 1px solid #ebebeb;
+	margin-bottom:20px;
 }
 .content-head .totalInfo-box .dropdownLink{
 	position: relative;

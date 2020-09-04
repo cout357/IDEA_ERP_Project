@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<base href="<%=basePath %>">
 	<meta charset="utf-8" />
-		<title>ERPDemo</title>
+		<title>工厂管家ERP系统</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/left-nav.css" />
 		<link rel="stylesheet" href="css/util.css" />
@@ -456,7 +456,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="fl">
 							<ul class="list">
 								<li class="item dropdown" id="dataCheckedMenu-dropdown">
-									<input type="checkbox" id="data-allCheb" />
+									<input type="checkbox" checked id="data-allCheb" />
 									<a href="javascript:;" class="dropdownLink iconfont link">
 										选中项&#xe63b;
 									</a>
@@ -480,6 +480,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						<div class="fr">
 							<ul class="list">
+								<li class="item"><a href="javascript:;"  class="printingData iconfont link">&#xe6c8;&nbsp;打印数据</a></li>
 							<!-- 	<li class="item"><a href="javascript:;"  class="importData iconfont link">&#xe648;&nbsp;导入数据</a></li> -->
 								<li class="item"><a href="javascript:;"  class="exportData iconfont link">&#xe649;&nbsp;导出数据</a></li>
 								<!-- <li class="item"><a href="javascript:;"  class="addData iconfont link">&#xe627;&nbsp;添加数据</a></li> -->
@@ -544,7 +545,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="hidden" id="colSum" value="23"/>
 						<input type="hidden" id="tableName" value="GeneralLedger"/>
 						<table class="datatable long">
-							<tr class="colname-tr">
+							<tr class="colname-tr hidTrs">
 								<th class="colname-th">选择
 									<div class="menu">
 										<span class=" iconfont" id="sort-cancel-all">一</span><br/>
@@ -701,8 +702,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 							<!-- 表格数据 -->
 							<c:forEach items="${generalLedgers }" var="db" varStatus="idx">
-								<tr class="row">
-									<th class="hor"><input type="checkbox" class="dataCheb" value="${db.gl_id }"/></th>
+								<tr class="row hidTrs">
+									<th class="hor"><input type="checkbox" class="dataCheb" checked  value="${db.gl_id }"/></th>
 									<th class="hor val">${db.gl_id }</th>
 									<th class="hor val">${db.kmId }</th>
 									<th class="hor val">${db.deposit }</th>
@@ -786,7 +787,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="box-foot">
 				<ul class="footBT-list">
-					<li class="footBT-item"><input type="button" class="footBT cur-poi" id="submit-addAll" value="批量添加" /></li>
+					<li class="footBT-item"><input type="button" class="footBT cur-poi submit"  value="批量添加" /></li>
 					<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
 				</ul>
 			</div>
@@ -830,7 +831,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="box-foot">
 				<ul class="footBT-list">
-					<li class="footBT-item"><input type="button" class="footBT cur-poi" id="submit-edit" value="提交" /></li>
+					<li class="footBT-item"><input type="button" class="footBT cur-poi submit" value="提交" /></li>
 					<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
 				</ul>
 			</div>
@@ -844,7 +845,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 <!-- 导入数据的选择文件-对话框 -->
 	    <div class="export-chooseFileBox dialog" >
-	    	<form action="http://192.168.1.142:5000/Uploader" method="POST" enctype="multipart/form-data">
+	    	<form action="http://${sessionScope.ip }:5000/Uploader" method="POST" enctype="multipart/form-data">
 				<div class="box-head">
 					<span class="title">导入数据</span>
 					<div class="fr">
@@ -856,17 +857,112 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	</div>
 				<div class="box-foot">
 					<ul class="footBT-list">
-						<li class="footBT-item"><input type="submit" class="footBT cur-poi" id="submit-edit" value="导入" /></li>
+ 						<li class="footBT-item"><input type="submit" class="footBT cur-poi submit" value="导入" /></li>
 						<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
 					</ul>
 				</div>
 	    	</form>
 	    </div>
+<!-- 导出数据-对话框 -->
+		<div class="export-setBox dialog">
+			<div class="box-head">
+				<span class="title">导出数据</span>
+				<div class="fr">
+					<a href="javascript:;" class="close" id="close-box">×</a>
+				</div>
+	    	</div>
+	    	<div class="box-body">
+	    		<table class="table">
+	    			<tbody>
+	    				<tr>
+							<td class="set-title">导出行：</td>
+							<td class="data-td putRow-td">
+								<div class="dataBox .putRow-box"><input type="radio" name="export-row" class="put-row" value="checked"><span class="text">勾选行</span></div>
+								<div class="dataBox .putRow-box"><input type="radio" name="export-row" class="put-row" value="all"><span class="text">所有行</span></div>
+								<div class="dataBox .putRow-box"><input type="radio" name="export-row" class="put-row" checked value="custom"><span class="text">自定义</span></div>
+
+								<div class="dataBox customBox">
+									前&nbsp;<input type="number" class="rowNum" value="30">&nbsp;行
+									&emsp;<span class="reminder"></span>
+								</div>
+							</td>
+	    				</tr>
+	    			</tbody>
+	    		</table>
+	    	</div>
+	    	<div class="box-foot">
+				<ul class="footBT-list">
+					<li class="footBT-item"><input type="submit" class="footBT cur-poi submit" value="导出" /></li>
+					<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
+				</ul>
+			</div>
+		</div>
+<!-- 打印数据的dialog框 -->
+	    <div class="printing-setBox dialog">
+	    	<div class="box-head">
+				<span class="title">打印数据</span>
+				<div class="fr">
+					<a href="javascript:;" class="close" id="close-box">×</a>
+				</div>
+	    	</div>
+	    	<div class="box-body">
+	    		<table class="table">
+	    			<tbody>
+	    				<tr>
+							<td class="colName set-title">页眉标题：</td>
+							<td class="data-td"><input type="text"  class="dataInput title" /></td>
+	    				</tr>
+	    				<tr>
+							<td class="set-title">附加打印：</td>
+							<td class="data-td">
+								<div class="dataBox"><input type="checkbox" checked class="haveTotalInfo cheb" />&nbsp;统计信息</div>
+								<div class="dataBox"><input type="checkbox" checked class="haveBorder cheb" />&nbsp;边框</div>
+							</td>
+	    				</tr>
+	    				<tr>
+							<td class="set-title">打印列：</td>
+							<td class="data-td printingCol-td">
+							<!-- 填充打印列 -->
+							</td>
+	    				</tr>
+	    				<tr>
+							<td class="set-title">打印行：</td>
+							<td class="data-td printingRow-td">
+								<div class="dataBox .printingRow-box"><input type="radio" name="put-row" class="put-row" value="checked"><span class="text">勾选行</span></div>
+								<div class="dataBox .printingRow-box"><input type="radio" name="put-row" class="put-row" value="all"><span class="text">所有行</span></div>
+								<div class="dataBox .printingRow-box"><input type="radio" name="put-row" class="put-row" checked value="custom"><span class="text">自定义</span></div>
+
+								<div class="dataBox customBox">
+									前&nbsp;<input type="number" class="rowNum" value="30">&nbsp;行
+									&emsp;<span class="reminder"></span>
+								</div>
+							</td>
+	    				</tr>
+	    			</tbody>
+	    		</table>
+	    	</div>
+	    	<div class="box-foot">
+				<ul class="footBT-list">
+					<li class="footBT-item"><input type="submit" class="footBT cur-poi submit" value="打印" /></li>
+					<li class="footBT-item"><input type="button" class="footBT cur-poi close" value="取消" /></li>
+				</ul>
+			</div>
+	    </div>
+<!-- 待打印的数据页 -->
+  		<div class="" style="overflow:hidden;height:0px;">
+			<table class="datatable-printing long">
+			</table>
+  		</div>
+<!-- 回到顶部 -->
+		<div class="back-top iconfont" >&#xe619;</div>
+
 	    
-	    <div class="back-top iconfont" >&#xe619;</div>
+
 	    
-		<script charset="utf-8" type="text/javascript" src="js/jquery-3.4.1.js" ></script>
-		<script charset="utf-8" type="text/javascript">
+		<script charset="UTF-8" type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+		<script charset="UTF-8" type="text/javascript" src="js/jQuery.print.js" ></script>
+		<script charset="UTF-8" type="text/javascript" src="js/funcs.js" ></script>
+		<script charset="UTF-8" type="text/javascript">
 			function getAddDatas(){
 				var $dataTrs = $('#addBox .data-tr');
 				var datas = new Array();
@@ -936,6 +1032,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 
 			}
+			function refreshPrintingDataSuc(hash){
+				var datas = hash.datas;
+				var $datatableP = $('.datatable-printing');
+				$('.datatable-printing .row').remove();
+				var $dataRowTemp = getDataRowTemp(colSum,false);
+				//填入表格数据
+				for(var i = 0;i < datas.length;i++){
+					var $newRow = $dataRowTemp.clone(true);
+					var $vals = $newRow.children('.val');
+					$vals.eq(0).html(datas[i].gl_id);
+					$vals.eq(1).html(datas[i].kmId);
+					$vals.eq(2).html(datas[i].deposit);
+					$vals.eq(3).html(datas[i].productClassification);
+					$vals.eq(4).html(datas[i].salesMan);
+					$vals.eq(5).html(datas[i].dataTime);
+					$vals.eq(6).html(datas[i].orderNeedSum);
+					$vals.eq(7).html(datas[i].storageSum);
+					$vals.eq(8).html(datas[i].checkoutSum);
+					$vals.eq(9).html(datas[i].stockSum);
+					$vals.eq(10).html(datas[i].stockCaseSum);
+					$vals.eq(11).html(datas[i].needStage);
+					$vals.eq(12).html(datas[i].preExportNumber);
+					$vals.eq(13).html(datas[i].availableNumber);
+					$vals.eq(14).html(datas[i].beforeYear);
+					$vals.eq(15).html(datas[i].averageMouth2020);
+					$vals.eq(16).html(datas[i].averageMouth);
+					$vals.eq(17).html(datas[i].orderNumber);
+					$vals.eq(18).html(datas[i].storageNumber);
+					$vals.eq(19).html(datas[i].checkoutNumber);
+					$vals.eq(20).html(datas[i].lowMiniNeed);
+					$vals.eq(21).html(datas[i].outHighNeed);
+					$vals.eq(22).html(datas[i].proposalNumber);
+					$datatableP.append($newRow);
+				}
+				console.log("填充完毕");
+			}
 			function editSuc(data) {
 				var $editTbody = $('#editBox .edit-tbody');
 				$editTbody.find(".gl_id").val(data.gl_id);
@@ -991,9 +1123,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//隐藏列表
 			var hiddenCols = ['固定存放库位','产品分类','业务员','盘点数据确认日期','低于最低库存预警款数','高于最大库存总款数'];
 		</script>
-		<script charset="utf-8" src="js/init.js"></script>
-		<script charset="utf-8" src="js/funcsOfAjax.js"></script>
-		<script charset="utf-8" src="js/event.js"></script>
+		<script charset="UTF-8" type="text/javascript" src="js/init.js"></script>
+		<script charset="UTF-8" type="text/javascript" src="js/funcsOfAjax.js"></script>
+		<script charset="UTF-8" type="text/javascript" src="js/event.js"></script>
 		<script charset="UTF-8" src="js/endInit.js"></script>
 	</body>
 </html>

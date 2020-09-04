@@ -3,6 +3,7 @@ package com.itheima.controller;
 import com.itheima.mapper.AccountMapper;
 import com.itheima.model.Account;
 import com.itheima.model.BenchmarkData;
+import com.itheima.otherClass.UtilFunc;
 import com.itheima.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextImpl;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -91,7 +93,48 @@ public class AccountController {
         return accountService.edit(data);
     }
 
+    @RequestMapping("export")
+    @ResponseBody
+    public HashMap export(@RequestBody List<String> screenInfo,Integer putDataCount) {
+        List<Account> datas = accountService.completeQuery(screenInfo,0,putDataCount);
+        String url ="http://" + UtilFunc.getRealIP() + ":5000/OrderCurrentAccount?";
 
+        for (int i=0; i<datas.size();i++){
+            if (i==0){
+                url=url+ "id="+String.valueOf(datas.get(i).getId());
+            }else {
+                url = url + "&id=" + String.valueOf(datas.get(i).getId());
+            }
+        }
+
+        System.out.println("url ==========" +url);
+        System.out.println("--------------------------");
+        HashMap hash = new HashMap();
+        hash.put("url",url);
+        return hash;
+    }
+
+    @RequestMapping("printing")
+    @ResponseBody
+    public HashMap printing(@RequestBody List<String> infoPackage,String title,Integer putDataCount,Model model){
+        List<String> colNames = new ArrayList<String>();
+        List<String> screenInfo;
+        infoPackage.remove(0);
+        for(int i = 0;i < infoPackage.size();) {
+            if("orderItems".equals(infoPackage.get(i)))break;
+            colNames.add(infoPackage.get(i));
+            infoPackage.remove(i);
+        }
+        screenInfo = infoPackage;
+        List<Account> datas = accountService.completeQuery(screenInfo,0,putDataCount);
+
+        HashMap hash = new HashMap();
+        hash.put("title",title);
+        hash.put("colNames",colNames);
+        hash.put("datas",datas);
+
+        return hash;
+    }
 
     @RequestMapping("/getname")
     public String getname(HttpServletRequest request, HttpSession session) {

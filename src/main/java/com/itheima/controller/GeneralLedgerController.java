@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -10,6 +11,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
+import com.itheima.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.itheima.model.CustomerInfo;
-import com.itheima.model.GeneralLedger;
-import com.itheima.model.GeneralLedgerTotalInfo;
-import com.itheima.model.OrdersAndJournalTotalInfo;
 import com.itheima.otherClass.UtilFunc;
 import com.itheima.service.GeneralLedgerService;
 import com.itheima.service.OrdersAndJournalService;
@@ -112,58 +110,48 @@ public class GeneralLedgerController {
 //		data.setVersion(data.getVersion()+1);
 		return gService.edit(data);
 	}
-	
+
 	@RequestMapping("export")
 	@ResponseBody
-	public HashMap export(@RequestBody List<String> screenInfo) {
-		List<GeneralLedger> generalLedgers = gService.completeQuery(screenInfo);
-		System.out.println(generalLedgers);
+	public HashMap export(@RequestBody List<String> screenInfo,Integer putDataCount) {
+		List<GeneralLedger> datas = gService.completeQuery(screenInfo,0,putDataCount);
+		String url ="http://" +UtilFunc.getRealIP() + ":5000/OrderCurrentAccount?";
 
-		String url ="http://" + getRealIP() + ":5000/DynamicBill?";
-
-		for (int i=0; i<generalLedgers.size();i++){
+		for (int i=0; i<datas.size();i++){
 			if (i==0){
-				url=url+ "id="+String.valueOf(generalLedgers.get(i).getGl_id());
+				url=url+ "id="+String.valueOf(datas.get(i).getGl_id());
 			}else {
-				url = url + "&id=" + String.valueOf(generalLedgers.get(i).getGl_id());
+				url = url + "&id=" + String.valueOf(datas.get(i).getGl_id());
 			}
 		}
 
-		System.out.println("url = "+ url);
-
+		System.out.println("url ==========" +url);
 		System.out.println("--------------------------");
 		HashMap hash = new HashMap();
 		hash.put("url",url);
 		return hash;
 	}
 
-	public static String getRealIP() {
-		try {
-			Enumeration<NetworkInterface> allNetInterfaces = NetworkInterface.getNetworkInterfaces();
-			while (allNetInterfaces.hasMoreElements()) {
-				NetworkInterface netInterface = (NetworkInterface) allNetInterfaces.nextElement();
-				// 去除回环接口，子接口，未运行和接口
-				if (netInterface.isLoopback() || netInterface.isVirtual() || !netInterface.isUp()) {
-					continue;
-				}
-				if (!netInterface.getDisplayName().contains("Intel") && !netInterface.getDisplayName().contains("Realtek")) {
-					continue;
-				}
-				Enumeration<InetAddress> addresses = netInterface.getInetAddresses();
-//                System.out.println(netInterface.getDisplayName());
-				while (addresses.hasMoreElements()) {
-					InetAddress ip = addresses.nextElement();
-					if (ip != null) {
-						if (ip instanceof Inet4Address) {
-							return ip.getHostAddress();
-						}
-					}
-				}
-				break;
-			}
-		} catch (SocketException e) {
-			System.err.println("Error when getting host ip address" + e.getMessage());
+	@RequestMapping("printing")
+	@ResponseBody
+	public HashMap printing(@RequestBody List<String> infoPackage,String title,Integer putDataCount,Model model){
+		List<String> colNames = new ArrayList<String>();
+		List<String> screenInfo;
+		infoPackage.remove(0);
+		for(int i = 0;i < infoPackage.size();) {
+			if("orderItems".equals(infoPackage.get(i)))break;
+			colNames.add(infoPackage.get(i));
+			infoPackage.remove(i);
 		}
-		return null;
+		screenInfo = infoPackage;
+		List<GeneralLedger> datas = gService.completeQuery(screenInfo,0,putDataCount);
+
+		HashMap hash = new HashMap();
+		hash.put("title",title);
+		hash.put("colNames",colNames);
+		hash.put("datas",datas);
+
+		return hash;
 	}
+
 }

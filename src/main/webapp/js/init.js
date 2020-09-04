@@ -1,4 +1,4 @@
-
+var title = "ERPDemo"
 /*数据表初始化*/
 //添加筛选按钮和筛选下拉框（并给筛选下拉框添加相应的类）
 var $colscreen_tdTemp = $('.colscreen-td').clone(true);
@@ -31,7 +31,7 @@ $colscreen_dropdownTemp.remove();
 
 //添加显示|隐藏列的选项
 (function(){
-	var $colname = $('.colname-text');
+	var $colname = $('.datatable .colname-text');
 	var $itemTemp = $("<li class='dropitem'><input class='cheb cur-poi' type='checkbox' checked='checked'/><span class='text'>none</span></li>");
 	var $list = $('#showColMenu-dropdown .droplist');
 	for(var i = 0;i < $colname.length;i++){
@@ -144,3 +144,18 @@ initDateInput();
 	$sortSigns.eq(0).addClass("sort-down");
 	$sortSigns.eq(0).html("&#xe738;");
 })();
+
+//初始化打印div的colname
+function initPrintingTable(){
+	var $colNameTexts = $('.datatable .colname-text');
+	var $datatableP = $('.datatable-printing');
+	var colNameTemp = $('<th class="colname-th hor "><span class="colname-text">colName</span></th>');
+	var tr = $('<tr class="colname-tr hidTrs"></tr>');
+	for(var i = 0;i < $colNameTexts.length;i++){
+		var colName = colNameTemp.clone(true);
+		colName.find('.colname-text').text($colNameTexts.eq(i).text());
+		tr.append(colName);
+	}
+	$datatableP.append(tr);
+}
+initPrintingTable();

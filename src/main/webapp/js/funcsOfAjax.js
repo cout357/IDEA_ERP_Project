@@ -1,12 +1,4 @@
-function getDataRowTemp(colSum){
-	var $row = $('<tr class="row"></tr>');
-	$row.append($('<th class="hor"><input type="checkbox" class="dataCheb" /></th>'));
-	for(var i = 0; i < colSum;i++)
-		$row.append($('<th class="hor val"></th>'));
-	$row.append($('<th class="hor iconfont sep-hor"><a href="javascript:;" class="editData" style="font-size:1.3rem;">&#xe612;</a>&emsp;<a href="javascript:;" class="delData" onclick="delData(this)" style="font-size:1rem;">&#xe78d;</a></th>'));
-	
-	return $row;
-}
+
 function getSortTypes(){
 	var sortTypes = new Array();			//排序列符号
 	for(var i = 0;i < signsort.length;i++){
@@ -17,14 +9,12 @@ function getSortTypes(){
 	}
 	return sortTypes;
 }
+
+
 var $dataRowTemp = getDataRowTemp(colSum);
 //根据排序信息和筛选信息重新查询数据
 function refreshDataAjax(){
-	var screenInfo = new Array();
-	screenInfo.push("orderItems");
-	screenInfo = screenInfo.concat(getSortTypes());
-	screenInfo.push("colValueItems");
-	screenInfo = screenInfo.concat(colValuescreen);
+	var screenInfo = getScreenInfo();
 	console.log(screenInfo);
 	console.log(pageIdx);
 	console.log(pageDataCount);
@@ -155,32 +145,21 @@ function refreshTotalInfoAjax(tableName){
 	);
 }
 //导出
-function exportAjax(tableName){
-	var screenInfo = new Array();
-	//按照排序顺序导出
-	screenInfo.push("orderItems");
-	screenInfo = screenInfo.concat(getSortTypes());
-	screenInfo.push("colValueItems");
-	//如果没有勾选全部页,则只导出当前页勾选了的数据
-	if($('.datatable .replenishDataCheb-th .replenishDataCheb').prop("checked")==false){
-		var myColValuescreen = new Array();		//筛选条件
-		for(var i = 0;i < colSum;i++)
-			myColValuescreen[i] = "";
-		var $dataChebs = $('.datatable .row .dataCheb');
-		myColValuescreen[0] = "&value ";
-		for(var i = 0;i < $dataChebs.length;i++)
-			if($dataChebs.eq(i).prop("checked")==true)
-				myColValuescreen[0] += "'"+$dataChebs.eq(i).val()+"'" + ",";
-		screenInfo = screenInfo.concat(myColValuescreen);
-	}
-	else		//否则直接根据筛选条件导出符合的所有数据
-		screenInfo = screenInfo.concat(colValuescreen);
+function exportAjax(tableName,putRowFamily){
+	var screenInfo;
+	var putDataCount = pageDataCount;
+	switch(putRowFamily){
+		case "checked":screenInfo = getTickScreenInfo();break;
+		case "all":screenInfo = getScreenInfo();putDataCount = dataCount;break;
+		case "custom":screenInfo = getScreenInfo();
+			putDataCount = $(".printing-setBox .box-body .table .printingRow-td .customBox .rowNum").val();break;
+	}	
 	console.log("导出信息:");
 	console.log(screenInfo);
 	$.ajax({
 		type: "post",//注意不能用get
 		dataType: 'json',
-		url: tableName+"CT/export",
+		url: tableName+"CT/export?putDataCount="+putDataCount,
 		contentType: 'application/json;charset=utf-8',//这个必须是这个格式
 		data: JSON.stringify(screenInfo),//前台要封装成json格式
 		traditional: true,
@@ -188,6 +167,42 @@ function exportAjax(tableName){
 			var url = hash.url;
 			console.log("export-url:"+url);
 			window.location.href=url;
+		}
+	});
+}
+
+//打印数据(表名，页眉标题，需要打印的列的列名)
+function printingAjax(tableName,title,colNames,haveTotalInfo,haveBorder,putRowFamily){
+	var screenInfo;
+	var putDataCount = pageDataCount;
+	switch(putRowFamily){
+		case "checked":screenInfo = getTickScreenInfo();break;
+		case "all":screenInfo = getScreenInfo();putDataCount = dataCount;break;
+		case "custom":screenInfo = getScreenInfo();
+			putDataCount = $(".printing-setBox .box-body .table .printingRow-td .customBox .rowNum").val();break;
+	}	
+	colNames.unshift("colNameItems");
+	var infoPackage = colNames.concat(screenInfo);
+	$.ajax({
+		type: "post",//注意不能用get
+		dataType: 'json',
+		url: tableName+"CT/printing?title="+title+"&putDataCount="+putDataCount,
+		contentType: 'application/json;charset=utf-8',//这个必须是这个格式
+		data: JSON.stringify(infoPackage),//前台要封装成json格式
+		traditional: true,
+		success: function (hash) {
+			refreshPrintingDataSuc(hash);
+			hiddenPrintingCol(hash.colNames);
+			if(haveBorder)
+				$('.datatable-printing .hor').css('border',"2px solid #000");
+			else
+				$('.datatable-printing .hor').css('border',"none");
+			$('.datatable-printing').print({
+				prepend:(haveTotalInfo?$('.totalInfo'):null),
+				title:title,
+				stylesheet:"css/printing.css"
+			});
+			$('.datatable-printing').find("row").remove();
 		}
 	});
 }

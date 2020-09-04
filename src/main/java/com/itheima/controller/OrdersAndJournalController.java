@@ -5,6 +5,7 @@ import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -90,6 +91,7 @@ public class OrdersAndJournalController {
 		//在获取最大id后到插入表中期间，如果有新数据添加进表，可能会出现重复订单编号的情况
 		//如果用时间+随机数的方式生成订单编号可以避免这一问题
 		Integer maxId = oService.findMaxId();
+		maxId = maxId==null?0:maxId;
 		for(OrdersAndJournal data:datas) {
 			data.setOrderId("KM"+(++maxId));
 		}
@@ -117,9 +119,9 @@ public class OrdersAndJournalController {
 	}	
 	@RequestMapping("export")
 	@ResponseBody
-	public HashMap export(@RequestBody List<String> screenInfo) throws IOException{
-		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo);
-		String url ="http://" +getRealIP() + ":5000/OrderCurrentAccount?";
+	public HashMap export(@RequestBody List<String> screenInfo,Integer putDataCount){
+		List<OrdersAndJournal> datas = oService.completeQuery(screenInfo,0,putDataCount);
+		String url ="http://" +UtilFunc.getRealIP() + ":5000/OrderCurrentAccount?";
 
 		for (int i=0; i<datas.size();i++){
 			if (i==0){
@@ -136,34 +138,26 @@ public class OrdersAndJournalController {
 		return hash;
 	}
 
+    @RequestMapping("printing")
+    @ResponseBody
+    public HashMap printing(@RequestBody List<String> infoPackage,String title,Integer putDataCount,Model model){
+        List<String> colNames = new ArrayList<String>();
+        List<String> screenInfo;
+        infoPackage.remove(0);
+        for(int i = 0;i < infoPackage.size();) {
+            if("orderItems".equals(infoPackage.get(i)))break;
+            colNames.add(infoPackage.get(i));
+            infoPackage.remove(i);
+        }
+        screenInfo = infoPackage;
+        List<OrdersAndJournal> datas = oService.completeQuery(screenInfo,0,putDataCount);
 
-	public static String getRealIP() {
-		try {
-			Enumeration<NetworkInterface> allNetInterfaces = NetworkInterface.getNetworkInterfaces();
-			while (allNetInterfaces.hasMoreElements()) {
-				NetworkInterface netInterface = (NetworkInterface) allNetInterfaces.nextElement();
-				// 去除回环接口，子接口，未运行和接口
-				if (netInterface.isLoopback() || netInterface.isVirtual() || !netInterface.isUp()) {
-					continue;
-				}
-				if (!netInterface.getDisplayName().contains("Intel") && !netInterface.getDisplayName().contains("Realtek")) {
-					continue;
-				}
-				Enumeration<InetAddress> addresses = netInterface.getInetAddresses();
-//                System.out.println(netInterface.getDisplayName());
-				while (addresses.hasMoreElements()) {
-					InetAddress ip = addresses.nextElement();
-					if (ip != null) {
-						if (ip instanceof Inet4Address) {
-							return ip.getHostAddress();
-						}
-					}
-				}
-				break;
-			}
-		} catch (SocketException e) {
-			System.err.println("Error when getting host ip address" + e.getMessage());
-		}
-		return null;
-	}
+        HashMap hash = new HashMap();
+        hash.put("title",title);
+        hash.put("colNames",colNames);
+        hash.put("datas",datas);
+
+        return hash;
+    }
+
 }
